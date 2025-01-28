@@ -1,0 +1,255 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://c540g315qq7eb"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_b0ij1"]
+
+[resource]
+script = ExtResource("1_b0ij1")
+starts = {
+"tutorialNPC": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-360, 80),
+"start_id": "tutorialNPC"
+},
+"1_1": {
+"dialogue": "oh poor lost daemon how have you found yourself here?,,, you must be so confused.",
+"offset": Vector2(-80, 80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_10": {
+"dialogue": "oh but i wouldn't want to put that responsibility for all of us on your shoulders, [wave amp=25.0 freq=5.0 connected=1]hehehe,[/wave]",
+"offset": Vector2(3920, 2160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_11",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_11": {
+"dialogue": "the [color=peru]Blocks[/color] within the labyrinth have been enchanted with [color=royal_blue]strange runes[/color],",
+"offset": Vector2(4320, 2360),
+"options": {
+0: {
+"condition": {},
+"link": &"1_12",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_12": {
+"dialogue": "many have tried but we've barely been able to clear a path, 
+",
+"offset": Vector2(4720, 2580),
+"options": {
+0: {
+"condition": {},
+"link": &"1_17",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_13": {
+"dialogue": "rumors have been spread that few with [color=deep_sky_blue]special abilities[/color] where able to make it out and back onto the surface... ",
+"offset": Vector2(5520, 3000),
+"options": {
+0: {
+"condition": {},
+"link": &"1_18",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_14": {
+"dialogue": "but i feel it, a new [color=deep_sky_blue]strange power[/color] emanating from you, You can move them, cant you?",
+"offset": Vector2(6320, 3400),
+"options": {
+0: {
+"condition": {},
+"link": &"1_15",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_15": {
+"dialogue": "go young [color=aquamarine]Greendaemon[/color], go to the labyrinth, but beware its puzzles they will test your mind to its fullest, go and succeed",
+"offset": Vector2(6720, 3620),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_16": {
+"dialogue": "but i think... maybe you have a chance,,,",
+"offset": Vector2(1520, 920),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_17": {
+"dialogue": "scouts have been able to make it further but the strange puzzles elude us..",
+"offset": Vector2(5120, 2780),
+"options": {
+0: {
+"condition": {},
+"link": &"1_13",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_18": {
+"dialogue": "but barely any daemon has the ability to move these [color=royal_blue]runes...[/color]",
+"offset": Vector2(5920, 3200),
+"options": {
+0: {
+"condition": {},
+"link": &"1_14",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_2": {
+"dialogue": "oh look at you, so young... you've must have just been born...",
+"offset": Vector2(320, 280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_3": {
+"dialogue": "how strange no new daemon has been born in a very, very long time.",
+"offset": Vector2(720, 500),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_4": {
+"dialogue": "i cant quite move from here, I've cried for so long the salt from my tears have crusted my legs to the floor, ",
+"offset": Vector2(1120, 700),
+"options": {
+0: {
+"condition": {},
+"link": &"1_16",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_5": {
+"dialogue": "very well ill tell you,
+past here you will find [color=crimson]IT[/color],",
+"offset": Vector2(1920, 1120),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_6": {
+"dialogue": "[color=crimson]the labyrinth[/color]",
+"offset": Vector2(2320, 1320),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_7": {
+"dialogue": "all of us have been trapped down here, and the only way to make it out of here is to solve the puzzles within that awful place,",
+"offset": Vector2(2720, 1540),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_8": {
+"dialogue": "you however are special, someone had created you for a purpose, you must make it to the surface!",
+"offset": Vector2(3120, 1740),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_9": {
+"dialogue": "i believe in you, you might even be able to carve a path for ALL of us,,,",
+"offset": Vector2(3520, 1960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+}
+}
+variables = {}
+strays = Array[String]([])
+characters = "res://Dialog/characters.tres"

@@ -1,0 +1,16 @@
+res://Scenes/world.tscn
+res://Sprites/world.tres
+res://early_level_ground.tres
+res://Scenes/tutorial_level.tscn
+res://Scenes/moveableBox(TileMap).tscn
+res://Scenes/player.tscn
+res://Scenes/transition_screen.tscn
+res://Scenes/finish.tscn
+res://Scenes/NPC1.tscn
+res://addons/dialogue_nodes/nodes/dialogueNode.gd
+res://Scripts/finish.gd
+res://Scripts/npc_animation.gd
+res://Scripts/npc_dialogue.gd
+res://Scripts/player.gd
+res://Scripts/TileMapMovement.gd
+res://Scripts/transition_screen.gd

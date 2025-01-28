@@ -1,0 +1,186 @@
+[gd_scene load_steps=20 format=4 uid="uid://dvba175ki7v6a"]
+
+[ext_resource type="TileSet" uid="uid://cmnrq41gip68b" path="res://Tres/early_level_ground.tres" id="1_dxrxh"]
+[ext_resource type="TileSet" uid="uid://cyvsuhanvaxy1" path="res://Tres/player_coll.tres" id="2_p8bmd"]
+[ext_resource type="Texture2D" uid="uid://cphm8pdk353y0" path="res://Sprites/objects/tunnel_light_mask.png" id="3_tb8uk"]
+[ext_resource type="Script" path="res://Scripts/start_block.gd" id="4_g4s7c"]
+[ext_resource type="Script" path="res://Scripts/finish.gd" id="5_gxvlc"]
+[ext_resource type="PackedScene" uid="uid://1x63y7s53ti4" path="res://Scenes/player.tscn" id="6_4h5wv"]
+[ext_resource type="Texture2D" uid="uid://jbbvg8d1upl3" path="res://Sprites/objects/light_mask.png" id="7_stmvq"]
+[ext_resource type="PackedScene" uid="uid://d4hdlnqb2ixew" path="res://Scenes/Items/moveableBox(TileMap).tscn" id="8_icc2f"]
+[ext_resource type="Script" path="res://Scripts/start.gd" id="9_8yfsa"]
+[ext_resource type="Script" path="res://Scripts/end.gd" id="10_7vcyw"]
+[ext_resource type="Texture2D" uid="uid://cpps0vy6fjm33" path="res://Sprites/test_tile_things-Sheet.png" id="11_qequa"]
+[ext_resource type="PackedScene" uid="uid://b1yqgsp5y20wh" path="res://Scenes/NPCs/NPC1.tscn" id="12_mesgx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sg5yw"]
+size = Vector2(116, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1eey7"]
+size = Vector2(138, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ml8n7"]
+size = Vector2(118, 74.5)
+
+[sub_resource type="Animation" id="Animation_chwpn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wrinw"]
+resource_name = "block_appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.56),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lsmp6"]
+resource_name = "block_disappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_af3po"]
+_data = {
+"RESET": SubResource("Animation_chwpn"),
+"block_appear": SubResource("Animation_wrinw"),
+"block_disappear": SubResource("Animation_lsmp6")
+}
+
+[node name="level_3" type="Node2D"]
+
+[node name="Tile_map" type="Node2D" parent="."]
+
+[node name="Collision" type="TileMapLayer" parent="Tile_map"]
+
+[node name="Ground" type="TileMapLayer" parent="Tile_map"]
+tile_map_data = PackedByteArray("AAAAAAgAAQABAAEAAAABAAgAAQABAAEAAAACAAgAAQABAAEAAAADAAgAAQABAAEAAAAEAAgAAQABAAEAAAAFAAgAAQABAAEAAAAGAAgAAwABAAEAAAAGAAcAAwAAAAEAAAAGAAYAAwAAAAEAAAAGAAUAAwAAAAEAAAAGAAQAAwAAAAEAAAAGAAMAAwAAAAEAAAAGAAIAAwAAAAEAAAAGAAEAAwAAAAEAAAAGAAAAAwAAAAEAAAAFAAAAAwAAAAEAAAAEAAAAAwAAAAEAAAADAAAAAwAAAAEAAAACAAAAAwAAAAEAAAABAAAAAwAAAAEAAAAAAAAAAwAAAAEAAAAAAAEAAwAAAAEAAAAAAAIAAwAAAAEAAAAAAAMAAwAAAAEAAAAAAAQAAwAAAAEAAAAAAAUAAwAAAAEAAAAAAAYAAwAAAAEAAAAAAAcAAwAAAAEAAAABAAcAAwAAAAEAAAABAAYABAACAAIAAAABAAUABAACAAIAAAABAAQABAACAAIAAAABAAMABAACAAIAAAABAAIABAACAAIAAAABAAEABAACAAIAAAACAAEABAACAAIAAAACAAIABAACAAIAAAACAAMABAACAAIAAAACAAQABAACAAIAAAACAAUABAACAAIAAAACAAYABAACAAIAAAACAAcAAwAAAAEAAAADAAcAAwAAAAEAAAADAAYABAACAAIAAAADAAUABAACAAIAAAADAAQABAACAAIAAAADAAMABAACAAIAAAADAAIABAACAAIAAAADAAEABAACAAIAAAAEAAEABAACAAIAAAAEAAIABAACAAIAAAAEAAMABAACAAIAAAAEAAQABAACAAIAAAAEAAUABAACAAIAAAAEAAYABAACAAIAAAAEAAcAAwAAAAEAAAAFAAcAAwAAAAEAAAAFAAYABAACAAIAAAAFAAUABAACAAIAAAAFAAQABAACAAIAAAAFAAMABAACAAIAAAAFAAIABAACAAIAAAAFAAEABAACAAIAAAD//wAAAQAAAAEAAAD//wEAAQAAAAEAAAD//wIAAQAAAAEAAAD//wMAAQAAAAEAAAD//wQAAQAAAAEAAAD//wUAAQAAAAEAAAD//wYAAQAAAAEAAAD//wcAAQAAAAEAAAD//wgAAQAAAAEAAAAAAAkAAQABAAIAAAABAAkAAQABAAIAAAACAAkAAwACAAEAAAADAAkAAQABAAEAAAAEAAkAAwABAAEAAAAFAAkAAQABAAIAAAAGAAkAAQACAAIAAAAHAAgAAQACAAIAAAAHAAcAAQACAAEAAAAHAAYAAQACAAEAAAAHAAUAAQACAAEAAAAHAAQAAQACAAEAAAAHAAMAAQACAAEAAAAHAAIAAQACAAEAAAAHAAEAAQACAAEAAAAHAAAAAQACAAEAAAAGAP//AQABAAAAAAAFAP//AQABAAAAAAAEAP//AQABAAAAAAADAP//AwABAAIAAAACAP//AQABAAEAAAABAP//AwACAAIAAAAAAP//AQABAAAAAAAHAP//AQACAAAAAAD//wkAAQAAAAIAAAD/////AQAAAAAAAAACAP7/AQABAAEAAAACAP3/AQABAAEAAAACAPz/AQABAAEAAAACAPv/AQABAAEAAAACAPr/AQABAAEAAAACAPn/AQABAAEAAAACAPj/AQABAAEAAAACAPf/AQABAAEAAAACAPb/AQABAAEAAAACAPX/AQABAAEAAAACAPT/AQABAAEAAAACAPP/AQABAAEAAAACAPL/AQABAAEAAAABAP7/AQAAAAEAAAABAP3/AQAAAAEAAAABAPz/AQAAAAEAAAABAPv/AQAAAAEAAAABAPr/AQAAAAEAAAABAPn/AQAAAAEAAAABAPj/AQAAAAEAAAABAPf/AQAAAAEAAAABAPb/AQAAAAEAAAABAPX/AQAAAAEAAAABAPT/AQAAAAEAAAABAPP/AQAAAAEAAAABAPL/AQAAAAEAAAADAP7/AQACAAEAAAADAP3/AQACAAEAAAADAPz/AQACAAEAAAADAPv/AQACAAEAAAADAPr/AQACAAEAAAADAPn/AQACAAEAAAADAPj/AQACAAEAAAADAPf/AQACAAEAAAADAPb/AQACAAEAAAADAPX/AQACAAEAAAADAPT/AQACAAEAAAADAPP/AQACAAEAAAADAPL/AQACAAEAAAADAAoAAQABAAEAAAADAAsAAQABAAEAAAADAAwAAQABAAEAAAADAA0AAQABAAEAAAADAA4AAQABAAEAAAADAA8AAQABAAEAAAADABAAAQABAAEAAAADABEAAQABAAEAAAADABIAAQABAAEAAAADABMAAQABAAEAAAADABQAAQABAAEAAAACAAoAAQAAAAEAAAACAAsAAQAAAAEAAAACAAwAAQAAAAEAAAACAA0AAQAAAAEAAAACAA4AAQAAAAEAAAACAA8AAQAAAAEAAAACABAAAQAAAAEAAAACABEAAQAAAAEAAAACABIAAQAAAAEAAAACABMAAQAAAAEAAAACABQAAQAAAAEAAAAEABQAAQACAAEAAAAEABMAAQACAAEAAAAEABIAAQACAAEAAAAEABEAAQACAAEAAAAEABAAAQACAAEAAAAEAA8AAQACAAEAAAAEAA4AAQACAAEAAAAEAA0AAQACAAEAAAAEAAwAAQACAAEAAAAEAAsAAQACAAEAAAAEAAoAAQACAAEAAAACAO7/AQABAAEAAAACAO//AQABAAEAAAACAPD/AQABAAEAAAACAPH/AQABAAEAAAABAO7/AQAAAAEAAAABAO//AQAAAAEAAAABAPD/AQAAAAEAAAABAPH/AQAAAAEAAAADAO7/AQACAAEAAAADAO//AQACAAEAAAADAPD/AQACAAEAAAADAPH/AQACAAEAAAACAOr/AQABAAEAAAACAOv/AQABAAEAAAACAOz/AQABAAEAAAACAO3/AQABAAEAAAADAO3/AQACAAEAAAADAOz/AQACAAEAAAADAOv/AQACAAEAAAADAOr/AQACAAEAAAABAO3/AQAAAAEAAAABAOz/AQAAAAEAAAABAOv/AQAAAAEAAAABAOr/AQAAAAEAAAA=")
+tile_set = ExtResource("1_dxrxh")
+
+[node name="Ground1" type="TileMapLayer" parent="Tile_map"]
+tile_map_data = PackedByteArray("AAADAA0AAwAAAAAAAAADABEAAwAAAAIAAAADABMAAwAAAAIAAAADAAkAAwAAAAIAAAADAAsAAwAAAAAAAAADAA4AAwAAAAIAAAACAPX/AwAAAAIAAAACAPb/AwAAAAAAAAACAPj/AwAAAAAAAAACAPn/AwAAAAEAAAACAPr/AwAAAAIAAAACAOr/AwAAAAIAAAACAOv/AwAAAAIAAAACAOz/AwAAAAIAAAACAO3/AwAAAAIAAAACAO7/AwAAAAIAAAACAO//AwAAAAIAAAACAPD/AwAAAAIAAAACAPH/AwAAAAIAAAACAPL/AwAAAAIAAAACAPP/AwAAAAIAAAACAPT/AwAAAAIAAAADAA8AAwAAAAIAAAADABAAAwAAAAIAAAADABIAAwAAAAIAAAADABQAAwAAAAIAAAACAP7/AwAAAAEAAAA=")
+tile_set = ExtResource("1_dxrxh")
+
+[node name="PlayerCollision" type="TileMapLayer" parent="Tile_map"]
+tile_map_data = PackedByteArray("AAAUACQAAAAAAAAAAAAUACMAAAAAAAAAAAAVACMAAAAAAAAAAAAVACIAAAAAAAAAAAAWACIAAAAAAAAAAAAXACIAAAAAAAAAAAAYACIAAAAAAAAAAAAZACIAAAAAAAAAAAAZACAAAAAAAAAAAAAZAB8AAAAAAAAAAAAZAB4AAAAAAAAAAAAaAB4AAAAAAAAAAAAbAB4AAAAAAAAAAAAcAB4AAAAAAAAAAAAdAB4AAAAAAAAAAAAcAB0AAAAAAAAAAAAbAB0AAAAAAAAAAAAaAB0AAAAAAAAAAAAZAB0AAAAAAAAAAAAdAB0AAAAAAAAAAAAUACUAAAAAAAAAAAA=")
+tile_set = ExtResource("2_p8bmd")
+
+[node name="Scenery" type="TileMapLayer" parent="Tile_map"]
+position = Vector2(21.885, 21.605)
+tile_map_data = PackedByteArray("AAAFAAgAAAAAAAQAAAAGAAcAAAAEAAQAAAA=")
+tile_set = ExtResource("1_dxrxh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tile_map"]
+position = Vector2(187, 1228)
+rotation = 3.14159
+scale = Vector2(1.25427, 1.15977)
+texture = ExtResource("3_tb8uk")
+
+[node name="StartBlock" type="TileMapLayer" parent="Tile_map"]
+visible = false
+tile_map_data = PackedByteArray("AAALACsAAAAAAAAAAAAMACoAAAAAAAAAAAANACkAAAAAAAAAAAAOACoAAAAAAAAAAAAPACsAAAAAAAAAAAAQACsAAAAAAAAAAAARACsAAAAAAAAAAAAKACsAAAAAAAAAAAAMACsAAAAAAAAAAAANACsAAAAAAAAAAAAOACsAAAAAAAAAAAANACoAAAAAAAAAAAA=")
+tile_set = ExtResource("2_p8bmd")
+collision_enabled = false
+script = ExtResource("4_g4s7c")
+
+[node name="finish" type="Area2D" parent="."]
+position = Vector2(24, 43)
+script = ExtResource("5_gxvlc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
+position = Vector2(135, -166)
+shape = SubResource("RectangleShape2D_sg5yw")
+
+[node name="player" parent="." instance=ExtResource("6_4h5wv")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(217, 1314)
+scale = Vector2(4, 4)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+modulate = Color(1, 1, 1, 0.392157)
+z_index = 5
+position = Vector2(2.75, 7)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_stmvq")
+
+[node name="Blocks" type="Node2D" parent="."]
+
+[node name="MoveableBox(Tile)" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("8_icc2f")]
+position = Vector2(96, 480)
+scale = Vector2(4, 4)
+mainTileMap = NodePath("../../Tile_map/Ground")
+CollisionTileMap = NodePath("../../Tile_map/Collision")
+
+[node name="Start_cutscene" type="Node2D" parent="."]
+
+[node name="start" type="Area2D" parent="Start_cutscene"]
+script = ExtResource("9_8yfsa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start_cutscene/start"]
+position = Vector2(225, 1305)
+shape = SubResource("RectangleShape2D_1eey7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Start_cutscene/start"]
+
+[node name="end" type="Area2D" parent="Start_cutscene"]
+script = ExtResource("10_7vcyw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start_cutscene/end"]
+position = Vector2(224, 567)
+shape = SubResource("RectangleShape2D_ml8n7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Start_cutscene/end"]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+position = Vector2(227, 690)
+scale = Vector2(1.16066, 1.08422)
+texture = ExtResource("11_qequa")
+region_enabled = true
+region_rect = Rect2(0, 132.92, 85.6133, 59.0803)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Start_cutscene/end"]
+libraries = {
+"": SubResource("AnimationLibrary_af3po")
+}
+
+[node name="NPC_0" parent="." instance=ExtResource("12_mesgx")]
+position = Vector2(348, 423)
+scale = Vector2(-4, 4)
+
+[connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]
+[connection signal="body_entered" from="Start_cutscene/start" to="player" method="_on_start_body_entered"]
+[connection signal="body_entered" from="Start_cutscene/start" to="Start_cutscene/start" method="_on_body_entered"]
+[connection signal="body_entered" from="Start_cutscene/start" to="Start_cutscene/end" method="_on_start_body_entered"]
+[connection signal="body_entered" from="Start_cutscene/end" to="player" method="_on_end_body_entered"]
+[connection signal="body_entered" from="Start_cutscene/end" to="Start_cutscene/end" method="_on_body_entered"]

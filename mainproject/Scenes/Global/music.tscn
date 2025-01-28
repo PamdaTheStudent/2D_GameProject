@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3n78ex5h4mu4"]
+
+[ext_resource type="Script" path="res://Scripts/music.gd" id="1_3vgn2"]
+[ext_resource type="AudioStream" uid="uid://dusubyn3twckp" path="res://Sounds/puzzle-draft.mp3" id="2_dbhdg"]
+
+[node name="Music" type="Node"]
+script = ExtResource("1_3vgn2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_dbhdg")
+volume_db = -20.0

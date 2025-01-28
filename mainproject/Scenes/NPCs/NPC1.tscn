@@ -1,0 +1,120 @@
+[gd_scene load_steps=18 format=3 uid="uid://b1yqgsp5y20wh"]
+
+[ext_resource type="Script" path="res://Scripts/npc_animation.gd" id="1_rg3x2"]
+[ext_resource type="Script" path="res://Scripts/npc_dialogue.gd" id="2_8skf3"]
+[ext_resource type="Theme" uid="uid://c7v8yvhp2wyqo" path="res://Tres/game_theme.tres" id="3_sqv10"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="4_iy4ia"]
+[ext_resource type="Resource" uid="uid://dmsynq486nf5" path="res://Dialog/NPC_level1.tres" id="5_rg3x2"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="6_uugng"]
+[ext_resource type="Texture2D" uid="uid://bhwicswjm07r" path="res://Sprites/play.png" id="7_84lm3"]
+[ext_resource type="AudioStream" uid="uid://bnifld5rvf7ss" path="res://Sounds/talk-octo.mp3" id="8_d35rg"]
+[ext_resource type="Texture2D" uid="uid://d2ihvkpymtvvq" path="res://Sprites/characters/NPCS-Sheet_1.png" id="8_rg3x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xiwtc"]
+size = Vector2(16, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swl3l"]
+size = Vector2(20, 18)
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_lm54p"]
+script = ExtResource("6_uugng")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8skf3"]
+atlas = ExtResource("8_rg3x2")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqv10"]
+atlas = ExtResource("8_rg3x2")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy4ia"]
+atlas = ExtResource("8_rg3x2")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gswb"]
+atlas = ExtResource("8_rg3x2")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uugng"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8skf3")
+}],
+"loop": true,
+"name": &"approach",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqv10")
+}],
+"loop": true,
+"name": &"stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy4ia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gswb")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_rg3x2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_xiwtc")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_8skf3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_swl3l")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Area2D"]
+
+[node name="DialogueBox" type="Panel" parent="Area2D/CanvasLayer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -142.0
+offset_top = -105.0
+offset_right = 178.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_sqv10")
+script = ExtResource("4_iy4ia")
+data = ExtResource("5_rg3x2")
+start_id = "OCTO_MUSTASCH"
+scroll_speed = 7
+skip_input_action = "ui_down"
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_lm54p")])
+next_icon = ExtResource("7_84lm3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D"]
+stream = ExtResource("8_d35rg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 1)
+scale = Vector2(0.238095, 0.21875)
+sprite_frames = SubResource("SpriteFrames_uugng")
+animation = &"talk"
+
+[connection signal="Close" from="Area2D" to="." method="_on_area_2d_close"]
+[connection signal="Free" from="Area2D" to="." method="_on_area_2d_free"]
+[connection signal="Talking" from="Area2D" to="." method="_on_area_2d_talking"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="dialogue_ended" from="Area2D/CanvasLayer/DialogueBox" to="Area2D" method="_on_dialogue_box_dialogue_ended"]

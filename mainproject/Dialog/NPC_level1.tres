@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://dmsynq486nf5"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_qelwu"]
+
+[resource]
+script = ExtResource("1_qelwu")
+starts = {
+"OCTO_MUSTASCH": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(116.021, 271.976),
+"start_id": "OCTO_MUSTASCH"
+},
+"1_1": {
+"dialogue": "You know-a, dees-a blocks useto-a be-a used for-a construction-a?",
+"offset": Vector2(400, 280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(400, 380),
+"speaker": 1
+},
+"1_2": {
+"dialogue": "well-a someting-a weird came-a from-a da surface and-a change-e-ded da programming of-a dem",
+"offset": Vector2(940, 300),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 1
+},
+"1_3": {
+"dialogue": "now-a we cant-a even-a move-a dem without-a breakin-a our-a backs!.... -a",
+"offset": Vector2(1437.74, 356.173),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 1
+}
+}
+variables = {}
+strays = Array[String]([])
+characters = "res://Dialog/characters.tres"

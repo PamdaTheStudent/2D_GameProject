@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://d4hdlnqb2ixew"]
+
+[ext_resource type="Script" path="res://Scripts/TileMapMovement.gd" id="1_6s3hb"]
+[ext_resource type="Texture2D" uid="uid://cpps0vy6fjm33" path="res://Sprites/test_tile_things-Sheet.png" id="2_gm1w0"]
+[ext_resource type="Texture2D" uid="uid://ufesdkbc66p2" path="res://Sprites/Move-Indicator.png" id="3_hp56o"]
+[ext_resource type="Texture2D" uid="uid://c6o3qeeev01c0" path="res://Sprites/NotMove-Indicator.png" id="4_utpki"]
+[ext_resource type="Script" path="res://Scripts/MoveIndicator.gd" id="5_b6sqr"]
+[ext_resource type="Script" path="res://Scripts/blockPressure.gd" id="6_nv6ap"]
+[ext_resource type="AudioStream" uid="uid://cv8vcjoajwy2n" path="res://Sounds/block-move.mp3" id="7_pgs0s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e6yh"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0q4y"]
+atlas = ExtResource("2_gm1w0")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_atmwp"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hp56o")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_utpki")
+}],
+"loop": true,
+"name": &"Stop",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_061pm"]
+size = Vector2(11, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfm6g"]
+size = Vector2(14, 13)
+
+[node name="MoveableBox(Tile)" type="StaticBody2D" node_paths=PackedStringArray("moveIndicator")]
+script = ExtResource("1_6s3hb")
+moveIndicator = NodePath("Move_Indicator")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7e6yh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.47035e-07, 8.9407e-08)
+scale = Vector2(0.25, 0.25)
+texture = SubResource("AtlasTexture_i0q4y")
+
+[node name="Move_Indicator" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(16, 1)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_atmwp")
+animation = &"Move"
+script = ExtResource("5_b6sqr")
+
+[node name="Area2D" type="Area2D" parent="Move_Indicator"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Move_Indicator/Area2D"]
+position = Vector2(1.59071e-08, 0)
+shape = SubResource("RectangleShape2D_061pm")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("6_nv6ap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_yfm6g")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_pgs0s")
+volume_db = -15.0
+pitch_scale = 0.75
+
+[connection signal="body_shape_entered" from="Move_Indicator/Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Move_Indicator/Area2D" to="." method="_on_area_2d_body_shape_exited"]
