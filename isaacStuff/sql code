@@ -1,0 +1,56 @@
+DROP TABLE IF EXISTS NPC;
+DROP TABLE IF EXISTS Player;
+/* This is for running the whole file, dont want to end up with duplicate entries*/
+
+/* Make a table for npcs, they have names, dialogue, and appear on a certain level*/
+CREATE TABLE NPC (
+    Name TEXT NOT NULL,
+    Level INTEGER NOT NULL,
+    Dialogue TEXT
+);
+/* Inserting data into the table. */
+INSERT INTO NPC (Name,Level,Dialogue)
+VALUES('Gaster', -1, 'How did you get here?');
+INSERT INTO NPC (Name,Level,Dialogue)
+VALUES('npc1', 2, 'Pushing boxes is fun! Or so Im told...');
+INSERT INTO NPC (Name,Level,Dialogue)
+VALUES('npc2', 1, 'we have been trapped down here for ages, im starting to forget what REAL food tastes like!, yknow theres only so much cave lichen and moss a man can eat before gettin reaaaallllll sick of it.');
+INSERT INTO NPC (Name,Level,Dialogue)
+VALUES('npc3', 8, 'Pushing boxes is horrible! Or so Im told...');
+INSERT INTO NPC (Name,Level,Dialogue)
+VALUES('npc4', 8, 'Am I even real?');
+
+/* Doing the same things with a player table. they have a name, and a level they are on*/
+CREATE TABLE Player
+	(Name TEXT NOT NULL,
+  Level INTEGER NOT NULL);
+  
+INSERT INTO Player(Name,Level)
+VALUES('Chara',1); 
+INSERT INTO Player(Name,Level)
+VALUES('Link',10);
+INSERT INTO Player(Name,Level)
+VALUES('Susan',3);
+INSERT INTO Player(Name,Level)
+VALUES('Ninja',4);
+INSERT INTO Player(Name,Level)
+VALUES('Chat',5);
+INSERT INTO Player(Name,Level)
+VALUES('Chant',6);
+INSERT INTO Player(Name,Level)
+VALUES('Frisk',7);
+INSERT INTO Player(Name,Level)
+VALUES('Master Chief',5);
+
+/* SELECT * FROM NPC;
+SELECT * FROM Player;*/
+
+UPDATE Player 
+SET Level = 2
+WHERE Name='Chara';
+
+DELETE FROM NPC 
+WHERE Name = 'Gaster';
+
+SELECT Player.Name, NPC.Name, NPC.Dialogue FROM NPC JOIN Player
+ON Player.Level = NPC.Level
