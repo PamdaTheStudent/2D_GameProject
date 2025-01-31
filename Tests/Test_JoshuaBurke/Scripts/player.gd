@@ -11,8 +11,12 @@ func _physics_process(delta):
 	handle_collisions()
 					
 	
+
+	
+	
 func player_movement(delta):
 	if Input.is_action_pressed("ui_right"):
+
 		current_dir = "right"
 		play_anim(1)
 		velocity.x = speed
@@ -79,5 +83,3 @@ func play_anim(movement):
 				anim.play("walk_down")
 			elif movement == 0:
 				anim.play("idle_down")
-
-
