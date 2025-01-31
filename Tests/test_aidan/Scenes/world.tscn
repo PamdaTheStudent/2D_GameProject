@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8b5htvpqogwe"]
+[gd_scene load_steps=11 format=3 uid="uid://c8b5htvpqogwe"]
 
 [ext_resource type="Texture2D" uid="uid://dmkyq7d3le4gp" path="res://Art/plains.png" id="1_thk1t"]
 [ext_resource type="Texture2D" uid="uid://chbiywatwjkns" path="res://Art/objects.png" id="2_qr7on"]
 [ext_resource type="PackedScene" uid="uid://coidmoln6uqon" path="res://Scenes/player.tscn" id="3_s148b"]
 [ext_resource type="Script" path="res://Scenes/area_2d.gd" id="4_wtve4"]
+[ext_resource type="Script" path="res://Scenes/finish.gd" id="5_rj3xc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_huekw"]
 texture = ExtResource("1_thk1t")
@@ -56,6 +57,9 @@ sources/1 = SubResource("TileSetAtlasSource_uc2s3")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1k5ic"]
 size = Vector2(28.5, 28)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40xya"]
+size = Vector2(103, 70)
+
 [node name="world" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -79,3 +83,10 @@ script = ExtResource("4_wtve4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(56, 104)
 shape = SubResource("RectangleShape2D_1k5ic")
+
+[node name="finish" type="Area2D" parent="."]
+script = ExtResource("5_rj3xc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
+position = Vector2(104, -181)
+shape = SubResource("RectangleShape2D_40xya")

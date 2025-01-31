@@ -1,17 +1,11 @@
 extends Area2D
 
-var here=false
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if area_entered:
-		if here == false && Input.is_action_just_pressed("ui_accept"):
-			Dialogic.start("timeline")
-			here = true
-	elif area_exited:
-		Dialogic.end_timeline()
-		here = false
+		get_tree().change_scene_to_file("res://Scenes/scene_2.tscn")
