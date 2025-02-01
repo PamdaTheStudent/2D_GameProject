@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const speed = 100
 var current_dir = "none"
-var push_force = 300
+var push_force = 50
 var volocity = 0
 func _ready():
 	$AnimatedSprite2D.play("idle_down")
@@ -35,18 +35,18 @@ func player_movement(delta):
 		volocity = velocity.y
 	elif Input.is_action_pressed("ui_up"):
 		current_dir = "up"		
-		#play_anim(1)		
 		velocity.x = 0
 		velocity.y = -speed
 		volocity = velocity.y
 	
 	else:
-		#play_anim(0)		
+		play_anim(0)		
 		velocity.x = 0
 		velocity.y = 0
 		volocity = velocity.y
 		
 	if (velocity.x != 0 or velocity.y != 0): 
+		play_anim(1)		
 		move_and_slide()
 	
 	
@@ -56,16 +56,13 @@ func handle_collisions():
 		var c = get_slide_collision(i)
 		if c.get_collider() is CharacterBody2D:
 			if Input.is_action_just_pressed("ui_accept"):
-				c.get_collider().move(-c.get_normal() * 17)
+				c.get_collider().move(-c.get_normal() * push_force)
 				print_debug(c.get_normal())
 				
 		if c.get_collider() is RigidBody2D:
 			# Apply the push force
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
-			#if current_dir == "down":
-				## Separate player slightly from the box to prevent sliding
-				#var separation_vector = c.get_normal() * 1  # Adjust as needed
-				#global_position += separation_vector
+
 			
 func play_anim(movement):
 	var dir = current_dir
