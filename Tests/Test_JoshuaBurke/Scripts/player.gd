@@ -4,13 +4,17 @@ extends CharacterBody2D
 const speed = 100
 var current_dir = "none"
 var push_force = 50
-var volocity = 0
+
+var currVelocity : Vector2
+
 func _ready():
 	$AnimatedSprite2D.play("idle_down")
 func _physics_process(delta):
 	player_movement(delta)
-	handle_collisions()
-					
+	if Input.is_action_just_pressed("ui_accept"):
+		handle_collisions()
+		
+		
 	
 
 	
@@ -32,38 +36,52 @@ func player_movement(delta):
 		#play_anim(1)
 		velocity.x = 0
 		velocity.y = speed
-		volocity = velocity.y
+		
+		 
 	elif Input.is_action_pressed("ui_up"):
 		current_dir = "up"		
 		velocity.x = 0
 		velocity.y = -speed
-		volocity = velocity.y
+		
 	
 	else:
 		play_anim(0)		
 		velocity.x = 0
 		velocity.y = 0
-		volocity = velocity.y
 		
+		
+	currVelocity = velocity
 	if (velocity.x != 0 or velocity.y != 0): 
-		play_anim(1)		
+		play_anim(1)
 		move_and_slide()
+				
 	
 	
 func handle_collisions():
 	# Process collisions after movement
+	
+	
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
+		print_debug(get_slide_collision(i))
+		
 		if c.get_collider() is CharacterBody2D:
 			if Input.is_action_just_pressed("ui_accept"):
 				c.get_collider().move(-c.get_normal() * push_force)
-				print_debug(c.get_normal())
+
 				
 		if c.get_collider() is RigidBody2D:
 			# Apply the push force
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
-
 			
+		if c.get_collider() is StaticBody2D:
+			c.get_collider().move(-c.get_normal())
+			move_and_slide()
+			
+	
+	
+	
+	
 func play_anim(movement):
 	var dir = current_dir
 	var anim = $AnimatedSprite2D
