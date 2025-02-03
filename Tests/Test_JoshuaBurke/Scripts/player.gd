@@ -9,10 +9,12 @@ var currVelocity : Vector2
 
 func _ready():
 	$AnimatedSprite2D.play("idle_down")
+	
 func _physics_process(delta):
 	player_movement(delta)
 	if Input.is_action_just_pressed("ui_accept"):
 		handle_collisions()
+
 		
 		
 	

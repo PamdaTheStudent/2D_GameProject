@@ -1,11 +1,13 @@
 extends StaticBody2D
 
+@export var moveIndicator: AnimatedSprite2D
 @export var mainTileMap: TileMapLayer
 @export var CollisionTileMap: TileMapLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.	
+	var current_tile: Vector2i = mainTileMap.local_to_map(global_position)
+	global_position = mainTileMap.map_to_local(current_tile)	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,7 +17,6 @@ func _process(delta: float) -> void:
 
 
 func move(direction: Vector2):
-	var pos = global_position
 	var current_tile: Vector2i = mainTileMap.local_to_map(global_position)
 	
 	var target_tile: Vector2i =  Vector2i(
@@ -29,5 +30,23 @@ func move(direction: Vector2):
 	if collisionData != null and collisionData.get_custom_data("collision") == true:
 		return
 	else:
+		
 		global_position = mainTileMap.map_to_local(target_tile)
 		
+
+func toTileMap(direction: Vector2):
+	var current_tile: Vector2i = mainTileMap.local_to_map(global_position)
+	
+	var target_tile: Vector2i =  Vector2i(
+		current_tile.x + direction.x,
+		current_tile.y + direction.y
+	)
+	var mainTileData: TileData = mainTileMap.get_cell_tile_data(target_tile)
+	var collisionData: TileData = CollisionTileMap.get_cell_tile_data(target_tile)
+	if mainTileData == null or mainTileData.get_custom_data("walkable") == false :
+		return
+	if collisionData != null and collisionData.get_custom_data("collision") == true:
+		return
+	else:
+		
+		global_position = mainTileMap.map_to_local(target_tile)
