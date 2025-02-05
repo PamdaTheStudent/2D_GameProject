@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d4hdlnqb2ixew"]
+[gd_scene load_steps=11 format=3 uid="uid://d4hdlnqb2ixew"]
 
 [ext_resource type="Script" path="res://Scripts/TileMapMovement.gd" id="1_6s3hb"]
 [ext_resource type="Texture2D" uid="uid://cdqv3esbu38u6" path="res://Sprites/objects/chest_01.png" id="2_cucky"]
@@ -48,6 +48,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_061pm"]
+size = Vector2(11, 12)
+
 [node name="MoveableBox(Tile)" type="StaticBody2D" node_paths=PackedStringArray("moveIndicator")]
 script = ExtResource("1_6s3hb")
 moveIndicator = NodePath("Move_Indicator")
@@ -60,9 +63,19 @@ shape = SubResource("RectangleShape2D_7e6yh")
 sprite_frames = SubResource("SpriteFrames_i1lhh")
 
 [node name="Move_Indicator" type="AnimatedSprite2D" parent="."]
+visible = false
 z_index = 2
 position = Vector2(16, 1)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_atmwp")
 animation = &"Move"
 script = ExtResource("5_b6sqr")
+
+[node name="Area2D" type="Area2D" parent="Move_Indicator"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Move_Indicator/Area2D"]
+position = Vector2(1.59071e-08, 0)
+shape = SubResource("RectangleShape2D_061pm")
+
+[connection signal="body_shape_entered" from="Move_Indicator/Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Move_Indicator/Area2D" to="." method="_on_area_2d_body_shape_exited"]

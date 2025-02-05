@@ -295,6 +295,7 @@ texture = ExtResource("3_2s0fw")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2qur"]
 texture = ExtResource("4_sra3b")
 0:0/0 = 0
+0:0/0/modulate = Color(0.77858, 0.140155, 0.32578, 1)
 0:0/0/custom_data_1 = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nwp8p"]

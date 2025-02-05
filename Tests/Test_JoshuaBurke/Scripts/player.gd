@@ -17,6 +17,8 @@ func _physics_process(delta):
 		handle_collisions()
 	if _indicatorReady == true:
 		CheckTargetTile(targetBox)
+	
+
 
 	
 func player_movement(delta):
@@ -52,12 +54,12 @@ func player_movement(delta):
 		velocity.x = 0
 		velocity.y = 0
 		
-		
+	
 	currVelocity = velocity
 	if (velocity.x != 0 or velocity.y != 0): 
 		play_anim(1)
 		move_and_slide()
-				
+	
 	
 	
 func handle_collisions():
@@ -104,6 +106,7 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 		_indicatorReady = true
 		body.changeIndicator(_indicatorReady)
 		targetBox = body
+		
 	
 func _on_area_2d_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body is moveableBox:
