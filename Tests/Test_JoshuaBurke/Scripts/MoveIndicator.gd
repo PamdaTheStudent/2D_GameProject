@@ -10,15 +10,19 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#Show the MoveIndicator
-	var anim = $AnimatedSprite2D
+	var anim = self
 	if _state == "Move":
 		anim.play("Move")
+		
 	if _state == "Stop":
 		anim.play("Stop")
+		
 	if _state == "Empty":
-		anim.play("Empty")
+		anim.visible  = false
+	else:
+		anim.visible  = true
 
 func _changeState(State: String):
 	#Swap the state of the moveInidcator
 	_state = State
-	
+		

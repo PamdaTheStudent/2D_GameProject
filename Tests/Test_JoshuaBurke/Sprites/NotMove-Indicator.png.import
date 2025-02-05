@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ufesdkbc66p2"
-path="res://.godot/imported/Move-Indicator.png-4988cc982f75490b49c0997d40c670a6.ctex"
+uid="uid://c6o3qeeev01c0"
+path="res://.godot/imported/NotMove-Indicator.png-edd94a3551270d6ca73b773f979e6ca2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/tilesets/Move-Indicator.png"
-dest_files=["res://.godot/imported/Move-Indicator.png-4988cc982f75490b49c0997d40c670a6.ctex"]
+source_file="res://Sprites/NotMove-Indicator.png"
+dest_files=["res://.godot/imported/NotMove-Indicator.png-edd94a3551270d6ca73b773f979e6ca2.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dnnbv7rqa2uwm"]
 
-[ext_resource type="Texture2D" uid="uid://ufesdkbc66p2" path="res://Sprites/tilesets/Move-Indicator.png" id="1_fm2ci"]
-[ext_resource type="Texture2D" uid="uid://c6o3qeeev01c0" path="res://Sprites/tilesets/NotMove-Indicator.png" id="2_1d7aa"]
+[ext_resource type="Texture2D" uid="uid://ufesdkbc66p2" path="res://Sprites/Move-Indicator.png" id="1_fm2ci"]
+[ext_resource type="Texture2D" uid="uid://c6o3qeeev01c0" path="res://Sprites/NotMove-Indicator.png" id="2_1d7aa"]
 
 [resource]
 animations = [{
