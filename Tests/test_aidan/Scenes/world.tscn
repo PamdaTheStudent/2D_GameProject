@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8b5htvpqogwe"]
+[gd_scene load_steps=12 format=3 uid="uid://c8b5htvpqogwe"]
 
 [ext_resource type="Texture2D" uid="uid://dmkyq7d3le4gp" path="res://Art/plains.png" id="1_thk1t"]
 [ext_resource type="Texture2D" uid="uid://chbiywatwjkns" path="res://Art/objects.png" id="2_qr7on"]
 [ext_resource type="PackedScene" uid="uid://coidmoln6uqon" path="res://Scenes/player.tscn" id="3_s148b"]
 [ext_resource type="Script" path="res://Scenes/area_2d.gd" id="4_wtve4"]
 [ext_resource type="Script" path="res://Scenes/finish.gd" id="5_rj3xc"]
+[ext_resource type="Script" path="res://Scenes/sqltutorial.gd" id="6_416s6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_huekw"]
 texture = ExtResource("1_thk1t")
@@ -75,7 +76,7 @@ layer_1/tile_data = PackedInt32Array(917504, 131072, 4, 917505, 131072, 4, 91750
 
 [node name="Player" parent="." instance=ExtResource("3_s148b")]
 y_sort_enabled = true
-position = Vector2(100, 131)
+position = Vector2(56, 129)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("4_wtve4")
@@ -90,3 +91,10 @@ script = ExtResource("5_rj3xc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
 position = Vector2(104, -181)
 shape = SubResource("RectangleShape2D_40xya")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_416s6")
