@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpux7s5bdo8rf"]
+
+[ext_resource type="Script" path="res://Scripts/door.gd" id="1_hm742"]
+[ext_resource type="Texture2D" uid="uid://pjmd0t4r7lrf" path="res://Sprites/tilesets/grass.png" id="2_0w5dk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ru8hx"]
+size = Vector2(16, 16)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_hm742")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ru8hx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0w5dk")
