@@ -69,7 +69,7 @@ func handle_collisions():
 			if Input.is_action_just_pressed("ui_accept"):
 				c.get_collider().move(-c.get_normal() * push_force)
 
-				
+
 		if c.get_collider() is RigidBody2D:
 			# Apply the push force
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)

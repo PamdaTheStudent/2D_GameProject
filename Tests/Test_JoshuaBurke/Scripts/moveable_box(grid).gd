@@ -1,6 +1,8 @@
 extends CharacterBody2D
 @export var mod_timer: Timer
 
+func _ready():
+	global_position=Vector2(0,0)
 
 
 func _process(delta: float) -> void:
@@ -12,7 +14,4 @@ func move(speed: Vector2):
 	mod_timer.start(0.25)
 	print_debug(speed)
 	velocity = speed
-
-
-	
 	
