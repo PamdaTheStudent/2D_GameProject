@@ -15,13 +15,13 @@ func _process(_delta):
 
 func _on_area_entered(area):
 	if area is BlockPressure:
-		$Sprite2D.texture = load('res://Sprites/RedTransparent.png')
+		$Sprite2D.texture = load('res://Sprites/GreenTransparent.png')
 		if (Solution == false):
 			Solution = true
 			Activated.emit()
 
 func _on_area_exited(area):
 	if area is BlockPressure:
-		$Sprite2D.texture = load('res://Sprites/GreenTransparent.png')
+		$Sprite2D.texture = load('res://Sprites/RedTransparent.png')
 		Solution = false
 		Deactivated.emit()

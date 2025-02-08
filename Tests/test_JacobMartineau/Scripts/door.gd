@@ -13,7 +13,9 @@ func _process(delta):
 	pass
 
 func _on_activated():
+	$Sprite2D.texture = load('res://Sprites/tilesets/grass.png')
 	print("Activated!")
 
 func _on_deactivated():
+	$Sprite2D.texture = load('res://Sprites/GreenTransparent.png')
 	print("Deactivated!")
