@@ -43,10 +43,11 @@ collision_mask = 1
 [node name="Camera2D" type="Camera2D" parent="player"]
 
 [node name="Door" parent="." instance=ExtResource("5_ul4qa")]
-position = Vector2(89, 160)
+position = Vector2(89, 8)
+scale = Vector2(7, 1)
 
 [node name="PressurePlate" parent="." instance=ExtResource("4_rtj3n")]
-position = Vector2(88, 8)
+position = Vector2(88, 160)
 
 [node name="LevelOne-One" type="Sprite2D" parent="."]
 visible = false
@@ -81,18 +82,6 @@ CollisionTileMap = NodePath("../TileMap/GridCollision")
 [node name="MoveableBox(Tile)5" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
 z_index = 1
 position = Vector2(120, 56)
-mainTileMap = NodePath("../TileMap/1")
-CollisionTileMap = NodePath("../TileMap/GridCollision")
-
-[node name="MoveableBox(Tile)6" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
-z_index = 1
-position = Vector2(104, 56)
-mainTileMap = NodePath("../TileMap/1")
-CollisionTileMap = NodePath("../TileMap/GridCollision")
-
-[node name="MoveableBox(Tile)7" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
-z_index = 1
-position = Vector2(72, 56)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
