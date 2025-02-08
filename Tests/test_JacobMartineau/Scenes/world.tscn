@@ -36,14 +36,14 @@ tile_set = ExtResource("3_3w1kr")
 [node name="player" parent="." instance=ExtResource("4_5k44d")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(88, 104)
+position = Vector2(88, 120)
 collision_layer = 1
 collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 
 [node name="Door" parent="." instance=ExtResource("5_ul4qa")]
-position = Vector2(89, 8)
+position = Vector2(89, 1)
 scale = Vector2(7, 1)
 
 [node name="PressurePlate" parent="." instance=ExtResource("4_rtj3n")]
@@ -57,78 +57,78 @@ texture = ExtResource("6_684cg")
 
 [node name="MoveableBox(Tile)" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
 z_index = 1
-position = Vector2(104, 40)
+position = Vector2(104, 56)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
 [node name="MoveableBox(Tile)2" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
 z_index = 1
-position = Vector2(88, 40)
+position = Vector2(88, 56)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
 [node name="MoveableBox(Tile)3" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
 z_index = 1
-position = Vector2(72, 40)
+position = Vector2(72, 56)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
 [node name="MoveableBox(Tile)4" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
 z_index = 1
-position = Vector2(56, 56)
+position = Vector2(56, 72)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
 [node name="MoveableBox(Tile)5" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
 z_index = 1
-position = Vector2(120, 56)
+position = Vector2(120, 72)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
 [node name="MoveableBox(Tile)8" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
 z_index = 1
-position = Vector2(56, 24)
+position = Vector2(56, 40)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
 [node name="MoveableBox(Tile)9" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
 z_index = 1
-position = Vector2(104, 24)
+position = Vector2(104, 40)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
 [node name="MoveableBox(Tile)10" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
 z_index = 1
-position = Vector2(72, 24)
+position = Vector2(72, 40)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
 [node name="MoveableBox(Tile)11" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
 z_index = 1
-position = Vector2(120, 24)
+position = Vector2(120, 40)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
 [node name="MoveableBox(Tile)12" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
 z_index = 1
-position = Vector2(88, 72)
+position = Vector2(88, 88)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
 [node name="MoveableBox(Tile)13" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
 z_index = 1
-position = Vector2(104, 72)
+position = Vector2(104, 88)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
 [node name="MoveableBox(Tile)14" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
 z_index = 1
-position = Vector2(72, 72)
+position = Vector2(72, 88)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
 [node name="MoveableBox(Tile)6" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
 z_index = 1
-position = Vector2(88, 128)
+position = Vector2(88, 136)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")

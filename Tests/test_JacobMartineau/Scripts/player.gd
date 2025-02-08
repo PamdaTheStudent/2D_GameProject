@@ -1,3 +1,4 @@
+class_name player
 extends CharacterBody2D
 @export var InteractionBox : Area2D
 
