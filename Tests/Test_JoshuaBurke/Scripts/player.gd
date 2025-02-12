@@ -67,9 +67,6 @@ func handle_collisions():
 		targetBox.move(directionToVector2())
 
 
-		if c.get_collider() is RigidBody2D:
-			# Apply the push force
-			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 			
 	
 	
@@ -108,19 +105,20 @@ func play_anim(movement):
 func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body is moveableBox:
 		_indicatorReady = true
-		body.changeIndicator(_indicatorReady)
+		#body.changeIndicator(_indicatorReady)
 		targetBox = body
 		
 	
 func _on_area_2d_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body is moveableBox:
 		_indicatorReady = false
-		body.changeIndicator(_indicatorReady)
+		#body.changeIndicator(_indicatorReady)
 		CheckTargetTile(body)
 
 	
 func CheckTargetTile(body):
-	body.movementIndicator(directionToVector2())
+	#body.movementIndicator(directionToVector2())
+	pass
 
 
 func directionToVector2():
