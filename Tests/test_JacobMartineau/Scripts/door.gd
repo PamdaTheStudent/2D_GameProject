@@ -25,6 +25,6 @@ func _on_deactivated():
 	print("Deactivated!")
 
 func _on_body_entered(body):
-	if open:
+	if open && body is player:
 		$Sprite2D.texture = load('res://Sprites/PinkTransparent.png')
 		print("Entered!")
