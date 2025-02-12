@@ -66,6 +66,10 @@ func handle_collisions():
 	if _indicatorReady:
 		targetBox.move(directionToVector2())
 
+
+		if c.get_collider() is RigidBody2D:
+			# Apply the push force
+			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 			
 	
 	
