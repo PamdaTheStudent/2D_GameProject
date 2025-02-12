@@ -63,7 +63,6 @@ shape = SubResource("RectangleShape2D_7e6yh")
 sprite_frames = SubResource("SpriteFrames_i1lhh")
 
 [node name="Move_Indicator" type="AnimatedSprite2D" parent="."]
-visible = false
 z_index = 2
 position = Vector2(16, 1)
 rotation = 1.5708

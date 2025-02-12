@@ -8,6 +8,7 @@ extends StaticBody2D
 var indicator: bool
 var current_tile: Vector2
 var collidingIndicator: bool
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_tile = mainTileMap.local_to_map(global_position)
