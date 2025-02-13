@@ -7,6 +7,8 @@ var current_dir = "none"
 var currVelocity : Vector2
 var _indicatorReady
 var targetBox
+var moving = false
+var previousDir = "none"
 
 func _ready():
 	$AnimatedSprite2D.play("idle_down")
@@ -53,10 +55,21 @@ func player_movement(delta):
 		play_anim(0)		
 		velocity.x = 0
 		velocity.y = 0
+		moving = false
 		
 	
 	currVelocity = velocity
+	
+	if previousDir != current_dir:
+		if _indicatorReady:
+			_indicatorReady = false
+			targetBox.changeIndicator(_indicatorReady)
+			CheckTargetTile(targetBox)
+		previousDir = current_dir
+		
+		
 	if (velocity.x != 0 or velocity.y != 0): 
+		moving = true
 		play_anim(1)
 		move_and_slide()
 	
@@ -119,12 +132,11 @@ func CheckTargetTile(body):
 	body.movementIndicator(directionToVector2())
 
 
-func directionToVector2():
-	if current_dir == "up":
-		return Vector2.UP
-	if current_dir == "down":
-		return Vector2.DOWN
-	if current_dir == "left":
-		return Vector2.LEFT
-	if current_dir == "right":
-		return Vector2.RIGHT
+func directionToVector2():	
+	var directions = {
+		"up": Vector2.UP,
+		"down": Vector2.DOWN,
+		"left": Vector2.LEFT,
+		"right": Vector2.RIGHT
+	}
+	return directions.get(current_dir, Vector2.ZERO)
