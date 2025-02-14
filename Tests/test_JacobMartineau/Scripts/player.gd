@@ -2,7 +2,7 @@ class_name player
 extends CharacterBody2D
 @export var InteractionBox : Area2D
 
-const speed = 100
+const speed = 50
 var current_dir = "none"
 
 var currVelocity : Vector2
@@ -78,27 +78,27 @@ func play_anim(movement):
 		"right":
 			anim.flip_h = false			
 			if movement == 1:
-				anim.play("walk_side")
+				anim.play("walk-right")
 			elif movement == 0:
-				anim.play("idle_side")
+				anim.play("idle")
 		"left":
-			anim.flip_h = true
+			anim.flip_h = false
 			if movement == 1:
-				anim.play("walk_side")
+				anim.play("walk-left")
 			elif movement == 0:
-				anim.play("idle_side")
+				anim.play("idle")
 		"up":
 			anim.flip_h = true	
 			if movement == 1:
-				anim.play("walk_up")
+				anim.play("walk-back")
 			elif movement == 0:
-				anim.play("idle_up")
+				anim.play("idle")
 		"down":
 			anim.flip_h = true	
 			if movement == 1:
-				anim.play("walk_down")
+				anim.play("walk-forward")
 			elif movement == 0:
-				anim.play("idle_down")
+				anim.play("idle")
 
 
 
