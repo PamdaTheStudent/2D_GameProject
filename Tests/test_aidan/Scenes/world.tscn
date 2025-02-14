@@ -57,7 +57,7 @@ sources/0 = SubResource("TileSetAtlasSource_huekw")
 sources/1 = SubResource("TileSetAtlasSource_uc2s3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1k5ic"]
-size = Vector2(22, 20)
+size = Vector2(26, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40xya"]
 size = Vector2(103, 70)
@@ -345,11 +345,11 @@ layer_1/tile_data = PackedInt32Array(917504, 131072, 4, 917505, 131072, 4, 91750
 y_sort_enabled = true
 position = Vector2(99, 155)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["NPC"]]
 script = ExtResource("4_wtve4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(56, 105)
+[node name="signArea" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(57, 106)
 shape = SubResource("RectangleShape2D_1k5ic")
 
 [node name="finish" type="Area2D" parent="."]
@@ -375,4 +375,5 @@ tile_map_data = PackedByteArray("AADi//j/AgAIAAwAAADi//n/AgAIAAwAAADi//r/AgAIAAw
 tile_set = SubResource("TileSet_f0ln8")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]

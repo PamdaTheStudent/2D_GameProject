@@ -1,6 +1,6 @@
 extends Area2D
 
-var entered = 0
+var here = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,10 +10,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_body_entered(body: Node2D) -> void:
-		if area_entered:
-			if Input.is_action_just_pressed("ui_accept"):
-				Dialogic.start("timeline")
-		elif area_exited:
-			Dialogic.end_timeline()
+	if body.is_in_group("NPC"):
+		if here == false && Input.is_action_just_pressed("ui_accept"):
+			Dialogic.start("timeline")
+			here = true
+
+
+func _on_body_exited(body: Node2D) -> void:
+	here == false
+	Dialogic.end_timeline()
