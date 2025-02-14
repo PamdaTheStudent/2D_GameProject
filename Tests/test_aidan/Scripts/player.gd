@@ -1,15 +1,29 @@
 extends CharacterBody2D
 
-
-const SPEED = 200
+const SPEED = 100
 var current_dir = "none"
+var push_force = 50
+var currVelocity : Vector2
 
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
 
 func _physics_process(delta):
 	player_movement(delta)
+	if Input.is_action_just_pressed("ui_accept"):
+		handle_collisions()
 	
+
+func handle_collisions():
+	# Process collisions after movement
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		print_debug(get_slide_collision(i))
+		
+		if c.get_collider() is StaticBody2D:
+			c.get_collider().move(-c.get_normal())
+			move_and_slide()
+			
 
 func player_movement(delta):
 	if Input.is_action_pressed("ui_right"):
