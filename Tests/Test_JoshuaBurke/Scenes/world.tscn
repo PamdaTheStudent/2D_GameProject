@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://gwy1vccir4un"]
+[gd_scene load_steps=7 format=4 uid="uid://gwy1vccir4un"]
 
 [ext_resource type="TileSet" uid="uid://clpv7d5vp83vt" path="res://Sprites/world.tres" id="3_3w1kr"]
 [ext_resource type="PackedScene" uid="uid://1x63y7s53ti4" path="res://Scenes/player.tscn" id="4_5k44d"]
 [ext_resource type="Texture2D" uid="uid://y6kss432yl2w" path="res://Sprites/RedTransparent.png" id="4_ud5mh"]
 [ext_resource type="PackedScene" uid="uid://c3m1towvelof5" path="res://Scenes/moveableBox(TileMap).tscn" id="6_0g8cy"]
-[ext_resource type="PackedScene" path="res://Scenes/moveableBox(GRID).tscn" id="7_rgmai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lwu8r"]
 texture = ExtResource("4_ud5mh")
@@ -54,10 +53,6 @@ y_sort_enabled = true
 [node name="player" parent="." instance=ExtResource("4_5k44d")]
 position = Vector2(297, 229)
 collision_layer = 1
-
-[node name="MoveableBox2" parent="." instance=ExtResource("7_rgmai")]
-position = Vector2(316, 228)
-input_pickable = true
 
 [node name="TileMap" type="Node2D" parent="."]
 

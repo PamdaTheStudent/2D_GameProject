@@ -35,6 +35,7 @@ func move(direction: Vector2):
 				current_tile.x + direction.x,
 				current_tile.y + direction.y
 			)
+			
 			global_position = mainTileMap.map_to_local(target_tile_trans)
 			current_tile = target_tile_trans
 			await get_tree().create_timer(0.03).timeout

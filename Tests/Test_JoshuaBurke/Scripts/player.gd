@@ -3,7 +3,6 @@ extends CharacterBody2D
 
 const speed = 100
 var current_dir = "none"
-var push_force = 50
 
 var currVelocity : Vector2
 
@@ -13,12 +12,10 @@ func _physics_process(delta):
 	player_movement(delta)
 	if Input.is_action_just_pressed("ui_accept"):
 		handle_collisions()
-		
-		
-	
 
-	
-	
+
+
+
 func player_movement(delta):
 	if Input.is_action_pressed("ui_right"):
 
@@ -65,15 +62,6 @@ func handle_collisions():
 		var c = get_slide_collision(i)
 		print_debug(get_slide_collision(i))
 		
-		if c.get_collider() is CharacterBody2D:
-			if Input.is_action_just_pressed("ui_accept"):
-				c.get_collider().move(-c.get_normal() * push_force)
-
-
-		if c.get_collider() is RigidBody2D:
-			# Apply the push force
-			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
-			
 		if c.get_collider() is StaticBody2D:
 			c.get_collider().move(-c.get_normal())
 			move_and_slide()
