@@ -39,6 +39,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 Player=""
 NPC=""
+movable=""
 
 [input]
 
