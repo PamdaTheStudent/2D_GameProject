@@ -28,3 +28,4 @@ func _on_body_entered(body):
 	if open && body is player:
 		$Sprite2D.texture = load('res://Sprites/PinkTransparent.png')
 		print("Entered!")
+		get_tree().change_scene_to_file("res://Scenes/Level2.tscn")
