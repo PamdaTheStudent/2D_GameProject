@@ -8,14 +8,23 @@ var current_dir = "none"
 var currVelocity : Vector2
 var _indicatorReady
 var targetBox
+var moving
+var movingObject = false
+var previousDir = "none"
+
 
 func _ready():
-	$AnimatedSprite2D.play("idle_down")
+	$AnimatedSprite2D.play("idle")
 	
 func _physics_process(delta):
 	player_movement(delta)
 	if Input.is_action_just_pressed("ui_accept"):
 		handle_collisions()
+		movingObject = true
+		await get_tree().create_timer(0.5).timeout
+		movingObject = false
+		
+		
 	if _indicatorReady == true:
 		CheckTargetTile(targetBox)
 	
@@ -50,16 +59,29 @@ func player_movement(delta):
 		velocity.y = -speed
 		
 	
+		
 	else:
 		play_anim(0)		
 		velocity.x = 0
 		velocity.y = 0
+		moving = false
 		
 	
 	currVelocity = velocity
+	
+	if previousDir != current_dir:
+		if _indicatorReady:
+			_indicatorReady = false
+			targetBox.changeIndicator(_indicatorReady)
+			CheckTargetTile(targetBox)
+		previousDir = current_dir
+		
+		
 	if (velocity.x != 0 or velocity.y != 0): 
+		moving = true
 		play_anim(1)
 		move_and_slide()
+
 	
 	
 	
@@ -73,33 +95,49 @@ func handle_collisions():
 func play_anim(movement):
 	var dir = current_dir
 	var anim = $AnimatedSprite2D
+	var animation = "walk_side"
 	
-	match dir:
-		"right":
-			anim.flip_h = false			
-			if movement == 1:
-				anim.play("walk-right")
-			elif movement == 0:
-				anim.play("idle")
-		"left":
-			anim.flip_h = false
-			if movement == 1:
-				anim.play("walk-left")
-			elif movement == 0:
-				anim.play("idle")
-		"up":
-			anim.flip_h = true	
-			if movement == 1:
-				anim.play("walk-back")
-			elif movement == 0:
-				anim.play("idle")
-		"down":
-			anim.flip_h = true	
-			if movement == 1:
-				anim.play("walk-forward")
-			elif movement == 0:
-				anim.play("idle")
+	if moving:
+		match dir:
+			"left":
+				animation = "walk_side"
+				anim.flip_h = true
+				
+			"right":
+				animation = "walk_side"
+				anim.flip_h = false			
+				
+			"up":
+				animation = "walk_up"
+				anim.flip_h = true	
+				
+			"down":
+				animation = "walk_down"
+				anim.flip_h = true	
+			
+	else:
+		animation = "idle_down"
+		#match dir:
+			#"left":
+				#animation = "idle_side"
+				#anim.flip_h = true
+				#
+			#"right":
+				#animation = "idle_side"
+				#anim.flip_h = false			
+				#
+			#"up":
+				#animation = "idle_up"
+				#anim.flip_h = true	
+				#
+			#"down":
+				#animation = "idle_down"
+				#anim.flip_h = true	
+	if movingObject == true:
+			animation = "move"
 
+		
+	anim.play(animation)
 
 
 func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
