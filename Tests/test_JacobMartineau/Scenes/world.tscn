@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://gwy1vccir4un"]
+[gd_scene load_steps=9 format=4 uid="uid://gwy1vccir4un"]
 
 [ext_resource type="TileSet" uid="uid://lyk7msgb356n" path="res://Sprites/world.tres" id="3_3w1kr"]
 [ext_resource type="PackedScene" uid="uid://1x63y7s53ti4" path="res://Scenes/player.tscn" id="4_5k44d"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d4hdlnqb2ixew" path="res://Scenes/moveableBox(TileMap).tscn" id="6_0g8cy"]
 [ext_resource type="Texture2D" uid="uid://gjkou1pj7x1c" path="res://Sprites/level one - one.png" id="6_684cg"]
 [ext_resource type="PackedScene" uid="uid://chjv3rd5cyrvy" path="res://Scenes/Level2.tscn" id="7_1enhn"]
+[ext_resource type="PackedScene" uid="uid://dsrsjxyrqk0ij" path="res://Scripts/npc_dialogue_activate.tscn" id="8_no1uy"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -136,3 +137,6 @@ mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
 [node name="Node2D" parent="." instance=ExtResource("7_1enhn")]
+
+[node name="NPC" parent="." instance=ExtResource("8_no1uy")]
+position = Vector2(56, 174)
