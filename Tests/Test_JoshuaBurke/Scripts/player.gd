@@ -7,8 +7,10 @@ var current_dir = "none"
 var currVelocity : Vector2
 var _indicatorReady
 var targetBox
+var moveingObject = false
 var moving = false
 var previousDir = "none"
+
 
 func _ready():
 	$AnimatedSprite2D.play("idle_down")
@@ -17,9 +19,13 @@ func _physics_process(delta):
 	player_movement(delta)
 	if Input.is_action_just_pressed("ui_accept"):
 		handle_collisions()
+		moveingObject = true
+		await get_tree().create_timer(0.5).timeout
+		moveingObject = false
+		
+			
 	if _indicatorReady == true:
 		CheckTargetTile(targetBox)
-	
 
 
 	
@@ -85,32 +91,49 @@ func handle_collisions():
 func play_anim(movement):
 	var dir = current_dir
 	var anim = $AnimatedSprite2D
+	var animation = "walk_side"
 	
-	match dir:
-		"right":
-			anim.flip_h = false			
-			if movement == 1:
-				anim.play("walk_side")
-			elif movement == 0:
-				anim.play("idle_side")
-		"left":
-			anim.flip_h = true
-			if movement == 1:
-				anim.play("walk_side")
-			elif movement == 0:
-				anim.play("idle_side")
-		"up":
-			anim.flip_h = true	
-			if movement == 1:
-				anim.play("walk_up")
-			elif movement == 0:
-				anim.play("idle_up")
-		"down":
-			anim.flip_h = true	
-			if movement == 1:
-				anim.play("walk_down")
-			elif movement == 0:
-				anim.play("idle_down")
+	if moving:
+		match dir:
+			"left":
+				animation = "walk_side"
+				anim.flip_h = true
+				
+			"right":
+				animation = "walk_side"
+				anim.flip_h = false			
+				
+			"up":
+				animation = "walk_up"
+				anim.flip_h = true	
+				
+			"down":
+				animation = "walk_down"
+				anim.flip_h = true	
+			
+	else:
+		animation = "idle_down"
+		#match dir:
+			#"left":
+				#animation = "idle_side"
+				#anim.flip_h = true
+				#
+			#"right":
+				#animation = "idle_side"
+				#anim.flip_h = false			
+				#
+			#"up":
+				#animation = "idle_up"
+				#anim.flip_h = true	
+				#
+			#"down":
+				#animation = "idle_down"
+				#anim.flip_h = true	
+	if moveingObject == true:
+			animation = "move"
+
+		
+	anim.play(animation)
 
 
 
