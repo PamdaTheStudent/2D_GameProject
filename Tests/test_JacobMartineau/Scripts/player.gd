@@ -14,7 +14,7 @@ var previousDir = "none"
 
 
 func _ready():
-	$AnimatedSprite2D.play("idle")
+	$AnimatedSprite2D.play("idle_down")
 	
 func _physics_process(delta):
 	player_movement(delta)
