@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="Godot"
-run/main_scene="res://Scenes/world.tscn"
+run/main_scene="res://Scenes/tutorial_level.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+
+[autoload]
+
+TransitionScreen="*res://Scenes/transition_screen.tscn"
 
 [display]
 

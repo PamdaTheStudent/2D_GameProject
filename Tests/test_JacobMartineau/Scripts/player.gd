@@ -2,7 +2,7 @@ class_name player
 extends CharacterBody2D
 @export var InteractionBox : Area2D
 
-const speed = 50
+const speed = 200
 var current_dir = "none"
 
 var currVelocity : Vector2

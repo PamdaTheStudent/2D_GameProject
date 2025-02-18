@@ -1,17 +1,24 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cmnrq41gip68b"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://cmnrq41gip68b"]
 
 [ext_resource type="Texture2D" uid="uid://cpps0vy6fjm33" path="res://Sprites/test_tile_things-Sheet.png" id="1_534nx"]
 [ext_resource type="Texture2D" uid="uid://dfyvk362kjytm" path="res://Sprites/tilesets/early_level_ground.png" id="2_avwem"]
+[ext_resource type="Texture2D" uid="uid://cv5kkh0i8coog" path="res://Sprites/PinkTransparent.png" id="3_o6awj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpjrt"]
 texture = ExtResource("1_534nx")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/custom_data_0 = true
 1:0/0 = 0
+1:0/0/custom_data_0 = true
 2:0/0 = 0
+2:0/0/custom_data_0 = true
 3:0/0 = 0
+3:0/0/custom_data_0 = true
 4:0/0 = 0
+4:0/0/custom_data_0 = true
 5:0/0 = 0
+5:0/0/custom_data_0 = true
 6:0/0 = 0
 7:0/0 = 0
 8:0/0 = 0
@@ -19,11 +26,17 @@ texture_region_size = Vector2i(32, 32)
 10:0/0 = 0
 11:0/0 = 0
 0:1/0 = 0
+0:1/0/custom_data_0 = true
 1:1/0 = 0
+1:1/0/custom_data_0 = true
 2:1/0 = 0
+2:1/0/custom_data_0 = true
 3:1/0 = 0
+3:1/0/custom_data_0 = true
 4:1/0 = 0
+4:1/0/custom_data_0 = true
 5:1/0 = 0
+5:1/0/custom_data_0 = true
 6:1/0 = 0
 7:1/0 = 0
 8:1/0 = 0
@@ -33,9 +46,13 @@ texture_region_size = Vector2i(32, 32)
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
+2:2/0/custom_data_0 = true
 3:2/0 = 0
+3:2/0/custom_data_0 = true
 4:2/0 = 0
+4:2/0/custom_data_0 = true
 5:2/0 = 0
+5:2/0/custom_data_0 = true
 6:2/0 = 0
 7:2/0 = 0
 8:2/0 = 0
@@ -45,9 +62,13 @@ texture_region_size = Vector2i(32, 32)
 0:3/0 = 0
 1:3/0 = 0
 2:3/0 = 0
+2:3/0/custom_data_0 = true
 3:3/0 = 0
+3:3/0/custom_data_0 = true
 4:3/0 = 0
+4:3/0/custom_data_0 = true
 5:3/0 = 0
+5:3/0/custom_data_0 = true
 6:3/0 = 0
 7:3/0 = 0
 8:3/0 = 0
@@ -135,8 +156,11 @@ texture_region_size = Vector2i(32, 32)
 texture = ExtResource("2_avwem")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
+0:0/0/custom_data_0 = true
 1:0/0 = 0
+1:0/0/custom_data_0 = true
 2:0/0 = 0
+2:0/0/custom_data_0 = true
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
@@ -147,7 +171,9 @@ texture_region_size = Vector2i(64, 64)
 10:0/0 = 0
 11:0/0 = 0
 0:1/0 = 0
+0:1/0/custom_data_0 = true
 2:1/0 = 0
+2:1/0/custom_data_0 = true
 3:1/0 = 0
 4:1/0 = 0
 5:1/0 = 0
@@ -158,8 +184,11 @@ texture_region_size = Vector2i(64, 64)
 10:1/0 = 0
 11:1/0 = 0
 0:2/0 = 0
+0:2/0/custom_data_0 = true
 1:2/0 = 0
+1:2/0/custom_data_0 = true
 2:2/0 = 0
+2:2/0/custom_data_0 = true
 3:2/0 = 0
 4:2/0 = 0
 5:2/0 = 0
@@ -278,7 +307,15 @@ texture_region_size = Vector2i(64, 64)
 10:11/0 = 0
 11:11/0 = 0
 1:1/0 = 0
+1:1/0/custom_data_0 = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xjam1"]
+texture = ExtResource("3_o6awj")
+0:0/0 = 0
 
 [resource]
+custom_data_layer_0/name = "walkable"
+custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_vpjrt")
 sources/1 = SubResource("TileSetAtlasSource_57itx")
+sources/2 = SubResource("TileSetAtlasSource_xjam1")
