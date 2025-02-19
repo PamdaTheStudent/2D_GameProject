@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var InteractionBox : Area2D
 
 var can_move = true
-var speed = 50
+var speed = 200
 var current_dir = "none"
 
 var currVelocity : Vector2

@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://lyk7msgb356n"]
+[gd_resource type="TileSet" load_steps=21 format=3 uid="uid://lyk7msgb356n"]
 
 [ext_resource type="Texture2D" uid="uid://dpjlq3g05h0la" path="res://Sprites/tilesets/plains.png" id="1_0ahio"]
 [ext_resource type="Texture2D" uid="uid://pjmd0t4r7lrf" path="res://Sprites/tilesets/grass.png" id="2_2p8cj"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c1xtep6e5m34c" path="res://Sprites/tilesets/SnowTileMap.png" id="7_7c7pc"]
 [ext_resource type="Texture2D" uid="uid://ddx44vt0n7ojk" path="res://Sprites/test_tile_things.png" id="8_wi12o"]
 [ext_resource type="Texture2D" uid="uid://cpps0vy6fjm33" path="res://Sprites/test_tile_things-Sheet.png" id="9_ltvvy"]
+[ext_resource type="Texture2D" uid="uid://xt08qa56ibpe" path="res://Sprites/early_level_ground.png" id="10_x734w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38ia5"]
 texture = ExtResource("1_0ahio")
@@ -669,7 +670,22 @@ texture = ExtResource("9_ltvvy")
 11:3/0/custom_data_0 = true
 4:8/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d45sc"]
+texture = ExtResource("10_x734w")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:1/0/custom_data_0 = true
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
 [resource]
+tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
@@ -693,3 +709,4 @@ sources/5 = SubResource("TileSetAtlasSource_q8o6u")
 sources/6 = SubResource("TileSetAtlasSource_u3hav")
 sources/7 = SubResource("TileSetAtlasSource_harah")
 sources/8 = SubResource("TileSetAtlasSource_ds0nv")
+sources/9 = SubResource("TileSetAtlasSource_d45sc")

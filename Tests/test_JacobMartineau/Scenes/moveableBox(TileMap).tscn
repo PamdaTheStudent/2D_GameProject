@@ -61,6 +61,7 @@ size = Vector2(11, 12)
 size = Vector2(14, 13)
 
 [node name="MoveableBox(Tile)" type="StaticBody2D" node_paths=PackedStringArray("moveIndicator")]
+scale = Vector2(4, 4)
 script = ExtResource("1_6s3hb")
 moveIndicator = NodePath("Move_Indicator")
 

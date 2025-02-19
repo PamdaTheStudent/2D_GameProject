@@ -43,7 +43,7 @@ func move(direction: Vector2):
 	var distance = global_position.distance_to(target_position)
 
 	# Adjust animation speed based on distance
-	var base_speed = 16  # Speed per tile (adjust as needed)
+	var base_speed = 32  # Speed per tile (adjust as needed)
 	var duration = distance / (base_speed * animation_speed)
 	
 	
