@@ -24,7 +24,7 @@ nodes = {
 }
 },
 "size": Vector2(300, 240),
-"speaker": ""
+"speaker": 0
 },
 "1_2": {
 "dialogue": "Just what makes you think the humans won't shoot on sight, let alone that you can get past those star people!",
@@ -37,7 +37,7 @@ nodes = {
 }
 },
 "size": Vector2(300, 240),
-"speaker": ""
+"speaker": 0
 },
 "1_3": {
 "dialogue": "Well, whatever. You know the drill. Push blocks, solve the labyrinth, escape to the surface.",
@@ -50,7 +50,7 @@ nodes = {
 }
 },
 "size": Vector2(300, 240),
-"speaker": ""
+"speaker": 0
 },
 "1_4": {
 "dialogue": "Have fun... or at least have the sense not to box yourself in!",
@@ -63,9 +63,9 @@ nodes = {
 }
 },
 "size": Vector2(300, 240),
-"speaker": ""
+"speaker": 0
 }
 }
 variables = {}
 strays = Array[String]([])
-characters = ""
+characters = "res://Dialog/characters.tres"
