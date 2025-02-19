@@ -14,8 +14,47 @@ nodes = {
 "start_id": "tutorialNPC"
 },
 "1_1": {
-"dialogue": "...",
+"dialogue": "Huh. Still think you can puzzle your way topside, eh?",
 "offset": Vector2(-100, -240),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": ""
+},
+"1_2": {
+"dialogue": "Just what makes you think the humans won't shoot on sight, let alone that you can get past those star people!",
+"offset": Vector2(280, -260),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": ""
+},
+"1_3": {
+"dialogue": "Well, whatever. You know the drill. Push blocks, solve the labyrinth, escape to the surface.",
+"offset": Vector2(640, -260),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": ""
+},
+"1_4": {
+"dialogue": "Have fun... or at least have the sense not to box yourself in!",
+"offset": Vector2(1060, -240),
 "options": {
 0: {
 "condition": {},
@@ -24,7 +63,7 @@ nodes = {
 }
 },
 "size": Vector2(300, 240),
-"speaker": "Fallen Friend"
+"speaker": ""
 }
 }
 variables = {}

@@ -5,13 +5,13 @@
 [resource]
 script = ExtResource("1_b0ij1")
 starts = {
-"tutorialNPC": &"0_1"
+"START": &"0_1"
 }
 nodes = {
 "0_1": {
 "link": &"1_1",
 "offset": Vector2(-360, -160),
-"start_id": "tutorialNPC"
+"start_id": "START"
 },
 "1_1": {
 "dialogue": "...",
