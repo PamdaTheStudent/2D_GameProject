@@ -12,3 +12,7 @@ func _on_area_2d_talking() -> void:
 
 func _on_area_2d_free() -> void:
 	$AnimatedSprite2D.play("stand")
+
+
+func _on_area_2d_close() -> void:
+	$AnimatedSprite2D.play("wave")

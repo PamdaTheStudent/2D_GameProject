@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bkpy683at20uj"]
+[gd_scene load_steps=17 format=3 uid="uid://bkpy683at20uj"]
 
 [ext_resource type="Script" path="res://Scripts/npc_animation.gd" id="1_a861e"]
 [ext_resource type="Script" path="res://Scripts/npc_dialogue.gd" id="2_fqjch"]
@@ -30,6 +30,10 @@ region = Rect2(0, 0, 60, 60)
 atlas = ExtResource("8_vmy2l")
 region = Rect2(60, 0, 60, 60)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_frtxx"]
+atlas = ExtResource("8_vmy2l")
+region = Rect2(0, 0, 60, 60)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_aqss2"]
 animations = [{
 "frames": [{
@@ -50,6 +54,14 @@ animations = [{
 "loop": true,
 "name": &"talk",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frtxx")
+}],
+"loop": true,
+"name": &"wave",
+"speed": 5.0
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
@@ -90,10 +102,10 @@ next_icon = ExtResource("7_ip0vb")
 position = Vector2(1, 1)
 scale = Vector2(0.238095, 0.21875)
 sprite_frames = SubResource("SpriteFrames_aqss2")
-animation = &"talk"
+animation = &"wave"
 
+[connection signal="Close" from="Area2D" to="." method="_on_area_2d_close"]
 [connection signal="Free" from="Area2D" to="." method="_on_area_2d_free"]
 [connection signal="Talking" from="Area2D" to="." method="_on_area_2d_talking"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
-[connection signal="dialogue_ended" from="Area2D/CanvasLayer/DialogueBox" to="Area2D" method="_on_dialogue_box_dialogue_ended"]

@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1740370587
+::res://::1740437261
 default_env.tres::Environment::8126756863714071075::1740370282::0::1::::<><>::
-early_level_ground.tres::TileSet::5643006727050874775::1740370270::0::1::::<><>::uid://cpps0vy6fjm33::::res://Sprites/test_tile_things-Sheet.png<>uid://dfyvk362kjytm::::res://Sprites/tilesets/early_level_ground.png<>uid://cv5kkh0i8coog::::res://Sprites/PinkTransparent.png
+early_level_ground.tres::TileSet::5643006727050874775::1740437261::0::1::::<><>::uid://cpps0vy6fjm33::::res://Sprites/test_tile_things-Sheet.png<>uid://dfyvk362kjytm::::res://Sprites/tilesets/early_level_ground.png<>uid://cv5kkh0i8coog::::res://Sprites/PinkTransparent.png
 game_theme.tres::Theme::-1::1740370097::0::1::::<><>::
 icon.svg::CompressedTexture2D::4846428923507724128::1740370282::1740370315::1::::<><>::
 MoveIndicator.tres::SpriteFrames::8098653855578202080::1740370269::0::1::::<><>::uid://ufesdkbc66p2::::res://Sprites/Move-Indicator.png<>uid://c6o3qeeev01c0::::res://Sprites/NotMove-Indicator.png
@@ -82,7 +82,7 @@ Poppins-Regular.ttf::FontFile::4214416702055673985::1740370510::1740370511::1:::
 README [INET].txt::TextFile::-1::1740370510::0::1::::<><>::
 tech-panel.png::CompressedTexture2D::5287935746960153760::1740370510::1740370511::1::::<><>::
 tech.theme::Theme::7237156549206226654::1740370510::0::1::::<><>::uid://brjuyem5xyah4::::res://addons/dialogue_nodes/themes/Poppins-Regular.ttf<>uid://og0o4cnb7vne::::res://addons/dialogue_nodes/themes/tech-panel.png
-::res://Dialog/::1740370572
+::res://Dialog/::1740370748
 characters.tres::Resource/CharacterList::9065164875878565347::1740370096::0::1::::<><>::res://addons/dialogue_nodes/objects/Character.gd<>res://addons/dialogue_nodes/objects/CharacterList.gd<>uid://blucuhwf2gla8::::res://Sprites/greendemonbeta1-Sheet.png
 choices.tres::Resource/DialogueData::1900111776640714115::1740370096::0::1::::<><>::res://addons/dialogue_nodes/objects/DialogueData.gd
 dialogue_box.tres::Resource/DialogueData::6939903783181327049::1740370096::0::1::::<><>::res://addons/dialogue_nodes/objects/DialogueData.gd
@@ -108,20 +108,20 @@ ExampleSignals.tres::Resource/DialogueData::4451938646115500077::1740370282::0::
 ExampleVariables.tres::Resource/DialogueData::4886097951687637358::1740370282::0::1::::<><>::res://addons/dialogue_nodes/objects/DialogueData.gd
 profile0.png::CompressedTexture2D::4296060542971295061::1740370282::1740370316::1::::<><>::
 voice.ogg::AudioStreamOggVorbis::2976354597759940103::1740370423::1740370424::1::::<><>::
-::res://Scenes/::1740370282
+::res://Scenes/::1740438823
 door.tscn::PackedScene::5868416205090937227::1740370269::0::1::::<><>::res://Scripts/door.gd<>uid://c5sc7t6sg4h18::::res://Sprites/GreenTransparent.png
-finish.tscn::PackedScene::5012609359081534819::1740370269::0::1::::<><>::res://Scripts/finish.gd
+finish.tscn::PackedScene::5012609359081534819::1740438823::0::1::::<><>::res://Scripts/finish.gd
 moveableBox(GRID).tscn::PackedScene::5225037919039250198::1740370269::0::1::::<><>::res://Scripts/moveable_box(grid).gd<>uid://cdqv3esbu38u6::::res://Sprites/objects/chest_01.png
-moveableBox(TileMap).tscn::PackedScene::9209391663174194186::1740370269::0::1::::<><>::res://Scripts/TileMapMovement.gd<>uid://cdqv3esbu38u6::::res://Sprites/objects/chest_01.png<>uid://cpps0vy6fjm33::::res://Sprites/test_tile_things-Sheet.png<>uid://ufesdkbc66p2::::res://Sprites/Move-Indicator.png<>uid://c6o3qeeev01c0::::res://Sprites/NotMove-Indicator.png<>res://Scripts/MoveIndicator.gd<>res://Scripts/blockPressure.gd
-NPC1.tscn::PackedScene::3120789130373328029::1740370282::0::1::::<><>::res://Scripts/npc_animation.gd<>res://Scripts/npc_dialogue.gd<>res://addons/dialogue_nodes/objects/DialogueBox.gd<>uid://c7v8yvhp2wyqo::::res://game_theme.tres<>uid://c540g315qq7eb::::res://Dialog/dialogue_box.tres<>res://addons/dialogue_nodes/objects/bbcodeWait.gd<>uid://b4mg0icgg0u85::::res://Sprites/play.png<>uid://dotwwuro00jwf::::res://Sprites/GreenSpritesNPC.tres
+moveableBox(TileMap).tscn::PackedScene::9209391663174194186::1740438823::0::1::::<><>::res://Scripts/TileMapMovement.gd<>uid://cdqv3esbu38u6::::res://Sprites/objects/chest_01.png<>uid://cpps0vy6fjm33::::res://Sprites/test_tile_things-Sheet.png<>uid://ufesdkbc66p2::::res://Sprites/Move-Indicator.png<>uid://c6o3qeeev01c0::::res://Sprites/NotMove-Indicator.png<>res://Scripts/MoveIndicator.gd<>res://Scripts/blockPressure.gd
+NPC1.tscn::PackedScene::3120789130373328029::1740438823::0::1::::<><>::res://Scripts/npc_animation.gd<>res://Scripts/npc_dialogue.gd<>res://addons/dialogue_nodes/objects/DialogueBox.gd<>res://game_theme.tres<>uid://c540g315qq7eb::::res://Dialog/dialogue_box.tres<>res://addons/dialogue_nodes/objects/bbcodeWait.gd<>uid://bhwicswjm07r::::res://Sprites/play.png<>uid://77d2y27ruobo::::res://Sprites/characters/NPC1-sheet.png
 npc_dialogue_activate.tscn::PackedScene::8458865882304407789::1740370282::0::1::::<><>::res://Scripts/npc_dialogue_activate.gd<>res://Scripts/npc_animation.gd<>res://addons/dialogue_nodes/objects/DialogueBox.gd<>uid://c7v8yvhp2wyqo::::res://game_theme.tres<>uid://c540g315qq7eb::::res://Dialog/dialogue_box.tres<>res://addons/dialogue_nodes/objects/bbcodeWait.gd<>uid://b4mg0icgg0u85::::res://Sprites/play.png<>uid://dotwwuro00jwf::::res://Sprites/GreenSpritesNPC.tres
-player.tscn::PackedScene::1874324162790509561::1740370269::0::1::::<><>::res://Scripts/player.gd<>uid://blucuhwf2gla8::::res://Sprites/greendemonbeta1-Sheet.png<>uid://ufesdkbc66p2::::res://Sprites/Move-Indicator.png
+player.tscn::PackedScene::1874324162790509561::1740438823::0::1::::<><>::res://Scripts/player.gd<>uid://blucuhwf2gla8::::res://Sprites/greendemonbeta1-Sheet.png<>uid://ufesdkbc66p2::::res://Sprites/Move-Indicator.png
 pressurePlate.tscn::PackedScene::5046179696153445::1740370269::0::1::::<><>::res://Scripts/pressure_plate.gd<>uid://y6kss432yl2w::::res://Sprites/RedTransparent.png
 Scenery.tres::TileSet::4788296098967527726::1740370269::0::1::::<><>::uid://cpps0vy6fjm33::::res://Sprites/test_tile_things-Sheet.png<>uid://77d2y27ruobo::::res://Sprites/characters/NPC1-sheet.png
-transition_screen.tscn::PackedScene::8450004371647886617::1740370269::0::1::::<><>::res://Scripts/transition_screen.gd
-tutorial_level.tscn::PackedScene::3877367496689460700::1740370282::0::1::::<><>::uid://pjmd0t4r7lrf::::res://Sprites/tilesets/grass.png<>uid://cmnrq41gip68b::::res://early_level_ground.tres<>uid://1x63y7s53ti4::::res://Scenes/player.tscn<>res://Scripts/finish.gd<>uid://d4hdlnqb2ixew::::res://Scenes/moveableBox(TileMap).tscn<>res://Scenes/NPC1.tscn<>res://Scripts/npc_animation.gd
-world.tscn::PackedScene::468054117067657585::1740370269::0::1::::<><>::uid://lyk7msgb356n::::res://Sprites/world.tres<>uid://1x63y7s53ti4::::res://Scenes/player.tscn<>uid://cpdy8ijjhyb::::res://Scenes/pressurePlate.tscn<>uid://cpux7s5bdo8rf::::res://Scenes/door.tscn<>uid://d4hdlnqb2ixew::::res://Scenes/moveableBox(TileMap).tscn<>uid://gjkou1pj7x1c::::res://Sprites/level one - one.png
-::res://Scripts/::1740370282
+transition_screen.tscn::PackedScene::8450004371647886617::1740438823::0::1::::<><>::res://Scripts/transition_screen.gd
+tutorial_level.tscn::PackedScene::3877367496689460700::1740438823::0::1::::<><>::uid://cmnrq41gip68b::::res://early_level_ground.tres<>uid://cpps0vy6fjm33::::res://Sprites/test_tile_things-Sheet.png<>uid://1x63y7s53ti4::::res://Scenes/player.tscn<>uid://dfyvk362kjytm::::res://Sprites/tilesets/early_level_ground.png<>res://Scripts/finish.gd<>uid://d4hdlnqb2ixew::::res://Scenes/moveableBox(TileMap).tscn<>uid://y6kss432yl2w::::res://Sprites/RedTransparent.png<>uid://bkpy683at20uj::::res://Scenes/NPC1.tscn
+world.tscn::PackedScene::468054117067657585::1740438823::0::1::::<><>::uid://lyk7msgb356n::::res://Sprites/world.tres<>uid://1x63y7s53ti4::::res://Scenes/player.tscn<>uid://cpdy8ijjhyb::::res://Scenes/pressurePlate.tscn<>uid://cpux7s5bdo8rf::::res://Scenes/door.tscn<>uid://d4hdlnqb2ixew::::res://Scenes/moveableBox(TileMap).tscn<>uid://gjkou1pj7x1c::::res://Sprites/level one - one.png
+::res://Scripts/::1740435863
 activateDialogue.gd::GDScript::-1::1740370282::0::1::::<>Area2D<>::
 blockPressure.gd::GDScript::-1::1740370269::0::1::::BlockPressure<>Area2D<>::
 DialogueBox.gd::GDScript::-1::1740370282::0::1::::DialogueBox<>Panel<>::
@@ -129,28 +129,28 @@ door.gd::GDScript::-1::1740370269::0::1::::theDoor<>Area2D<>::
 finish.gd::GDScript::-1::1740370269::0::1::::<>Area2D<>::
 moveable_box(grid).gd::GDScript::-1::1740370269::0::1::::<>CharacterBody2D<>::
 MoveIndicator.gd::GDScript::-1::1740370269::0::1::::<>AnimatedSprite2D<>::
-npc_animation.gd::GDScript::-1::1740370282::0::1::::<>CharacterBody2D<>::
-npc_dialogue.gd::GDScript::-1::1740370282::0::1::::NPC<>Area2D<>::
+npc_animation.gd::GDScript::-1::1740435863::0::1::::<>CharacterBody2D<>::
+npc_dialogue.gd::GDScript::-1::1740435863::0::1::::NPC<>Area2D<>::
 player.gd::GDScript::-1::1740370269::0::1::::player<>CharacterBody2D<>::
 playerDetection.gd::GDScript::-1::1740370269::0::1::::playerDetection<>Area2D<>::
 pressure_plate.gd::GDScript::-1::1740370269::0::1::::pressurePlate<>Area2D<>::
 TileMapMovement.gd::GDScript::-1::1740370282::0::1::::moveableBox<>StaticBody2D<>::
 transition_screen.gd::GDScript::-1::1740370269::0::1::::<>CanvasLayer<>::
-::res://Sprites/::1740370742
+::res://Sprites/::1740439008
 Grass.png::CompressedTexture2D::2237318237645052852::1740370269::1740370315::1::::<><>::
 greendemonbeta1-Sheet.png::CompressedTexture2D::3199943070568938573::1740370269::1740370315::1::::<><>::
-GreenSpritesNPC.tres::SpriteFrames::-1::1740370096::0::1::::<><>::
+GreenSpritesNPC.tres::SpriteFrames::1509307480187498759::1740371753::0::1::::<><>::uid://blucuhwf2gla8::::res://Sprites/greendemonbeta1-Sheet.png
 GreenTransparent.png::CompressedTexture2D::6915845102150333305::1740370269::1740370315::1::::<><>::
 level one - one.png::CompressedTexture2D::440345723983826754::1740370269::1740370316::1::::<><>::
 Move-Indicator.png::CompressedTexture2D::1414373946859758029::1740370269::1740370315::1::::<><>::
 NotMove-Indicator.png::CompressedTexture2D::6979325673705417949::1740370269::1740370315::1::::<><>::
-PinkTransparent.png::CompressedTexture2D::6309363850964628218::1740370269::1740370315::1::::<><>::
+PinkTransparent.png::CompressedTexture2D::6309363850964628218::1740438997::1740439015::1::::<><>::
 play.png::CompressedTexture2D::85989681973839973::1740370096::1740370748::1::::<><>::
 PlayerRunning.png::CompressedTexture2D::1014647821913019221::1740370269::1740370315::1::::<><>::
-RedTransparent.png::CompressedTexture2D::1749168263435443592::1740370269::1740370315::1::::<><>::
+RedTransparent.png::CompressedTexture2D::1749168263435443592::1740438686::1740438752::1::::<><>::
 test_tile_things-Sheet.png::CompressedTexture2D::5857778380466210684::1740370270::1740370315::1::::<><>::
 test_tile_things.png::CompressedTexture2D::7419122984646413732::1740370270::1740370315::1::::<><>::
-world.tres::TileSet::822287319810178515::1740370270::0::1::::<><>::uid://dpjlq3g05h0la::::res://Sprites/tilesets/plains.png<>uid://pjmd0t4r7lrf::::res://Sprites/tilesets/grass.png<>uid://e205ishnuujd::::res://Sprites/objects/objects.png<>uid://y6kss432yl2w::::res://Sprites/RedTransparent.png<>uid://dnjjhpxxdexl7::::res://Sprites/tilesets/Snow.png<>uid://cynt0o61fuk5u::::res://Sprites/tilesets/Ice.png<>uid://c1xtep6e5m34c::::res://Sprites/tilesets/SnowTileMap.png<>uid://ddx44vt0n7ojk::::res://Sprites/test_tile_things.png<>uid://cpps0vy6fjm33::::res://Sprites/test_tile_things-Sheet.png
+world.tres::TileSet::822287319810178515::1740435458::0::1::::<><>::uid://dpjlq3g05h0la::::res://Sprites/tilesets/plains.png<>uid://pjmd0t4r7lrf::::res://Sprites/tilesets/grass.png<>uid://e205ishnuujd::::res://Sprites/objects/objects.png<>uid://y6kss432yl2w::::res://Sprites/RedTransparent.png<>uid://dnjjhpxxdexl7::::res://Sprites/tilesets/Snow.png<>uid://cynt0o61fuk5u::::res://Sprites/tilesets/Ice.png<>uid://c1xtep6e5m34c::::res://Sprites/tilesets/SnowTileMap.png<>uid://ddx44vt0n7ojk::::res://Sprites/test_tile_things.png<>uid://cpps0vy6fjm33::::res://Sprites/test_tile_things-Sheet.png
 ::res://Sprites/characters/::1740370316
 greendemonbeta1-Sheet.png::CompressedTexture2D::8982076148373879481::1740370269::1740370316::1::::<><>::
 NPC1-sheet.png::CompressedTexture2D::2312334755708256984::1740370269::1740370316::1::::<><>::
