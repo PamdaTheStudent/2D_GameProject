@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cpux7s5bdo8rf" path="res://Scenes/door.tscn" id="5_ul4qa"]
 [ext_resource type="PackedScene" uid="uid://d4hdlnqb2ixew" path="res://Scenes/moveableBox(TileMap).tscn" id="6_0g8cy"]
 [ext_resource type="Texture2D" uid="uid://gjkou1pj7x1c" path="res://Sprites/level one - one.png" id="6_684cg"]
-[ext_resource type="PackedScene" uid="uid://bkpy683at20uj" path="res://Scenes/NPC1.tscn" id="7_dj25b"]
+[ext_resource type="PackedScene" uid="uid://bkpy683at20uj" path="res://Scenes/NPC_0_LVL_1.tscn" id="7_dj25b"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -135,5 +135,5 @@ position = Vector2(88, 120)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
-[node name="NPC1" parent="." instance=ExtResource("7_dj25b")]
+[node name="NPC_0" parent="." instance=ExtResource("7_dj25b")]
 position = Vector2(56, 160)

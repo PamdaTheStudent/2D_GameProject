@@ -20,15 +20,22 @@ var previousDir = "none"
 
 
 func _ready():
-	var NPC1 = get_node("../NPC1/Area2D")
-	if NPC1:
-		NPC1.connect("Talking", Callable(self, "_talking"))
-		NPC1.connect("Free", Callable(self, "_dialogue_end"))
-	var NPC2 = get_node("../NPC2/Area2D")
-	if NPC2:
-		NPC2.connect("Talking", Callable(self, "_talking"))
-		NPC2.connect("Free", Callable(self, "_dialogue_end"))
+	_NPC_focus()
 	$AnimatedSprite2D.play("idle_down")
+
+func _NPC_focus():
+	var NPC_Cast = [
+		get_node("../NPC_0/Area2D"), 
+		get_node("../NPC_1/Area2D"), 
+		get_node("../NPC_2/Area2D"), 
+		get_node("../NPC_3/Area2D"),
+		get_node("../NPC_4/Area2D")
+	]
+	if NPC_Cast:
+		for item in NPC_Cast.size():
+			if NPC_Cast[item]:
+				NPC_Cast[item].connect("Talking", Callable(self, "_talking"))
+				NPC_Cast[item].connect("Free", Callable(self, "_dialogue_end"))
 
 func _talking():
 	speed = 0

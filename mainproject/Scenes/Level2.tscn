@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cpux7s5bdo8rf" path="res://Scenes/door.tscn" id="3_uptrh"]
 [ext_resource type="PackedScene" uid="uid://cpdy8ijjhyb" path="res://Scenes/pressurePlate.tscn" id="4_7kx8a"]
 [ext_resource type="PackedScene" uid="uid://d4hdlnqb2ixew" path="res://Scenes/moveableBox(TileMap).tscn" id="5_4oo5x"]
-[ext_resource type="PackedScene" uid="uid://bhilp4oo5m5q2" path="res://Scenes/NPC2.tscn" id="6_sgsmv"]
+[ext_resource type="PackedScene" uid="uid://bhilp4oo5m5q2" path="res://Scenes/NPC_0_LVL_2.tscn" id="6_sgsmv"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -55,5 +55,5 @@ position = Vector2(104, 232)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
-[node name="NPC2" parent="." instance=ExtResource("6_sgsmv")]
+[node name="NPC_0" parent="." instance=ExtResource("6_sgsmv")]
 position = Vector2(32, 240)
