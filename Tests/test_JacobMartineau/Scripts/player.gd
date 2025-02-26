@@ -8,6 +8,7 @@ var current_dir = "none"
 var currVelocity : Vector2
 var _indicatorReady
 var targetBox
+var cutscene = 0
 
 func _ready():
 	$AnimatedSprite2D.play("idle_down")
@@ -43,7 +44,7 @@ func player_movement(delta):
 		velocity.y = speed
 		
 		 
-	elif Input.is_action_pressed("ui_up"):
+	elif Input.is_action_pressed("ui_up") or cutscene > 1:
 		InteractionBox.rotation_degrees = 270
 		current_dir = "up"		
 		velocity.x = 0
@@ -129,3 +130,8 @@ func directionToVector2():
 		return Vector2.LEFT
 	if current_dir == "right":
 		return Vector2.RIGHT
+
+
+func _on_finish_body_entered(body: Node2D) -> void:
+	print_debug("body entered")
+	cutscene += 1
