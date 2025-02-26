@@ -8,13 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://gjkou1pj7x1c" path="res://Sprites/level one - one.png" id="6_684cg"]
 [ext_resource type="PackedScene" uid="uid://bkpy683at20uj" path="res://Scenes/NPC_0_LVL_1.tscn" id="7_dj25b"]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["Level-One-Persist"]]
 y_sort_enabled = true
 
-[node name="TileMap" type="Node2D" parent="."]
+[node name="TileMap" type="Node2D" parent="." groups=["Level-One-Persist"]]
 y_sort_enabled = true
 
-[node name="GridCollision" type="TileMapLayer" parent="TileMap"]
+[node name="GridCollision" type="TileMapLayer" parent="TileMap" groups=["Level-One-Persist"]]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(1, 0)
@@ -22,33 +22,33 @@ tile_map_data = PackedByteArray("AAACAAAAAwAAAAAAAAACAAEAAwAAAAAAAAACAAIAAwAAAAA
 tile_set = ExtResource("3_3w1kr")
 y_sort_origin = -1
 
-[node name="1" type="TileMapLayer" parent="TileMap"]
+[node name="1" type="TileMapLayer" parent="TileMap" groups=["Level-One-Persist"]]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAAAP7/CAAGAAYAAAABAP7/CAAHAAYAAAACAP7/CAAIAAYAAAADAP7/CAAJAAYAAAAEAP7/CAAKAAYAAAAFAP7/CAALAAYAAAAGAP7/CAALAAYAABAHAP3/CAAKAAUAABAIAP3/CAAJAAUAABAJAP3/CAAIAAUAABAKAP3/CAAHAAUAABAMAPz/CAAFAAQAAAD+/woACAAEAAUAACD+/wsACAAEAAQAACD+/wwACAAHAAQAAAD//wwACAAIAAQAAAAAAAwACAAJAAQAAAABAAwACAAEAAQAACACAAwACAAFAAQAACADAAwACAAEAAQAACAEAAwACAAFAAQAACAFAAwACAAGAAQAACAGAAwACAAHAAQAACAHAAwACAAIAAQAACAIAAwACAAJAAQAACAJAAwACAAKAAQAACAKAAwACAAHAAQAAAALAAwACAAIAAQAAAALAAsACAAGAAcAADAMAAsACAAEAAcAABALAAoACAAFAAYAABALAAkACAAFAAUAABALAAgACAAFAAQAABALAAcACAAFAAQAADALAAYACAAFAAUAADALAAUACAAFAAYAADALAAQACAAFAAcAADALAAMACAAFAAcAABALAAIACAAFAAYAABALAAEACAAFAAUAABALAAAACAAFAAQAABALAP//CAAEAAcAAAAMAP//CAAFAAcAAAAMAAAACAAEAAQAABAMAAkACAAEAAUAABAMAAgACAAEAAQAABAMAAcACAAEAAQAADAMAAMACAAEAAcAABAMAAIACAAEAAYAABAMAAEACAAEAAUAABAMAAQACAAEAAcAADAMAAUACAAEAAYAADAMAAYACAAEAAUAADAMAAoACAAEAAYAABAMAAwACAAJAAQAAAAAAAoACAAGAAUAACD//woACAAFAAUAACD//wkACAAFAAYAACD//wsACAAFAAQAACAAAAkACAAGAAYAACD//wYACAAFAAYAAAD//wUACAAFAAUAAAD//wQACAAFAAQAAAAAAAMACAAGAAQAACAAAAIACAAGAAUAACAAAAEACAAGAAYAACD//wAACAAFAAcAACD/////CAAFAAcAAAD//wEACAAFAAYAACD//wIACAAFAAUAACAAAAQACAAGAAQAAAAAAAUACAAGAAUAAAAAAAYACAAGAAYAAAD//wMACAAFAAQAACD+//z/CAAEAAQAAAD///z/CAAFAAQAAAAAAPz/CAAGAAQAAAAHAP7/CAAKAAYAABAIAP7/CAAJAAYAABAJAP7/CAAIAAYAABAKAP7/CAAHAAYAABALAP7/CAAEAAYAAAAMAP7/CAAFAAYAAAAMAP3/CAAFAAUAAAALAP3/CAAEAAUAAAALAPz/CAAEAAQAAAAKAPz/CAAHAAQAABAJAPz/CAAIAAQAABAIAPz/CAAJAAQAABAHAPz/CAAKAAQAABAGAPz/CAALAAQAABAFAPz/CAALAAQAAAAEAPz/CAAKAAQAAAADAPz/CAAJAAQAAAACAPz/CAAIAAQAAAABAPz/CAAHAAQAAAD///3/CAAFAAUAAAD///7/CAAFAAYAAAD+//7/CAAEAAYAAAD+//3/CAAEAAUAAAD+////CAAEAAcAAAD+/wAACAAEAAcAACD+/wEACAAEAAYAACD+/wIACAAEAAUAACD+/wMACAAEAAQAACD+/wQACAAEAAQAAAD+/wUACAAEAAUAAAD+/wYACAAEAAYAAAD//wcACAAFAAcAAAD//wgACAAFAAcAACD+/wgACAAEAAcAACD+/wkACAAEAAYAACD+/wcACAAEAAcAAAAAAP3/CAAGAAUAAAABAP3/CAAHAAUAAAACAP3/CAAIAAUAAAADAP3/CAAJAAUAAAAEAP3/CAAKAAUAAAAFAP3/CAALAAUAAAAGAP3/CAALAAUAABAKAAsACAAHAAMAAAAKAAoACAAHAAIAAAAKAAkACAAHAAEAAAAKAAgACAAHAAAAAAAKAAcACAAHAAAAACAKAAYACAAHAAEAACAKAAUACAAHAAIAACAKAAQACAAHAAMAACAKAAMACAAHAAMAAAAKAAIACAAHAAIAAAAKAAEACAAHAAEAAAAKAAAACAAHAAAAAAAKAP//CAAHAAcAABAJAAsACAAGAAMAAAAJAAoACAAGAAIAAAAJAAkACAAGAAEAAAAJAAgACAAGAAAAAAAJAAcACAAGAAAAACAJAAYACAAGAAEAACAJAAUACAAGAAIAACAJAAQACAAGAAMAACAJAAMACAAGAAMAAAAJAAIACAAGAAIAAAAJAAEACAAGAAEAAAAJAAAACAAGAAAAAAAJAP//CAAIAAcAABAIAAsACAAFAAMAAAAIAAoACAAFAAIAAAAIAAkACAAFAAEAAAAIAAgACAAFAAAAAAAIAAcACAAFAAAAACAIAAYACAAFAAEAACAIAAUACAAFAAIAACAIAAQACAALAAMAAAAIAAMACAALAAIAAAAIAAIACAAFAAIAAAAIAAEACAALAAEAAAAIAAAACAALAAAAAAAIAP//CAAJAAcAABAHAAsACAADAAMAAAAHAAoACAADAAIAAAAHAAkACAADAAEAAAAHAAgACAADAAAAAAAHAAcACAADAAIAAAAHAAYACAADAAEAAAAHAAUACAADAAAAAAAHAAQACAAKAAMAAAAHAAMACAAKAAIAAAAHAAIACAADAAIAAAAHAAEACAAKAAEAAAAHAAAACAAKAAAAAAAHAP//CAAKAAcAABAGAAsACAACAAAAADAGAAoACAACAAEAADAGAAkACAACAAIAADAGAAgACAACAAMAADAGAAcACAACAAMAABAGAAYACAACAAIAABAGAAUACAACAAEAABAGAAQACAAJAAMAAAAGAAMACAAJAAIAAAAGAAIACAACAAEAADAGAAEACAAJAAEAAAAGAAAACAAJAAAAAAAGAP//CAALAAcAABAFAAsACAADAAAAADAFAAoACAADAAEAADAFAAkACAADAAIAADAFAAgACAADAAMAADAFAAcACAADAAMAABAFAAYACAADAAIAABAFAAUACAADAAEAABAFAAQACAADAAAAABAFAAMACAADAAAAADAFAAIACAADAAEAADAFAAEACAADAAIAADAFAAAACAADAAMAADAFAP//CAALAAcAAAAEAAsACAADAAMAAAAEAAoACAADAAIAAAAEAAkACAADAAEAAAAEAAgACAADAAAAAAAEAAcACAADAAAAACAEAAYACAADAAEAACAEAAUACAADAAIAACAEAAQACAAKAAMAAAAEAAMACAAKAAIAAAAEAAIACAADAAIAAAAEAAEACAAKAAEAAAAEAAAACAAKAAAAAAAEAP//CAAKAAcAAAADAAsACAACAAMAAAADAAoACAACAAIAAAADAAkACAACAAEAAAADAAgACAACAAAAAAADAAcACAACAAAAACADAAYACAACAAEAACADAAUACAACAAIAACADAAQACAAJAAMAAAADAAMACAAJAAIAAAADAAIACAACAAIAAAADAAEACAAJAAEAAAADAAAACAAJAAAAAAADAP//CAAJAAcAAAACAAsACAABAAMAAAACAAoACAABAAIAAAACAAkACAABAAEAAAACAAgACAABAAAAAAACAAcACAABAAAAACACAAYACAABAAEAACACAAUACAABAAIAACACAAQACAAIAAMAAAACAAMACAAIAAIAAAACAAIACAABAAIAAAACAAEACAAIAAEAAAACAAAACAAIAAAAAAACAP//CAAIAAcAAAABAAsACAAAAAMAAAABAAoACAAAAAIAAAABAAkACAAAAAEAAAABAAgACAAAAAAAAAABAAcACAAAAAAAACABAAYACAAAAAEAACABAAUACAAAAAIAACABAAQACAAAAAMAACABAAMACAAAAAMAAAABAAIACAAAAAIAAAABAAEACAAAAAEAAAABAAAACAAAAAAAAAABAP//CAAHAAcAAAAAAAAACAAGAAcAACAAAP//CAAGAAcAAAAAAAcACAAGAAcAAAAAAAgACAAGAAcAACAAAAsACAAGAAcAACA=")
 tile_set = ExtResource("3_3w1kr")
 
-[node name="TopLayer" type="TileMapLayer" parent="TileMap"]
+[node name="TopLayer" type="TileMapLayer" parent="TileMap" groups=["Level-One-Persist"]]
 z_index = 1
 y_sort_enabled = true
 use_parent_material = true
 tile_map_data = PackedByteArray("AAABAP7/AgAAAAUAAAAHAP7/AgAGAAcAAAAFAP7/AgAGAAcAAAADAP7/AgAGAAcAAAAJAP7/AgAAAAUAAAAJAAAAAgAAAAUAAAAJAAIAAgAAAAUAAAAJAAQAAgAAAAUAAAAJAAYAAgAAAAUAAAAJAAgAAgAAAAUAAAABAAgAAgAAAAUAAAABAAYAAgAAAAUAAAABAAQAAgAAAAUAAAABAAIAAgAAAAUAAAABAAAAAgAAAAUAAAA=")
 tile_set = ExtResource("3_3w1kr")
 
-[node name="player" parent="." instance=ExtResource("4_5k44d")]
+[node name="player" parent="." groups=["Level-One-Persist"] instance=ExtResource("4_5k44d")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(83, 186)
 collision_layer = 1
 collision_mask = 1
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="player" groups=["Level-One-Persist"]]
 zoom = Vector2(2, 2)
 
-[node name="Door" parent="." instance=ExtResource("5_ul4qa")]
+[node name="Door" parent="." groups=["Level-One-Persist"] instance=ExtResource("5_ul4qa")]
 position = Vector2(89, 1)
 scale = Vector2(7, 1)
 
-[node name="PressurePlate" parent="." instance=ExtResource("4_rtj3n")]
+[node name="PressurePlate" parent="." groups=["Level-One-Persist"] instance=ExtResource("4_rtj3n")]
 position = Vector2(88, 152)
 
 [node name="LevelOne-One" type="Sprite2D" parent="."]
@@ -57,83 +57,83 @@ position = Vector2(96, 85)
 scale = Vector2(0.15, 0.17086)
 texture = ExtResource("6_684cg")
 
-[node name="MoveableBox(Tile)" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
+[node name="MoveableBox(Tile)" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["Level-One-Persist"] instance=ExtResource("6_0g8cy")]
 z_index = 1
 position = Vector2(104, 56)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
-[node name="MoveableBox(Tile)2" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
+[node name="MoveableBox(Tile)2" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["Level-One-Persist"] instance=ExtResource("6_0g8cy")]
 z_index = 1
 position = Vector2(88, 56)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
-[node name="MoveableBox(Tile)3" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
+[node name="MoveableBox(Tile)3" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["Level-One-Persist"] instance=ExtResource("6_0g8cy")]
 z_index = 1
 position = Vector2(72, 56)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
-[node name="MoveableBox(Tile)4" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
+[node name="MoveableBox(Tile)4" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["Level-One-Persist"] instance=ExtResource("6_0g8cy")]
 z_index = 1
 position = Vector2(56, 72)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
-[node name="MoveableBox(Tile)5" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
+[node name="MoveableBox(Tile)5" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["Level-One-Persist"] instance=ExtResource("6_0g8cy")]
 z_index = 1
 position = Vector2(120, 72)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
-[node name="MoveableBox(Tile)8" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
+[node name="MoveableBox(Tile)8" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["Level-One-Persist"] instance=ExtResource("6_0g8cy")]
 z_index = 1
 position = Vector2(56, 40)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
-[node name="MoveableBox(Tile)9" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
+[node name="MoveableBox(Tile)9" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["Level-One-Persist"] instance=ExtResource("6_0g8cy")]
 z_index = 1
 position = Vector2(104, 40)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
-[node name="MoveableBox(Tile)10" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
+[node name="MoveableBox(Tile)10" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["Level-One-Persist"] instance=ExtResource("6_0g8cy")]
 z_index = 1
 position = Vector2(72, 40)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
-[node name="MoveableBox(Tile)11" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
+[node name="MoveableBox(Tile)11" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["Level-One-Persist"] instance=ExtResource("6_0g8cy")]
 z_index = 1
 position = Vector2(120, 40)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
-[node name="MoveableBox(Tile)12" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
+[node name="MoveableBox(Tile)12" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["Level-One-Persist"] instance=ExtResource("6_0g8cy")]
 z_index = 1
 position = Vector2(88, 88)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
-[node name="MoveableBox(Tile)13" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
+[node name="MoveableBox(Tile)13" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["Level-One-Persist"] instance=ExtResource("6_0g8cy")]
 z_index = 1
 position = Vector2(104, 88)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
-[node name="MoveableBox(Tile)14" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
+[node name="MoveableBox(Tile)14" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["Level-One-Persist"] instance=ExtResource("6_0g8cy")]
 z_index = 1
 position = Vector2(72, 88)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
-[node name="MoveableBox(Tile)6" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_0g8cy")]
+[node name="MoveableBox(Tile)6" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["Level-One-Persist"] instance=ExtResource("6_0g8cy")]
 z_index = 1
 position = Vector2(88, 120)
 mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
-[node name="NPC_0" parent="." instance=ExtResource("7_dj25b")]
+[node name="NPC_0" parent="." groups=["Level-One-Persist"] instance=ExtResource("7_dj25b")]
 position = Vector2(56, 160)
