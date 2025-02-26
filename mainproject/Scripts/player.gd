@@ -25,11 +25,7 @@ func _ready():
 
 func _NPC_focus():
 	var NPC_Cast = [
-		get_node("../NPC_0/Area2D"), 
-		get_node("../NPC_1/Area2D"), 
-		get_node("../NPC_2/Area2D"), 
-		get_node("../NPC_3/Area2D"),
-		get_node("../NPC_4/Area2D")
+		get_node("../NPC_0/Area2D")
 	]
 	if NPC_Cast:
 		for item in NPC_Cast.size():
