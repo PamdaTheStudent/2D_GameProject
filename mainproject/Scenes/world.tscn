@@ -38,7 +38,7 @@ tile_set = ExtResource("3_3w1kr")
 [node name="player" parent="." groups=["Level-One-Persist"] instance=ExtResource("4_5k44d")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(83, 186)
+position = Vector2(83, 185)
 collision_layer = 1
 collision_mask = 1
 
@@ -137,11 +137,13 @@ mainTileMap = NodePath("../TileMap/1")
 CollisionTileMap = NodePath("../TileMap/GridCollision")
 
 [node name="NPC_0" parent="." groups=["Level-One-Persist"] instance=ExtResource("7_dj25b")]
-position = Vector2(56, 160)
+position = Vector2(56, 158)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -79.0
+offset_top = 20.0
+offset_right = -39.0
+offset_bottom = 60.0
 script = ExtResource("8_ohhsu")
