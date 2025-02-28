@@ -11,7 +11,7 @@ var targetBox
 var cutscene = 0
 
 func _ready():
-	$AnimatedSprite2D.play("idle_down")
+	$AnimatedSprite2D.play("idle")
 	
 func _physics_process(delta):
 	player_movement(delta)
