@@ -451,7 +451,7 @@ offset_bottom = 255.0
 color = Color(1, 1, 1, 0)
 
 [node name="NPC" parent="." instance=ExtResource("6_682lm")]
-position = Vector2(43, 77)
+position = Vector2(34, 67)
 scale = Vector2(4, 4)
 
 [connection signal="body_entered" from="Finish" to="Finish" method="_on_body_entered"]
