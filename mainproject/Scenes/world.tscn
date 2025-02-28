@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://gwy1vccir4un"]
+[gd_scene load_steps=11 format=4 uid="uid://gwy1vccir4un"]
 
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_tphy5"]
 [ext_resource type="TileSet" uid="uid://lyk7msgb356n" path="res://Sprites/world.tres" id="3_3w1kr"]
+[ext_resource type="AudioStream" uid="uid://cq32a508fa6dh" path="res://Sounds/puzzle-draft.mp3" id="3_ixjbr"]
 [ext_resource type="PackedScene" uid="uid://1x63y7s53ti4" path="res://Scenes/player.tscn" id="4_5k44d"]
 [ext_resource type="PackedScene" uid="uid://cpdy8ijjhyb" path="res://Scenes/pressurePlate.tscn" id="4_rtj3n"]
 [ext_resource type="PackedScene" uid="uid://cpux7s5bdo8rf" path="res://Scenes/door.tscn" id="5_ul4qa"]
@@ -11,6 +13,7 @@
 
 [node name="World" type="Node2D" groups=["Level-One-Persist"]]
 y_sort_enabled = true
+script = ExtResource("1_tphy5")
 
 [node name="TileMap" type="Node2D" parent="." groups=["Level-One-Persist"]]
 y_sort_enabled = true
@@ -34,6 +37,9 @@ y_sort_enabled = true
 use_parent_material = true
 tile_map_data = PackedByteArray("AAABAP7/AgAAAAUAAAAHAP7/AgAGAAcAAAAFAP7/AgAGAAcAAAADAP7/AgAGAAcAAAAJAP7/AgAAAAUAAAAJAAAAAgAAAAUAAAAJAAIAAgAAAAUAAAAJAAQAAgAAAAUAAAAJAAYAAgAAAAUAAAAJAAgAAgAAAAUAAAABAAgAAgAAAAUAAAABAAYAAgAAAAUAAAABAAQAAgAAAAUAAAABAAIAAgAAAAUAAAABAAAAAgAAAAUAAAA=")
 tile_set = ExtResource("3_3w1kr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ixjbr")
 
 [node name="player" parent="." groups=["Level-One-Persist"] instance=ExtResource("4_5k44d")]
 z_index = 1

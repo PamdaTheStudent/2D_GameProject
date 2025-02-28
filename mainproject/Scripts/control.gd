@@ -9,18 +9,16 @@ func _ready() -> void:
 	database = SQLite.new()
 	database.path = "res://boxes.db"
 	database.open_db()
-	var save_nodes = get_tree().get_nodes_in_group("savable")
+	var save_nodes = get_tree().get_nodes_in_group("save_node")
 	database.delete_rows("block","*")
-	for Node in save_nodes:
-		named = Node.name
-		xSave = Node.current_tile.x
-		
-		ySave = Node.current_tile.y
-		var data = {"Name":named,"Level":1,"x":xSave,"y":ySave}
-		database.insert_row("block",data)
-		
-	
-	pass # Replace with function body.
+	#for Node in save_nodes:
+		#named = Node.name
+		#xSave = Node.current_tile.x
+		#
+		#ySave = Node.current_tile.y
+		#var data = {"Name":named,"Level":1,"x":xSave,"y":ySave}
+		#database.insert_row("block",data)
+		#print(data)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

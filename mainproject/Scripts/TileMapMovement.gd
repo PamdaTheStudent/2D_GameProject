@@ -13,11 +13,13 @@ var moving
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$AudioStreamPlayer2D.request_ready()
 	current_tile = mainTileMap.local_to_map(global_position)
 	global_position = mainTileMap.map_to_local(current_tile)
 
 
 func move(direction: Vector2):
+	$AudioStreamPlayer2D.play()
 	current_tile = mainTileMap.local_to_map(global_position)
 	var target_tile: Vector2i =  Vector2i(
 		current_tile.x + direction.x,
