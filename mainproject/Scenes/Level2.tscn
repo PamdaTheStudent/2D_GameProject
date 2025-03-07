@@ -49,7 +49,7 @@ scale = Vector2(7, 1)
 [node name="PressurePlate" parent="." instance=ExtResource("4_7kx8a")]
 position = Vector2(-130, 142)
 
-[node name="MoveableBox(Tile)" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("5_4oo5x")]
+[node name="MoveableBox(Tile)" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["save_node"] instance=ExtResource("5_4oo5x")]
 z_index = 1
 position = Vector2(104, 232)
 mainTileMap = NodePath("../TileMap/1")
