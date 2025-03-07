@@ -1,0 +1,8 @@
+res://Scenes/world.tscn
+res://Sprites/world.tres
+res://Scripts/moveable_box(grid).gd
+res://Scripts/TileMapMovement.gd
+res://Scenes/moveableBox.tscn
+res://Scenes/player.tscn
+res://Scenes/moveableBox(TileMap).tscn
+res://Scripts/player.gd

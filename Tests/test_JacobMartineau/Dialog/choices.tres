@@ -1,0 +1,115 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://2cotfh732cqd"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_3pahp"]
+
+[resource]
+script = ExtResource("1_3pahp")
+starts = {
+"choicesNPC": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-220, -240),
+"start_id": "choicesNPC"
+},
+"1_1": {
+"dialogue": "You don't actually think you can escape, do you?",
+"offset": Vector2(120, -280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": "Yes"
+},
+1: {
+"condition": {},
+"link": &"1_3",
+"text": "No"
+}
+},
+"size": Vector2(300, 290),
+"speaker": 0
+},
+"1_2": {
+"dialogue": "You always were like that. Think you're better than us, for not having given up yet?",
+"offset": Vector2(616, -318),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_3": {
+"dialogue": "Then why are you still trying to solve all these puzzles??",
+"offset": Vector2(620, -20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_4": {
+"dialogue": "We've tried everything we could think of to escape, short of playing the stupid games of those star people!",
+"offset": Vector2(1080, -320),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_5": {
+"dialogue": "You think you can outsmart them? What a joke!",
+"offset": Vector2(1480, -320),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_6": {
+"dialogue": "Oh, I get it. You're just bored. Just need something to pass the time.",
+"offset": Vector2(1074.2, 12.3787),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_7": {
+"dialogue": "So long as the star people have left us games to play, might as well play them, right?",
+"offset": Vector2(1498.2, 23.3787),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+}
+}
+variables = {}
+strays = Array[String]([])
+characters = "res://Dialog/characters.tres"
