@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c7v8yvhp2wyqo"]
+
+[ext_resource type="FontFile" uid="uid://cxlmcp5twe1e1" path="res://Dialog/PixelifySans-VariableFont_wght.ttf" id="1_a7xx4"]
+
+[resource]
+default_font = ExtResource("1_a7xx4")
+default_font_size = 10
