@@ -1,0 +1,174 @@
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://clpv7d5vp83vt"]
+
+[ext_resource type="Texture2D" uid="uid://dpjlq3g05h0la" path="res://Sprites/tilesets/plains.png" id="1_0ahio"]
+[ext_resource type="Texture2D" uid="uid://pjmd0t4r7lrf" path="res://Sprites/tilesets/grass.png" id="2_2p8cj"]
+[ext_resource type="Texture2D" uid="uid://e205ishnuujd" path="res://Sprites/objects/objects.png" id="3_2s0fw"]
+[ext_resource type="Texture2D" uid="uid://y6kss432yl2w" path="res://Sprites/RedTransparent.png" id="4_sra3b"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38ia5"]
+texture = ExtResource("1_0ahio")
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+1:0/next_alternative_id = 2
+1:0/0 = 0
+1:0/0/custom_data_0 = true
+2:0/next_alternative_id = 2
+2:0/0 = 0
+2:0/0/custom_data_0 = true
+3:0/next_alternative_id = 2
+3:0/0 = 0
+3:0/0/custom_data_0 = true
+4:0/0 = 0
+4:0/0/custom_data_0 = true
+5:0/0 = 0
+5:0/0/custom_data_0 = true
+0:1/0 = 0
+0:1/0/custom_data_0 = true
+1:1/next_alternative_id = 2
+1:1/0 = 0
+1:1/0/custom_data_0 = true
+2:1/next_alternative_id = 2
+2:1/0 = 0
+2:1/0/custom_data_0 = true
+3:1/next_alternative_id = 2
+3:1/0 = 0
+3:1/0/custom_data_0 = true
+4:1/0 = 0
+4:1/0/custom_data_0 = true
+5:1/0 = 0
+5:1/0/custom_data_0 = true
+0:2/0 = 0
+0:2/0/custom_data_0 = true
+1:2/next_alternative_id = 2
+1:2/0 = 0
+1:2/0/custom_data_0 = true
+2:2/next_alternative_id = 2
+2:2/0 = 0
+2:2/0/custom_data_0 = true
+3:2/next_alternative_id = 2
+3:2/0 = 0
+3:2/0/custom_data_0 = true
+4:2/0 = 0
+4:2/0/custom_data_0 = true
+5:2/0 = 0
+5:2/0/custom_data_0 = true
+0:3/0 = 0
+0:3/0/custom_data_0 = true
+1:3/0 = 0
+1:3/0/custom_data_0 = true
+2:3/0 = 0
+2:3/0/custom_data_0 = true
+3:3/0 = 0
+3:3/0/custom_data_0 = true
+0:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+3:5/0 = 0
+3:5/0/custom_data_0 = true
+3:4/0 = 0
+3:4/0/custom_data_0 = true
+2:4/0 = 0
+2:4/0/custom_data_0 = true
+2:5/0 = 0
+2:5/0/custom_data_0 = true
+1:4/0 = 0
+1:4/0/custom_data_0 = true
+1:5/0 = 0
+1:5/0/custom_data_0 = true
+2:6/0 = 0
+1:6/0 = 0
+3:6/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4w6lc"]
+texture = ExtResource("2_2p8cj")
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rl42n"]
+texture = ExtResource("3_2s0fw")
+0:5/size_in_atlas = Vector2i(3, 4)
+0:5/0 = 0
+0:5/0/y_sort_origin = 25
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(14.0379, 5.12074, 14.2145, 26.31, -15.0973, 25.7803, -15.2739, 5.82705)
+6:7/size_in_atlas = Vector2i(2, 2)
+6:7/0 = 0
+6:7/0/y_sort_origin = 10
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(14.0379, 5.12074, 15.8037, 15.7154, -15.2739, 15.8919, -15.2739, 5.82705)
+8:6/size_in_atlas = Vector2i(2, 3)
+8:6/0 = 0
+8:6/0/y_sort_origin = 15
+8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(8.74057, 23.3082, 9.2703, 9.00544, -8, 8, -8.56399, 22.7785)
+10:7/size_in_atlas = Vector2i(2, 2)
+10:7/0 = 0
+10:7/0/y_sort_origin = 5
+10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -6.35678, 9.2703, 9.00544, -8, 8, -8, -6.35678)
+11:2/size_in_atlas = Vector2i(1, 2)
+11:2/0 = 0
+11:2/0/y_sort_origin = -11
+11:2/0/custom_data_0 = true
+10:0/size_in_atlas = Vector2i(2, 1)
+10:0/0 = 0
+10:0/0/y_sort_origin = -4
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.18718, 5.83363, 6, -0.25, -6.27557, 0.0883884, -6.01041, 6.18718, -0.353554, 6.36396)
+5:0/0 = 0
+5:0/0/y_sort_origin = 2
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.18718, 5.83363, 6, -0.25, -6.27557, 0.0883884, -6.01041, 6.18718, -0.353554, 6.36396)
+0:0/0 = 0
+0:0/0/y_sort_origin = 3
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(6, 2.75, 6, -0.25, -6.27557, 0.0883884, -6.18718, 2.56326, -0.0883884, 5.48008)
+0:1/0 = 0
+0:1/0/y_sort_origin = 3
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 5.75, 8, 8, -3, -0.25, -8, -8, -3.25, -8, -1.25)
+1:4/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2qur"]
+texture = ExtResource("4_sra3b")
+0:0/0 = 0
+0:0/0/custom_data_1 = true
+
+[resource]
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "walkable"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "collision"
+custom_data_layer_1/type = 1
+sources/0 = SubResource("TileSetAtlasSource_38ia5")
+sources/1 = SubResource("TileSetAtlasSource_4w6lc")
+sources/2 = SubResource("TileSetAtlasSource_rl42n")
+sources/3 = SubResource("TileSetAtlasSource_i2qur")
