@@ -1,6 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ::res://::1741389481
 default_env.tres::Environment::8126756863714071075::1741386703::0::1::::<><>::
 early_level_ground.tres::TileSet::5643006727050874775::1741389481::0::1::::<><>::uid://cpps0vy6fjm33::::res://Sprites/test_tile_things-Sheet.png<>uid://dfyvk362kjytm::::res://Sprites/tilesets/early_level_ground.png<>uid://cv5kkh0i8coog::::res://Sprites/PinkTransparent.png<>uid://bvfwnio5864kr::::res://Sprites/tilesets/early_level_ground2.png
@@ -208,6 +209,8 @@ wooden_door.png::CompressedTexture2D::2910325049430436521::1741386703::174138913
 wooden_door_b.png::CompressedTexture2D::4725776783261312998::1741386703::1741389134::1::::<><>::
 =======
 <<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 ::res://::1741385982
@@ -623,6 +626,9 @@ wooden_door.png::CompressedTexture2D::2910325049430436521::1741390303::174164189
 wooden_door_b.png::CompressedTexture2D::4725776783261312998::1741390303::1741641899::1::::<><>::
 >>>>>>> Stashed changes
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
