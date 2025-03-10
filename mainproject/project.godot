@@ -13,15 +13,6 @@ config_version=5
 config/name="Godot"
 run/main_scene="res://Scenes/tutorial_level.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-config/icon="res://icon.svg"
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
 [autoload]
 
@@ -58,10 +49,3 @@ MoveObject={
 
 textures/canvas_textures/default_texture_filter=0
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes

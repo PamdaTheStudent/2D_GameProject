@@ -79,7 +79,6 @@ shape = SubResource("RectangleShape2D_swl3l")
 [node name="CanvasLayer" type="CanvasLayer" parent="Area2D"]
 
 [node name="DialogueBox" type="Panel" parent="Area2D/CanvasLayer"]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
