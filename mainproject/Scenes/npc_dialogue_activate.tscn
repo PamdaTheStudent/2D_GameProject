@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://dsrsjxyrqk0ij"]
+
+[ext_resource type="Script" path="res://Scripts/npc_dialogue_activate.gd" id="1_85btj"]
+[ext_resource type="Script" path="res://Scripts/npc_animation.gd" id="1_a861e"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="3_776td"]
+[ext_resource type="Theme" uid="uid://c7v8yvhp2wyqo" path="res://game_theme.tres" id="3_pfp48"]
+[ext_resource type="Resource" uid="uid://c540g315qq7eb" path="res://Dialog/dialogue_box.tres" id="4_vnseq"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="5_wsq3b"]
+[ext_resource type="Texture2D" uid="uid://b4mg0icgg0u85" path="res://Sprites/play.png" id="7_ip0vb"]
+[ext_resource type="SpriteFrames" uid="uid://dotwwuro00jwf" path="res://Sprites/GreenSpritesNPC.tres" id="8_gi0js"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xiwtc"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swl3l"]
+size = Vector2(16, 16)
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_lm54p"]
+script = ExtResource("5_wsq3b")
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_a861e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xiwtc")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_85btj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_swl3l")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Area2D"]
+
+[node name="DialogueBox" type="Panel" parent="Area2D/CanvasLayer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -142.0
+offset_top = -105.0
+offset_right = 178.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_pfp48")
+script = ExtResource("3_776td")
+data = ExtResource("4_vnseq")
+start_id = "tutorialNPC"
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_lm54p")])
+next_icon = ExtResource("7_ip0vb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 1)
+scale = Vector2(0.238095, 0.21875)
+sprite_frames = ExtResource("8_gi0js")
+animation = &"idle_down"
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
