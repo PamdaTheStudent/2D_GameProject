@@ -16,4 +16,4 @@ func _on_body_entered(body: Node2D) -> void:
 	elif entered == 1:
 		TransitionScreen.transition(true)
 		await TransitionScreen.on_transition_finished
-		get_tree().change_scene_to_file("res://Scenes/world.tscn")
+		get_tree().change_scene_to_file("res://Scenes/level_one.tscn")

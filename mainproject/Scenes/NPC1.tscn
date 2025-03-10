@@ -4,7 +4,11 @@
 [ext_resource type="Script" path="res://Scripts/npc_dialogue.gd" id="2_fqjch"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="3_776td"]
 [ext_resource type="Theme" uid="uid://c7v8yvhp2wyqo" path="res://game_theme.tres" id="3_pfp48"]
+<<<<<<<< HEAD:Tests/test_JacobMartineau/Scenes/NPC1.tscn
 [ext_resource type="Resource" uid="uid://c540g315qq7eb" path="res://Dialog/dialogue_box.tres" id="4_vnseq"]
+========
+[ext_resource type="Resource" uid="uid://c540g315qq7eb" path="res://Dialog/NPC1.tres" id="4_vnseq"]
+>>>>>>>> main:mainproject/Scenes/NPC1.tscn
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="5_wsq3b"]
 [ext_resource type="Texture2D" uid="uid://bhwicswjm07r" path="res://Sprites/play.png" id="7_ip0vb"]
 [ext_resource type="Texture2D" uid="uid://77d2y27ruobo" path="res://Sprites/characters/NPC1-sheet.png" id="8_vmy2l"]
@@ -108,3 +112,4 @@ animation = &"wave"
 [connection signal="Talking" from="Area2D" to="." method="_on_area_2d_talking"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="dialogue_ended" from="Area2D/CanvasLayer/DialogueBox" to="Area2D" method="_on_dialogue_box_dialogue_ended"]
