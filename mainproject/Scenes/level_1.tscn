@@ -1,36 +1,34 @@
-[gd_scene load_steps=14 format=4 uid="uid://b73eyu2tdawji"]
+[gd_scene load_steps=21 format=4 uid="uid://b73eyu2tdawji"]
 
 [ext_resource type="TileSet" uid="uid://cmnrq41gip68b" path="res://early_level_ground.tres" id="1_evi0p"]
+[ext_resource type="Texture2D" uid="uid://cphm8pdk353y0" path="res://Sprites/objects/tunnel_light_mask.png" id="2_xrdnt"]
+[ext_resource type="Texture2D" uid="uid://y6kss432yl2w" path="res://Sprites/RedTransparent.png" id="3_chwpn"]
 [ext_resource type="Script" uid="uid://qqpm2f23pxiy" path="res://Scenes/finish_1.gd" id="3_evi0p"]
+[ext_resource type="Script" uid="uid://bk3xh60sdoddm" path="res://Scenes/start_block.gd" id="4_af3po"]
 [ext_resource type="PackedScene" uid="uid://1x63y7s53ti4" path="res://Scenes/player.tscn" id="4_wrinw"]
 [ext_resource type="Texture2D" uid="uid://jbbvg8d1upl3" path="res://Sprites/objects/light_mask.png" id="5_chwpn"]
 [ext_resource type="PackedScene" uid="uid://d4hdlnqb2ixew" path="res://Scenes/moveableBox(TileMap).tscn" id="6_af3po"]
-[ext_resource type="Script" uid="uid://df56l8t7mln4s" path="res://Scenes/block_appear.gd" id="6_lsmp6"]
+[ext_resource type="Script" uid="uid://bu4lyer6dre5y" path="res://Scenes/end.gd" id="6_lsmp6"]
 [ext_resource type="Texture2D" uid="uid://cpps0vy6fjm33" path="res://Sprites/test_tile_things-Sheet.png" id="7_xrdnt"]
+[ext_resource type="Script" uid="uid://dyco2vrlejgcx" path="res://Scenes/start.gd" id="9_af3po"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uy8f0"]
+texture = ExtResource("3_chwpn")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_6r07y"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_uy8f0")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40xya"]
-size = Vector2(103, 70)
+size = Vector2(116, 70)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrdnt"]
 size = Vector2(138, 83)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrinw"]
 size = Vector2(118, 74.5)
-
-[sub_resource type="Animation" id="Animation_wrinw"]
-resource_name = "block_appear"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_chwpn"]
 length = 0.001
@@ -47,10 +45,41 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_wrinw"]
+resource_name = "block_appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.56),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lsmp6"]
+resource_name = "block_disappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_af3po"]
 _data = {
 &"RESET": SubResource("Animation_chwpn"),
-&"block_appear": SubResource("Animation_wrinw")
+&"block_appear": SubResource("Animation_wrinw"),
+&"block_disappear": SubResource("Animation_lsmp6")
 }
 
 [node name="Node2D" type="Node2D"]
@@ -60,7 +89,7 @@ _data = {
 [node name="Collision" type="TileMapLayer" parent="Tile_map"]
 
 [node name="Ground" type="TileMapLayer" parent="Tile_map"]
-tile_map_data = PackedByteArray("AAAAAAgAAQABAAEAAAABAAgAAQABAAEAAAACAAgAAQABAAEAAAADAAgAAQABAAEAAAAEAAgAAQABAAEAAAAFAAgAAQABAAEAAAAGAAgAAwABAAEAAAAGAAcAAQABAAEAAAAGAAYAAQABAAEAAAAGAAUAAQABAAEAAAAGAAQAAQABAAEAAAAGAAMAAQABAAEAAAAGAAIAAQABAAEAAAAGAAEAAQABAAEAAAAGAAAAAQABAAEAAAAFAAAAAQABAAEAAAAEAAAAAQABAAEAAAADAAAAAQABAAEAAAACAAAAAQABAAEAAAABAAAAAQABAAEAAAAAAAAAAQABAAEAAAAAAAEAAQABAAEAAAAAAAIAAQABAAEAAAAAAAMAAQABAAEAAAAAAAQAAQABAAEAAAAAAAUAAQABAAEAAAAAAAYAAQABAAEAAAAAAAcAAQABAAEAAAABAAcAAQABAAEAAAABAAYAAQABAAEAAAABAAUAAQABAAEAAAABAAQAAQABAAEAAAABAAMAAQABAAEAAAABAAIAAQABAAEAAAABAAEAAQABAAEAAAACAAEAAQABAAEAAAACAAIAAQABAAEAAAACAAMAAQABAAEAAAACAAQAAQABAAEAAAACAAUAAQABAAEAAAACAAYAAQABAAEAAAACAAcAAQABAAEAAAADAAcAAQABAAEAAAADAAYAAQABAAEAAAADAAUAAQABAAEAAAADAAQAAQABAAEAAAADAAMAAQABAAEAAAADAAIAAQABAAEAAAADAAEAAQABAAEAAAAEAAEAAQABAAEAAAAEAAIAAQABAAEAAAAEAAMAAQABAAEAAAAEAAQAAQABAAEAAAAEAAUAAQABAAEAAAAEAAYAAQABAAEAAAAEAAcAAQABAAEAAAAFAAcAAQABAAEAAAAFAAYAAQABAAEAAAAFAAUAAQABAAEAAAAFAAQAAQABAAEAAAAFAAMAAQABAAEAAAAFAAIAAQABAAEAAAAFAAEAAQABAAEAAAD//wAAAQAAAAEAAAD//wEAAQAAAAEAAAD//wIAAQAAAAEAAAD//wMAAQAAAAEAAAD//wQAAQAAAAEAAAD//wUAAQAAAAEAAAD//wYAAQAAAAEAAAD//wcAAQAAAAEAAAD//wgAAQAAAAEAAAAAAAkAAQABAAIAAAABAAkAAQABAAIAAAACAAkAAwACAAEAAAADAAkAAQABAAEAAAAEAAkAAwABAAEAAAAFAAkAAQABAAIAAAAGAAkAAQACAAIAAAAHAAgAAQACAAIAAAAHAAcAAQACAAEAAAAHAAYAAQACAAEAAAAHAAUAAQACAAEAAAAHAAQAAQACAAEAAAAHAAMAAQACAAEAAAAHAAIAAQACAAEAAAAHAAEAAQACAAEAAAAHAAAAAQACAAEAAAAGAP//AQABAAAAAAAFAP//AQABAAAAAAAEAP//AQABAAAAAAADAP//AwABAAIAAAACAP//AQABAAEAAAABAP//AwACAAIAAAAAAP//AQABAAAAAAAHAP//AQACAAAAAAD//wkAAQAAAAIAAAD/////AQAAAAAAAAACAP7/AQABAAEAAAACAP3/AQABAAEAAAACAPz/AQABAAEAAAACAPv/AQABAAEAAAACAPr/AQABAAEAAAACAPn/AQABAAEAAAACAPj/AQABAAEAAAACAPf/AQABAAEAAAACAPb/AQABAAEAAAACAPX/AQABAAEAAAACAPT/AQABAAEAAAACAPP/AQABAAEAAAACAPL/AQABAAEAAAABAP7/AQAAAAEAAAABAP3/AQAAAAEAAAABAPz/AQAAAAEAAAABAPv/AQAAAAEAAAABAPr/AQAAAAEAAAABAPn/AQAAAAEAAAABAPj/AQAAAAEAAAABAPf/AQAAAAEAAAABAPb/AQAAAAEAAAABAPX/AQAAAAEAAAABAPT/AQAAAAEAAAABAPP/AQAAAAEAAAABAPL/AQAAAAEAAAADAP7/AQACAAEAAAADAP3/AQACAAEAAAADAPz/AQACAAEAAAADAPv/AQACAAEAAAADAPr/AQACAAEAAAADAPn/AQACAAEAAAADAPj/AQACAAEAAAADAPf/AQACAAEAAAADAPb/AQACAAEAAAADAPX/AQACAAEAAAADAPT/AQACAAEAAAADAPP/AQACAAEAAAADAPL/AQACAAEAAAADAAoAAQABAAEAAAADAAsAAQABAAEAAAADAAwAAQABAAEAAAADAA0AAQABAAEAAAADAA4AAQABAAEAAAADAA8AAQABAAEAAAADABAAAQABAAEAAAADABEAAQABAAEAAAADABIAAQABAAEAAAADABMAAQABAAEAAAADABQAAQABAAEAAAACAAoAAQAAAAEAAAACAAsAAQAAAAEAAAACAAwAAQAAAAEAAAACAA0AAQAAAAEAAAACAA4AAQAAAAEAAAACAA8AAQAAAAEAAAACABAAAQAAAAEAAAACABEAAQAAAAEAAAACABIAAQAAAAEAAAACABMAAQAAAAEAAAACABQAAQAAAAEAAAAEABQAAQACAAEAAAAEABMAAQACAAEAAAAEABIAAQACAAEAAAAEABEAAQACAAEAAAAEABAAAQACAAEAAAAEAA8AAQACAAEAAAAEAA4AAQACAAEAAAAEAA0AAQACAAEAAAAEAAwAAQACAAEAAAAEAAsAAQACAAEAAAAEAAoAAQACAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAgAAQABAAEAAAABAAgAAQABAAEAAAACAAgAAQABAAEAAAADAAgAAQABAAEAAAAEAAgAAQABAAEAAAAFAAgAAQABAAEAAAAGAAgAAwABAAEAAAAGAAcAAQABAAEAAAAGAAYAAQABAAEAAAAGAAUAAQABAAEAAAAGAAQAAQABAAEAAAAGAAMAAQABAAEAAAAGAAIAAQABAAEAAAAGAAEAAQABAAEAAAAGAAAAAQABAAEAAAAFAAAAAQABAAEAAAAEAAAAAQABAAEAAAADAAAAAQABAAEAAAACAAAAAQABAAEAAAABAAAAAQABAAEAAAAAAAAAAQABAAEAAAAAAAEAAQABAAEAAAAAAAIAAQABAAEAAAAAAAMAAQABAAEAAAAAAAQAAQABAAEAAAAAAAUAAQABAAEAAAAAAAYAAQABAAEAAAAAAAcAAQABAAEAAAABAAcAAQABAAEAAAABAAYAAQABAAEAAAABAAUAAQABAAEAAAABAAQAAQABAAEAAAABAAMAAQABAAEAAAABAAIAAQABAAEAAAABAAEAAQABAAEAAAACAAEAAQABAAEAAAACAAIAAQABAAEAAAACAAMAAQABAAEAAAACAAQAAQABAAEAAAACAAUAAQABAAEAAAACAAYAAQABAAEAAAACAAcAAQABAAEAAAADAAcAAQABAAEAAAADAAYAAQABAAEAAAADAAUAAQABAAEAAAADAAQAAQABAAEAAAADAAMAAQABAAEAAAADAAIAAQABAAEAAAADAAEAAQABAAEAAAAEAAEAAQABAAEAAAAEAAIAAQABAAEAAAAEAAMAAQABAAEAAAAEAAQAAQABAAEAAAAEAAUAAQABAAEAAAAEAAYAAQABAAEAAAAEAAcAAQABAAEAAAAFAAcAAQABAAEAAAAFAAYAAQABAAEAAAAFAAUAAQABAAEAAAAFAAQAAQABAAEAAAAFAAMAAQABAAEAAAAFAAIAAQABAAEAAAAFAAEAAQABAAEAAAD//wAAAQAAAAEAAAD//wEAAQAAAAEAAAD//wIAAQAAAAEAAAD//wMAAQAAAAEAAAD//wQAAQAAAAEAAAD//wUAAQAAAAEAAAD//wYAAQAAAAEAAAD//wcAAQAAAAEAAAD//wgAAQAAAAEAAAAAAAkAAQABAAIAAAABAAkAAQABAAIAAAACAAkAAwACAAEAAAADAAkAAQABAAEAAAAEAAkAAwABAAEAAAAFAAkAAQABAAIAAAAGAAkAAQACAAIAAAAHAAgAAQACAAIAAAAHAAcAAQACAAEAAAAHAAYAAQACAAEAAAAHAAUAAQACAAEAAAAHAAQAAQACAAEAAAAHAAMAAQACAAEAAAAHAAIAAQACAAEAAAAHAAEAAQACAAEAAAAHAAAAAQACAAEAAAAGAP//AQABAAAAAAAFAP//AQABAAAAAAAEAP//AQABAAAAAAADAP//AwABAAIAAAACAP//AQABAAEAAAABAP//AwACAAIAAAAAAP//AQABAAAAAAAHAP//AQACAAAAAAD//wkAAQAAAAIAAAD/////AQAAAAAAAAACAP7/AQABAAEAAAACAP3/AQABAAEAAAACAPz/AQABAAEAAAACAPv/AQABAAEAAAACAPr/AQABAAEAAAACAPn/AQABAAEAAAACAPj/AQABAAEAAAACAPf/AQABAAEAAAACAPb/AQABAAEAAAACAPX/AQABAAEAAAACAPT/AQABAAEAAAACAPP/AQABAAEAAAACAPL/AQABAAEAAAABAP7/AQAAAAEAAAABAP3/AQAAAAEAAAABAPz/AQAAAAEAAAABAPv/AQAAAAEAAAABAPr/AQAAAAEAAAABAPn/AQAAAAEAAAABAPj/AQAAAAEAAAABAPf/AQAAAAEAAAABAPb/AQAAAAEAAAABAPX/AQAAAAEAAAABAPT/AQAAAAEAAAABAPP/AQAAAAEAAAABAPL/AQAAAAEAAAADAP7/AQACAAEAAAADAP3/AQACAAEAAAADAPz/AQACAAEAAAADAPv/AQACAAEAAAADAPr/AQACAAEAAAADAPn/AQACAAEAAAADAPj/AQACAAEAAAADAPf/AQACAAEAAAADAPb/AQACAAEAAAADAPX/AQACAAEAAAADAPT/AQACAAEAAAADAPP/AQACAAEAAAADAPL/AQACAAEAAAADAAoAAQABAAEAAAADAAsAAQABAAEAAAADAAwAAQABAAEAAAADAA0AAQABAAEAAAADAA4AAQABAAEAAAADAA8AAQABAAEAAAADABAAAQABAAEAAAADABEAAQABAAEAAAADABIAAQABAAEAAAADABMAAQABAAEAAAADABQAAQABAAEAAAACAAoAAQAAAAEAAAACAAsAAQAAAAEAAAACAAwAAQAAAAEAAAACAA0AAQAAAAEAAAACAA4AAQAAAAEAAAACAA8AAQAAAAEAAAACABAAAQAAAAEAAAACABEAAQAAAAEAAAACABIAAQAAAAEAAAACABMAAQAAAAEAAAACABQAAQAAAAEAAAAEABQAAQACAAEAAAAEABMAAQACAAEAAAAEABIAAQACAAEAAAAEABEAAQACAAEAAAAEABAAAQACAAEAAAAEAA8AAQACAAEAAAAEAA4AAQACAAEAAAAEAA0AAQACAAEAAAAEAAwAAQACAAEAAAAEAAsAAQACAAEAAAAEAAoAAQACAAEAAAACAO7/AQABAAEAAAACAO//AQABAAEAAAACAPD/AQABAAEAAAACAPH/AQABAAEAAAABAO7/AQAAAAEAAAABAO//AQAAAAEAAAABAPD/AQAAAAEAAAABAPH/AQAAAAEAAAADAO7/AQACAAEAAAADAO//AQACAAEAAAADAPD/AQACAAEAAAADAPH/AQACAAEAAAACAOr/AQABAAEAAAACAOv/AQABAAEAAAACAOz/AQABAAEAAAACAO3/AQABAAEAAAADAO3/AQACAAEAAAADAOz/AQACAAEAAAADAOv/AQACAAEAAAADAOr/AQACAAEAAAABAO3/AQAAAAEAAAABAOz/AQAAAAEAAAABAOv/AQAAAAEAAAABAOr/AQAAAAEAAAA=")
 tile_set = ExtResource("1_evi0p")
 
 [node name="PlayerCollision" type="TileMapLayer" parent="Tile_map"]
@@ -70,12 +99,24 @@ position = Vector2(21.885, 21.605)
 tile_map_data = PackedByteArray("AAAFAAgAAAAAAAQAAAAGAAcAAAAEAAQAAAA=")
 tile_set = ExtResource("1_evi0p")
 
+[node name="Sprite2D" type="Sprite2D" parent="Tile_map"]
+position = Vector2(199, 1223)
+rotation = 3.14159
+scale = Vector2(1.25427, 1.15977)
+texture = ExtResource("2_xrdnt")
+
+[node name="StartBlock" type="TileMapLayer" parent="Tile_map"]
+tile_map_data = PackedByteArray("AAALACsAAAAAAAAAAAAMACoAAAAAAAAAAAANACkAAAAAAAAAAAAOACoAAAAAAAAAAAAPACsAAAAAAAAAAAAQACsAAAAAAAAAAAARACsAAAAAAAAAAAAKACsAAAAAAAAAAAAMACsAAAAAAAAAAAANACsAAAAAAAAAAAAOACsAAAAAAAAAAAANACoAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_6r07y")
+collision_enabled = false
+script = ExtResource("4_af3po")
+
 [node name="finish" type="Area2D" parent="."]
 position = Vector2(24, 43)
 script = ExtResource("3_evi0p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
-position = Vector2(138, -226)
+position = Vector2(135, -166)
 shape = SubResource("RectangleShape2D_40xya")
 
 [node name="player" parent="." instance=ExtResource("4_wrinw")]
@@ -85,98 +126,127 @@ scale = Vector2(4, 4)
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(0.5, 0.5)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="player"]
-
-[node name="Sprite2D" type="Sprite2D" parent="player/CanvasLayer"]
-visible = false
-position = Vector2(231, 1308)
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+modulate = Color(1, 1, 1, 0.52549)
+z_index = 5
+position = Vector2(2.75, 7)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_chwpn")
 
 [node name="Blocks" type="Node2D" parent="."]
 
-[node name="MoveableBox(Tile)" parent="Blocks" instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
 position = Vector2(40, 244)
 scale = Vector2(4, 4)
+mainTileMap = NodePath("../../Tile_map/Ground")
+CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)2" parent="Blocks" instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)2" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
 position = Vector2(106, 177)
 scale = Vector2(4, 4)
+mainTileMap = NodePath("../../Tile_map/Ground")
+CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)3" parent="Blocks" instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)3" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
 position = Vector2(174, 246)
 scale = Vector2(4, 4)
+mainTileMap = NodePath("../../Tile_map/Ground")
+CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)4" parent="Blocks" instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)4" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
 position = Vector2(108, 311)
 scale = Vector2(4, 4)
+mainTileMap = NodePath("../../Tile_map/Ground")
+CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)5" parent="Blocks" instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)5" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
 position = Vector2(39, 382)
 scale = Vector2(4, 4)
+mainTileMap = NodePath("../../Tile_map/Ground")
+CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)6" parent="Blocks" instance=ExtResource("6_af3po")]
-position = Vector2(170, 450)
+[node name="MoveableBox(Tile)6" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
+position = Vector2(167, 449)
 scale = Vector2(4, 4)
+mainTileMap = NodePath("../../Tile_map/Ground")
+CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)7" parent="Blocks" instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)7" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
 position = Vector2(304, 31)
 scale = Vector2(4, 4)
+mainTileMap = NodePath("../../Tile_map/Ground")
+CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)8" parent="Blocks" instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)8" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
 position = Vector2(240, 31)
 scale = Vector2(4, 4)
+mainTileMap = NodePath("../../Tile_map/Ground")
+CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)9" parent="Blocks" instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)9" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
 position = Vector2(240, 177)
 scale = Vector2(4, 4)
+mainTileMap = NodePath("../../Tile_map/Ground")
+CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)10" parent="Blocks" instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)10" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
 position = Vector2(240, 108)
 scale = Vector2(4, 4)
+mainTileMap = NodePath("../../Tile_map/Ground")
+CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)11" parent="Blocks" instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)11" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
 position = Vector2(40, 110)
 scale = Vector2(4, 4)
+mainTileMap = NodePath("../../Tile_map/Ground")
+CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)12" parent="Blocks" instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)12" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
 position = Vector2(173, 110)
 scale = Vector2(4, 4)
+mainTileMap = NodePath("../../Tile_map/Ground")
+CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)13" parent="Blocks" instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)13" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
 position = Vector2(372, 243)
 scale = Vector2(4, 4)
+mainTileMap = NodePath("../../Tile_map/Ground")
+CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)14" parent="Blocks" instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)14" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
 position = Vector2(372, 106)
 scale = Vector2(4, 4)
+mainTileMap = NodePath("../../Tile_map/Ground")
+CollisionTileMap = NodePath("../../Tile_map/Collision")
 
 [node name="Start_cutscene" type="Node2D" parent="."]
 
 [node name="start" type="Area2D" parent="Start_cutscene"]
+script = ExtResource("9_af3po")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Start_cutscene/start"]
 position = Vector2(225, 1305)
 shape = SubResource("RectangleShape2D_xrdnt")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Start_cutscene/start"]
+
 [node name="end" type="Area2D" parent="Start_cutscene"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Start_cutscene/end"]
-position = Vector2(226, 578.75)
-shape = SubResource("RectangleShape2D_wrinw")
-
-[node name="block_appear" type="CanvasLayer" parent="Start_cutscene/end"]
 script = ExtResource("6_lsmp6")
 
-[node name="Sprite2D" type="Sprite2D" parent="Start_cutscene/end/block_appear"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start_cutscene/end"]
+position = Vector2(224, 567)
+shape = SubResource("RectangleShape2D_wrinw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Start_cutscene/end"]
+modulate = Color(1, 1, 1, 0)
 top_level = true
-position = Vector2(228, 675)
+position = Vector2(227, 690)
 scale = Vector2(1.16066, 1.08422)
 texture = ExtResource("7_xrdnt")
 region_enabled = true
 region_rect = Rect2(0, 132.92, 85.6133, 59.0803)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Start_cutscene/end/block_appear"]
-reset_on_save = false
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Start_cutscene/end"]
 libraries = {
 &"": SubResource("AnimationLibrary_af3po")
 }
@@ -184,5 +254,8 @@ libraries = {
 [connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]
 [connection signal="body_entered" from="finish" to="player" method="_on_finish_body_entered"]
 [connection signal="body_entered" from="Start_cutscene/start" to="player" method="_on_start_body_entered"]
+[connection signal="body_entered" from="Start_cutscene/start" to="Start_cutscene/start" method="_on_body_entered"]
+[connection signal="body_entered" from="Start_cutscene/start" to="Start_cutscene/end" method="_on_start_body_entered"]
+[connection signal="body_entered" from="Start_cutscene/end" to="Tile_map/StartBlock" method="_on_end_body_entered"]
 [connection signal="body_entered" from="Start_cutscene/end" to="player" method="_on_end_body_entered"]
-[connection signal="body_entered" from="Start_cutscene/end" to="Start_cutscene/end/block_appear" method="_on_end_body_entered"]
+[connection signal="body_entered" from="Start_cutscene/end" to="Start_cutscene/end" method="_on_body_entered"]
