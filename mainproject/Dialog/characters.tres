@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CharacterList" load_steps=6 format=3 uid="uid://d2fh684014qnb"]
 
-[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_drd4d"]
-[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="2_5atv3"]
+[ext_resource type="Script" uid="uid://dd026ia0y1d33" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_drd4d"]
+[ext_resource type="Script" uid="uid://b40sy0etoyr7w" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="2_5atv3"]
 [ext_resource type="Texture2D" uid="uid://77d2y27ruobo" path="res://Sprites/characters/NPC1-sheet.png" id="2_i6qt8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_go3aj"]

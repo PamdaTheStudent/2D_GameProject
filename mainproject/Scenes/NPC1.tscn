@@ -1,11 +1,11 @@
 [gd_scene load_steps=17 format=3 uid="uid://bkpy683at20uj"]
 
-[ext_resource type="Script" path="res://Scripts/npc_animation.gd" id="1_a861e"]
-[ext_resource type="Script" path="res://Scripts/npc_dialogue.gd" id="2_fqjch"]
-[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="3_776td"]
+[ext_resource type="Script" uid="uid://dvcisi42j6yh7" path="res://Scripts/npc_animation.gd" id="1_a861e"]
+[ext_resource type="Script" uid="uid://b6n6qrai2w0q8" path="res://Scripts/npc_dialogue.gd" id="2_fqjch"]
+[ext_resource type="Script" uid="uid://kjrmj8ih1ek3" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="3_776td"]
 [ext_resource type="Theme" uid="uid://c7v8yvhp2wyqo" path="res://game_theme.tres" id="3_pfp48"]
 [ext_resource type="Resource" uid="uid://c540g315qq7eb" path="res://Dialog/NPC1.tres" id="4_vnseq"]
-[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="5_wsq3b"]
+[ext_resource type="Script" uid="uid://da7d3gp8vi6t0" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="5_wsq3b"]
 [ext_resource type="Texture2D" uid="uid://bhwicswjm07r" path="res://Sprites/play.png" id="7_ip0vb"]
 [ext_resource type="Texture2D" uid="uid://77d2y27ruobo" path="res://Sprites/characters/NPC1-sheet.png" id="8_vmy2l"]
 
