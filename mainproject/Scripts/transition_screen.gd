@@ -28,9 +28,15 @@ func _on_animation_finished(anim_name):
 		color_rect.visible = false
 		
 
-func transition(long):
-	if long == true:
-		animation_player.play("fade_to_black_long")
-	else:
-		animation_player.play("fade_to_black")
+func transition(anim_name):
 	color_rect.visible = true
+	if anim_name == "fade_to_black_long":
+		animation_player.play("fade_to_black_long")
+	elif anim_name == "fade_to_black":
+		animation_player.play("fade_to_black")
+	elif anim_name == "fade_to_normal_long":
+		animation_player.play("fade_to_normal_long")
+	elif anim_name == "fade_to_normal":
+		animation_player.play("fade_to_normal")
+	elif anim_name == "anim_off":
+		color_rect.visible = false

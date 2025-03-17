@@ -450,7 +450,7 @@ zoom = Vector2(0.5, 0.5)
 [node name="CanvasLayer" type="CanvasLayer" parent="player"]
 
 [node name="light_mask" type="Sprite2D" parent="player/CanvasLayer"]
-modulate = Color(1, 1, 1, 0.32549)
+modulate = Color(1, 1, 1, 0.470588)
 position = Vector2(255, 178)
 scale = Vector2(0.6, 0.446)
 texture = ExtResource("9_cue2k")

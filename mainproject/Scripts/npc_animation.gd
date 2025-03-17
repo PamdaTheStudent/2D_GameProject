@@ -15,4 +15,4 @@ func _on_area_2d_free() -> void:
 
 
 func _on_area_2d_close() -> void:
-	$AnimatedSprite2D.play("wave")
+	$AnimatedSprite2D.play("approach")
