@@ -1,6 +1,6 @@
 @tool
 ## A node for displaying branching dialogues, primarily created using the Dialogue Nodes editor.
-class_name DialogueBox
+#class_name DialogueBox
 extends Panel
  
 

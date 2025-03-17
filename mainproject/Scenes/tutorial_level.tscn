@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bkpy683at20uj" path="res://Scenes/NPC1.tscn" id="6_682lm"]
 [ext_resource type="Texture2D" uid="uid://jbbvg8d1upl3" path="res://Sprites/objects/light_mask.png" id="9_cue2k"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_malhh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8owl6"]
 texture = ExtResource("1_v8myl")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
@@ -22,9 +22,9 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 custom_data_layer_0/name = "collision"
 custom_data_layer_0/type = 1
-sources/3 = SubResource("TileSetAtlasSource_malhh")
+sources/3 = SubResource("TileSetAtlasSource_8owl6")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dfa5v"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_65s1a"]
 texture = ExtResource("5_q76hd")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
@@ -34,9 +34,9 @@ texture_region_size = Vector2i(8, 8)
 tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 4
-sources/0 = SubResource("TileSetAtlasSource_dfa5v")
+sources/0 = SubResource("TileSetAtlasSource_65s1a")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k3gyh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b1uyw"]
 texture = ExtResource("3_ibahb")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -170,7 +170,7 @@ texture_region_size = Vector2i(32, 32)
 2:5/0 = 0
 1:5/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bhdnf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2uonp"]
 texture = ExtResource("4_kj8qy")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -212,10 +212,10 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_71kw2"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_k3gyh")
-sources/3 = SubResource("TileSetAtlasSource_bhdnf")
+sources/0 = SubResource("TileSetAtlasSource_b1uyw")
+sources/3 = SubResource("TileSetAtlasSource_2uonp")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_12xhx"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_splj5"]
 texture = ExtResource("3_ibahb")
 texture_region_size = Vector2i(4, 4)
 0:0/0 = 0
@@ -352,9 +352,9 @@ texture_region_size = Vector2i(4, 4)
 
 [sub_resource type="TileSet" id="TileSet_2kmsc"]
 tile_size = Vector2i(8, 8)
-sources/0 = SubResource("TileSetAtlasSource_12xhx")
+sources/0 = SubResource("TileSetAtlasSource_splj5")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_drngb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vgybl"]
 texture = ExtResource("3_ibahb")
 texture_region_size = Vector2i(4, 4)
 0:33/size_in_atlas = Vector2i(20, 15)
@@ -364,7 +364,7 @@ texture_region_size = Vector2i(4, 4)
 
 [sub_resource type="TileSet" id="TileSet_nt6am"]
 tile_size = Vector2i(8, 8)
-sources/0 = SubResource("TileSetAtlasSource_drngb")
+sources/0 = SubResource("TileSetAtlasSource_vgybl")
 
 [sub_resource type="TileSet" id="TileSet_tq8dn"]
 

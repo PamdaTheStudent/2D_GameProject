@@ -77,6 +77,7 @@ script = ExtResource("2_fqjch")
 shape = SubResource("RectangleShape2D_swl3l")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Area2D"]
+layer = 10
 
 [node name="DialogueBox" type="Panel" parent="Area2D/CanvasLayer"]
 visible = false
