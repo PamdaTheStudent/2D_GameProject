@@ -1,18 +1,18 @@
 [gd_resource type="Resource" script_class="CharacterList" load_steps=9 format=3 uid="uid://d2fh684014qnb"]
 
-[ext_resource type="Script" uid="uid://dd026ia0y1d33" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_drd4d"]
-[ext_resource type="Script" uid="uid://b40sy0etoyr7w" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="2_5atv3"]
-[ext_resource type="Texture2D" uid="uid://77d2y27ruobo" path="res://Sprites/characters/NPC1-sheet.png" id="2_i6qt8"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_drd4d"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="2_5atv3"]
+[ext_resource type="Texture2D" uid="uid://18hsigecb265" path="res://Sprites/characters/tutorialdemon.png" id="2_ban52"]
 [ext_resource type="Texture2D" uid="uid://d2ihvkpymtvvq" path="res://Sprites/characters/NPCS-Sheet_1.png" id="3_d0s2x"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_go3aj"]
-atlas = ExtResource("2_i6qt8")
-region = Rect2(16, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_seo3j"]
+atlas = ExtResource("2_ban52")
+region = Rect2(56, 32, 96, 96)
 
 [sub_resource type="Resource" id="Resource_kmyie"]
 script = ExtResource("1_drd4d")
-name = "Fallen Friend"
-image = SubResource("AtlasTexture_go3aj")
+name = "MOM DAEMON"
+image = SubResource("AtlasTexture_seo3j")
 color = Color(1, 1, 1, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_noiug"]
@@ -21,7 +21,7 @@ region = Rect2(62.5758, 133.5, 65.2887, 56)
 
 [sub_resource type="Resource" id="Resource_ifw4y"]
 script = ExtResource("1_drd4d")
-name = "OCTO_MUSTASCH"
+name = "OCTO MUSTASCH"
 image = SubResource("AtlasTexture_noiug")
 color = Color(1, 1, 1, 1)
 metadata/_custom_type_script = "uid://dd026ia0y1d33"

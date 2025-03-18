@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Godot"
-run/main_scene="uid://b73eyu2tdawji"
-config/features=PackedStringArray("4.4", "Forward Plus")
+run/main_scene="res://Scenes/tutorial_level.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
 
 [autoload]
 
@@ -22,6 +22,7 @@ TransitionScreen="*res://Scenes/transition_screen.tscn"
 
 window/size/viewport_width=1500
 window/size/viewport_height=1000
+window/stretch/mode="canvas_items"
 window/stretch/scale=3.0
 
 [dotnet]

@@ -1,16 +1,16 @@
 [gd_scene load_steps=17 format=3 uid="uid://bkpy683at20uj"]
 
-[ext_resource type="Script" uid="uid://dvcisi42j6yh7" path="res://Scripts/npc_animation.gd" id="1_a861e"]
-[ext_resource type="Script" uid="uid://b6n6qrai2w0q8" path="res://Scripts/npc_dialogue.gd" id="2_fqjch"]
-[ext_resource type="Script" uid="uid://kjrmj8ih1ek3" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="3_776td"]
+[ext_resource type="Script" path="res://Scripts/npc_animation.gd" id="1_a861e"]
+[ext_resource type="Script" path="res://Scripts/npc_dialogue.gd" id="2_fqjch"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="3_776td"]
 [ext_resource type="Theme" uid="uid://c7v8yvhp2wyqo" path="res://game_theme.tres" id="3_pfp48"]
 [ext_resource type="Resource" uid="uid://c540g315qq7eb" path="res://Dialog/NPC1.tres" id="4_vnseq"]
-[ext_resource type="Script" uid="uid://da7d3gp8vi6t0" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="5_wsq3b"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="5_wsq3b"]
 [ext_resource type="Texture2D" uid="uid://bhwicswjm07r" path="res://Sprites/play.png" id="7_ip0vb"]
-[ext_resource type="Texture2D" uid="uid://77d2y27ruobo" path="res://Sprites/characters/NPC1-sheet.png" id="8_vmy2l"]
+[ext_resource type="Texture2D" uid="uid://18hsigecb265" path="res://Sprites/characters/tutorialdemon.png" id="8_tlf8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xiwtc"]
-size = Vector2(8, 8)
+size = Vector2(10, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_swl3l"]
 size = Vector2(16, 16)
@@ -18,27 +18,27 @@ size = Vector2(16, 16)
 [sub_resource type="RichTextEffect" id="RichTextEffect_lm54p"]
 script = ExtResource("5_wsq3b")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hlns4"]
-atlas = ExtResource("8_vmy2l")
-region = Rect2(60, 0, 60, 60)
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf437"]
+atlas = ExtResource("8_tlf8s")
+region = Rect2(15, 40, 170, 152)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1f3eh"]
-atlas = ExtResource("8_vmy2l")
-region = Rect2(0, 0, 60, 60)
+[sub_resource type="AtlasTexture" id="AtlasTexture_baacy"]
+atlas = ExtResource("8_tlf8s")
+region = Rect2(15, 40, 170, 152)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l3ivy"]
-atlas = ExtResource("8_vmy2l")
-region = Rect2(60, 0, 60, 60)
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7xov"]
+atlas = ExtResource("8_tlf8s")
+region = Rect2(210, 40, 170, 152)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_frtxx"]
-atlas = ExtResource("8_vmy2l")
-region = Rect2(0, 0, 60, 60)
+[sub_resource type="AtlasTexture" id="AtlasTexture_adkmx"]
+atlas = ExtResource("8_tlf8s")
+region = Rect2(210, 40, 170, 152)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aqss2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hlns4")
+"texture": SubResource("AtlasTexture_uf437")
 }],
 "loop": true,
 "name": &"stand",
@@ -46,10 +46,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1f3eh")
+"texture": SubResource("AtlasTexture_baacy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l3ivy")
+"texture": SubResource("AtlasTexture_w7xov")
 }],
 "loop": true,
 "name": &"talk",
@@ -57,7 +57,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_frtxx")
+"texture": SubResource("AtlasTexture_adkmx")
 }],
 "loop": true,
 "name": &"wave",
@@ -77,6 +77,7 @@ script = ExtResource("2_fqjch")
 shape = SubResource("RectangleShape2D_swl3l")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Area2D"]
+layer = 10
 
 [node name="DialogueBox" type="Panel" parent="Area2D/CanvasLayer"]
 visible = false
@@ -99,10 +100,9 @@ custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_lm54p")])
 next_icon = ExtResource("7_ip0vb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, 1)
-scale = Vector2(0.238095, 0.21875)
+scale = Vector2(0.0813954, 0.0855263)
 sprite_frames = SubResource("SpriteFrames_aqss2")
-animation = &"wave"
+animation = &"stand"
 
 [connection signal="Close" from="Area2D" to="." method="_on_area_2d_close"]
 [connection signal="Free" from="Area2D" to="." method="_on_area_2d_free"]

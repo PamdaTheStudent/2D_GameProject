@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dsnilqc0fje7r"]
 
-[ext_resource type="Script" uid="uid://p5hg5yefi2h6" path="res://Scripts/transition_screen.gd" id="1_d3hth"]
+[ext_resource type="Script" path="res://Scripts/transition_screen.gd" id="1_d3hth"]
 
 [sub_resource type="Animation" id="Animation_6y0de"]
 length = 0.001
@@ -81,11 +81,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2cyyb"]
 _data = {
-&"RESET": SubResource("Animation_6y0de"),
-&"fade_to_black": SubResource("Animation_ri3db"),
-&"fade_to_black_long": SubResource("Animation_v4fw7"),
-&"fade_to_normal": SubResource("Animation_y6el1"),
-&"fade_to_normal_long": SubResource("Animation_c4g4b")
+"RESET": SubResource("Animation_6y0de"),
+"fade_to_black": SubResource("Animation_ri3db"),
+"fade_to_black_long": SubResource("Animation_v4fw7"),
+"fade_to_normal": SubResource("Animation_y6el1"),
+"fade_to_normal_long": SubResource("Animation_c4g4b")
 }
 
 [node name="transition_screen" type="CanvasLayer"]
@@ -105,5 +105,5 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_2cyyb")
+"": SubResource("AnimationLibrary_2cyyb")
 }

@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://d4hdlnqb2ixew"]
+[gd_scene load_steps=13 format=3 uid="uid://d4hdlnqb2ixew"]
 
-[ext_resource type="Script" uid="uid://mc1xbuaspb8k" path="res://Scripts/TileMapMovement.gd" id="1_6s3hb"]
+[ext_resource type="Script" path="res://Scripts/TileMapMovement.gd" id="1_6s3hb"]
 [ext_resource type="Texture2D" uid="uid://cpps0vy6fjm33" path="res://Sprites/test_tile_things-Sheet.png" id="2_gm1w0"]
 [ext_resource type="Texture2D" uid="uid://ufesdkbc66p2" path="res://Sprites/Move-Indicator.png" id="3_hp56o"]
 [ext_resource type="Texture2D" uid="uid://c6o3qeeev01c0" path="res://Sprites/NotMove-Indicator.png" id="4_utpki"]
-[ext_resource type="Script" uid="uid://ccom8vbuccysu" path="res://Scripts/MoveIndicator.gd" id="5_b6sqr"]
-[ext_resource type="Script" uid="uid://bk8x3216ggr3n" path="res://Scripts/blockPressure.gd" id="6_nv6ap"]
+[ext_resource type="Script" path="res://Scripts/MoveIndicator.gd" id="5_b6sqr"]
+[ext_resource type="Script" path="res://Scripts/blockPressure.gd" id="6_nv6ap"]
+[ext_resource type="AudioStream" uid="uid://cv8vcjoajwy2n" path="res://Sounds/block-move.mp3" id="7_pgs0s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7e6yh"]
 size = Vector2(16, 16)
@@ -77,6 +78,11 @@ script = ExtResource("6_nv6ap")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_yfm6g")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_pgs0s")
+volume_db = -7.5
+pitch_scale = 0.75
 
 [connection signal="body_shape_entered" from="Move_Indicator/Area2D" to="." method="_on_area_2d_body_shape_entered"]
 [connection signal="body_shape_exited" from="Move_Indicator/Area2D" to="." method="_on_area_2d_body_shape_exited"]

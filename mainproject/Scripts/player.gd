@@ -14,7 +14,7 @@ var cutscene = 0 # Why not use a bool?
 
 func _ready():
 	_NPC_focus()
-	$AnimatedSprite2D.play("idle_down")
+	$AnimatedSprite2D.play("idle")
 
 func _physics_process(delta):
 	player_movement(delta)

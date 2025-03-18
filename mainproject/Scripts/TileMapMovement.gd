@@ -18,6 +18,7 @@ func _ready() -> void:
 
 
 func move(direction: Vector2):
+	$AudioStreamPlayer2D.play()
 	current_tile = mainTileMap.local_to_map(global_position)
 	var target_tile: Vector2i =  Vector2i(
 		current_tile.x + direction.x,

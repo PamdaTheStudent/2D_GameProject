@@ -1,19 +1,19 @@
 [gd_scene load_steps=17 format=3 uid="uid://b1yqgsp5y20wh"]
 
-[ext_resource type="Script" uid="uid://dvcisi42j6yh7" path="res://Scripts/npc_animation.gd" id="1_rg3x2"]
-[ext_resource type="Script" uid="uid://b6n6qrai2w0q8" path="res://Scripts/npc_dialogue.gd" id="2_8skf3"]
+[ext_resource type="Script" path="res://Scripts/npc_animation.gd" id="1_rg3x2"]
+[ext_resource type="Script" path="res://Scripts/npc_dialogue.gd" id="2_8skf3"]
 [ext_resource type="Theme" uid="uid://c7v8yvhp2wyqo" path="res://game_theme.tres" id="3_sqv10"]
-[ext_resource type="Script" uid="uid://kjrmj8ih1ek3" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="4_iy4ia"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="4_iy4ia"]
 [ext_resource type="Resource" uid="uid://dmsynq486nf5" path="res://Dialog/NPC_level1.tres" id="5_rg3x2"]
-[ext_resource type="Script" uid="uid://da7d3gp8vi6t0" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="6_uugng"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="6_uugng"]
 [ext_resource type="Texture2D" uid="uid://bhwicswjm07r" path="res://Sprites/play.png" id="7_84lm3"]
 [ext_resource type="Texture2D" uid="uid://d2ihvkpymtvvq" path="res://Sprites/characters/NPCS-Sheet_1.png" id="8_rg3x2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xiwtc"]
-size = Vector2(8, 8)
+size = Vector2(16, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_swl3l"]
-size = Vector2(16, 16)
+size = Vector2(20, 18)
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_lm54p"]
 script = ExtResource("6_uugng")
@@ -68,12 +68,14 @@ animations = [{
 script = ExtResource("1_rg3x2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_xiwtc")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("2_8skf3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_swl3l")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Area2D"]
