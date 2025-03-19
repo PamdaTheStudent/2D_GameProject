@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://cn40kswmrbu11"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_a3rea"]
+
+[resource]
+script = ExtResource("1_a3rea")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-589, -313),
+"start_id": "START"
+},
+"1_1": {
+"dialogue": "I used to be a teacher, waaaaaay back,",
+"offset": Vector2(-284, -347),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_2": {
+"dialogue": "looking back at my time as a brand spanking new professor,",
+"offset": Vector2(127.514, -330),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_3": {
+"dialogue": "my masters in \"Dungeon Design\" may have backfired on me [shake rate=20.0 level=5 connected=1]*sigh*[/shake]",
+"offset": Vector2(567.577, -318.461),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_4": {
+"dialogue": "i guess i can always get into real-estate, or taxes, I'm already dressed for the part",
+"offset": Vector2(983.765, -298.104),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+}
+}
+variables = {}
+strays = Array[String]([])
+characters = "res://Dialog/characters.tres"

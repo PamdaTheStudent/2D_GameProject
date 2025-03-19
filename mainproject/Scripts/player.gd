@@ -60,8 +60,11 @@ func player_movement(delta):
 		move_and_slide()
 
 func play_anim(movement):
+	var footstep = $AudioStreamPlayer2D
 	var dir = current_dir
 	var anim = $AnimatedSprite2D
+	if movement == 0:
+		footstep.play()
 	match dir:
 		"right":
 			anim.flip_h = false			

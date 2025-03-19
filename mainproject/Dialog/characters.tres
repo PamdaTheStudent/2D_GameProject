@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterList" load_steps=9 format=3 uid="uid://d2fh684014qnb"]
+[gd_resource type="Resource" script_class="CharacterList" load_steps=11 format=3 uid="uid://d2fh684014qnb"]
 
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_drd4d"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="2_5atv3"]
@@ -26,6 +26,16 @@ image = SubResource("AtlasTexture_noiug")
 color = Color(1, 1, 1, 1)
 metadata/_custom_type_script = "uid://dd026ia0y1d33"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_osf4k"]
+atlas = ExtResource("3_d0s2x")
+region = Rect2(8, 64, 48, 48)
+
+[sub_resource type="Resource" id="Resource_h6hbs"]
+script = ExtResource("1_drd4d")
+name = "ONION GUY"
+image = SubResource("AtlasTexture_osf4k")
+color = Color(1, 1, 1, 1)
+
 [resource]
 script = ExtResource("2_5atv3")
-characters = Array[ExtResource("1_drd4d")]([SubResource("Resource_kmyie"), SubResource("Resource_ifw4y")])
+characters = Array[ExtResource("1_drd4d")]([SubResource("Resource_kmyie"), SubResource("Resource_ifw4y"), SubResource("Resource_h6hbs")])

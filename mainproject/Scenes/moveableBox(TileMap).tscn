@@ -81,7 +81,7 @@ shape = SubResource("RectangleShape2D_yfm6g")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_pgs0s")
-volume_db = -7.5
+volume_db = -15.0
 pitch_scale = 0.75
 
 [connection signal="body_shape_entered" from="Move_Indicator/Area2D" to="." method="_on_area_2d_body_shape_entered"]

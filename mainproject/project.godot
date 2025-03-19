@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 [autoload]
 
 TransitionScreen="*res://Scenes/transition_screen.tscn"
+Music="*res://music.tscn"
 
 [display]
 

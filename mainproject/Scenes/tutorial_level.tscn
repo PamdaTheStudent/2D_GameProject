@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d4hdlnqb2ixew" path="res://Scenes/moveableBox(TileMap).tscn" id="5_hrh0a"]
 [ext_resource type="Texture2D" uid="uid://y6kss432yl2w" path="res://Sprites/RedTransparent.png" id="5_q76hd"]
 [ext_resource type="Texture2D" uid="uid://cphm8pdk353y0" path="res://Sprites/objects/tunnel_light_mask.png" id="6_3ros8"]
-[ext_resource type="PackedScene" uid="uid://bkpy683at20uj" path="res://Scenes/NPC1.tscn" id="6_682lm"]
+[ext_resource type="PackedScene" uid="uid://bkpy683at20uj" path="res://Scenes/NPCs/NPC0.tscn" id="6_682lm"]
 [ext_resource type="Texture2D" uid="uid://jbbvg8d1upl3" path="res://Sprites/objects/light_mask.png" id="9_cue2k"]
 [ext_resource type="AudioStream" uid="uid://cm8mnay4mxcld" path="res://Sounds/cavern-noise.mp3" id="12_g5y6f"]
 

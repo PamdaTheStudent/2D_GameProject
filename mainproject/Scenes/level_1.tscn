@@ -1,6 +1,7 @@
 [gd_scene load_steps=21 format=4 uid="uid://b73eyu2tdawji"]
 
 [ext_resource type="TileSet" uid="uid://cmnrq41gip68b" path="res://early_level_ground.tres" id="1_evi0p"]
+[ext_resource type="Script" path="res://Scenes/level_1.gd" id="1_icumm"]
 [ext_resource type="TileSet" uid="uid://cyvsuhanvaxy1" path="res://Scenes/player_coll.tres" id="2_af3po"]
 [ext_resource type="Texture2D" uid="uid://cphm8pdk353y0" path="res://Sprites/objects/tunnel_light_mask.png" id="2_xrdnt"]
 [ext_resource type="Script" path="res://Scenes/finish_1.gd" id="3_evi0p"]
@@ -11,8 +12,7 @@
 [ext_resource type="Script" path="res://Scenes/end.gd" id="6_lsmp6"]
 [ext_resource type="Texture2D" uid="uid://cpps0vy6fjm33" path="res://Sprites/test_tile_things-Sheet.png" id="7_xrdnt"]
 [ext_resource type="Script" path="res://Scenes/start.gd" id="9_af3po"]
-[ext_resource type="PackedScene" uid="uid://b1yqgsp5y20wh" path="res://Scenes/NPC2.tscn" id="12_uy8f0"]
-[ext_resource type="AudioStream" uid="uid://dusubyn3twckp" path="res://Sounds/puzzle-draft.mp3" id="13_4fcff"]
+[ext_resource type="PackedScene" uid="uid://b1yqgsp5y20wh" path="res://Scenes/NPCs/NPC1.tscn" id="12_uy8f0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40xya"]
 size = Vector2(116, 70)
@@ -76,6 +76,7 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_icumm")
 
 [node name="Tile_map" type="Node2D" parent="."]
 
@@ -256,11 +257,6 @@ libraries = {
 [node name="NPC_0" parent="." instance=ExtResource("12_uy8f0")]
 position = Vector2(348, 423)
 scale = Vector2(-4, 4)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_4fcff")
-volume_db = -5.0
-autoplay = true
 
 [connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]
 [connection signal="body_entered" from="finish" to="player" method="_on_finish_body_entered"]
