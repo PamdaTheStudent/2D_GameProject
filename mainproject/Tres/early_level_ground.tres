@@ -1,9 +1,10 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://cmnrq41gip68b"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://cmnrq41gip68b"]
 
 [ext_resource type="Texture2D" uid="uid://cpps0vy6fjm33" path="res://Sprites/test_tile_things-Sheet.png" id="1_534nx"]
 [ext_resource type="Texture2D" uid="uid://dfyvk362kjytm" path="res://Sprites/tilesets/early_level_ground.png" id="2_avwem"]
 [ext_resource type="Texture2D" uid="uid://cv5kkh0i8coog" path="res://Sprites/PinkTransparent.png" id="3_o6awj"]
 [ext_resource type="Texture2D" uid="uid://bvfwnio5864kr" path="res://Sprites/tilesets/early_level_ground2.png" id="4_xb0yb"]
+[ext_resource type="Texture2D" uid="uid://ddnuioyervtft" path="res://Sprites/tilesets/Ice.png" id="5_0lfgo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpjrt"]
 texture = ExtResource("1_534nx")
@@ -340,12 +341,40 @@ texture_region_size = Vector2i(64, 64)
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 9, -32, 10.5, 16, -32, 17)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5blb"]
+resource_name = "ice"
+texture = ExtResource("5_0lfgo")
+texture_region_size = Vector2i(64, 64)
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 1
+2:2/0/terrains_peering_bit/right_side = 1
+2:2/0/terrains_peering_bit/bottom_right_corner = 1
+2:2/0/terrains_peering_bit/bottom_side = 1
+2:2/0/terrains_peering_bit/bottom_left_corner = 1
+2:2/0/terrains_peering_bit/left_side = 1
+2:2/0/terrains_peering_bit/top_left_corner = 1
+2:2/0/terrains_peering_bit/top_side = 1
+2:2/0/terrains_peering_bit/top_right_corner = 1
+2:2/0/custom_data_0 = true
+2:2/0/custom_data_1 = true
+
 [resource]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+terrain_set_0/terrain_1/name = "Ice"
+terrain_set_0/terrain_1/color = Color(0.290985, 0.431537, 0.722669, 1)
+terrain_set_0/terrain_2/name = "Snow"
+terrain_set_0/terrain_2/color = Color(0.46875, 0.5, 0.25, 1)
 custom_data_layer_0/name = "walkable"
 custom_data_layer_0/type = 1
+custom_data_layer_1/name = "ice"
+custom_data_layer_1/type = 1
 sources/0 = SubResource("TileSetAtlasSource_vpjrt")
 sources/1 = SubResource("TileSetAtlasSource_57itx")
 sources/2 = SubResource("TileSetAtlasSource_xjam1")
 sources/3 = SubResource("TileSetAtlasSource_qmd1q")
+sources/4 = SubResource("TileSetAtlasSource_x5blb")

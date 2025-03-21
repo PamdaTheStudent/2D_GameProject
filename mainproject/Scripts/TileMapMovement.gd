@@ -108,8 +108,6 @@ func movementIndicator(direction: Vector2) :
 		moveIndicator._changeState("Empty")
 	moveIndicator.global_position = mainTileMap.map_to_local(target_tile)
 	
-
-		
 func changeIndicator(inArea: bool):
 		indicator = inArea
 	
