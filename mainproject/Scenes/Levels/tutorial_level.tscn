@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://bvihw8wtw0stg"]
+[gd_scene load_steps=26 format=4 uid="uid://bvihw8wtw0stg"]
 
 [ext_resource type="Texture2D" uid="uid://cv5kkh0i8coog" path="res://Sprites/PinkTransparent.png" id="1_tbbih"]
 [ext_resource type="TileSet" uid="uid://cmnrq41gip68b" path="res://Tres/early_level_ground.tres" id="2_f1neg"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://jbbvg8d1upl3" path="res://Sprites/objects/light_mask.png" id="10_tvl33"]
 [ext_resource type="PackedScene" uid="uid://bkpy683at20uj" path="res://Scenes/NPCs/NPC0.tscn" id="11_i0tep"]
 [ext_resource type="AudioStream" uid="uid://cm8mnay4mxcld" path="res://Sounds/cavern-noise.mp3" id="12_xtbt1"]
+[ext_resource type="PackedScene" uid="uid://bd7v4xf6lqnd6" path="res://Scenes/Global/control.tscn" id="13_g7wvu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oaky4"]
 texture = ExtResource("1_tbbih")
@@ -374,7 +375,7 @@ size = Vector2(163.5, 74)
 
 [node name="Tile_map" type="Node2D" parent="."]
 
-[node name="Collision" type="TileMapLayer" parent="Tile_map"]
+[node name="Collision" type="TileMapLayer" parent="Tile_map" groups=["save_node"]]
 visible = false
 modulate = Color(1, 1, 1, 0.572549)
 z_index = 5
@@ -416,14 +417,14 @@ position = Vector2(251, -880)
 scale = Vector2(0.778, 1.368)
 texture = ExtResource("6_yn4hj")
 
-[node name="MoveableBox(Tile)" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("7_pe1fo")]
+[node name="MoveableBox(Tile)" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["save_node"] instance=ExtResource("7_pe1fo")]
 z_index = 1
 position = Vector2(158, -95)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../Tile_map/Ground")
 CollisionTileMap = NodePath("../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)2" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("7_pe1fo")]
+[node name="MoveableBox(Tile)2" parent="." node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["save_node"] instance=ExtResource("7_pe1fo")]
 z_index = 1
 position = Vector2(223, -32)
 scale = Vector2(4, 4)
@@ -437,7 +438,7 @@ script = ExtResource("8_viaj2")
 position = Vector2(223, -218)
 shape = SubResource("RectangleShape2D_k2v15")
 
-[node name="player" parent="." instance=ExtResource("9_44ru8")]
+[node name="player" parent="." groups=["save_node"] instance=ExtResource("9_44ru8")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(224, 352)
@@ -475,6 +476,8 @@ stream = ExtResource("12_xtbt1")
 volume_db = -5.0
 autoplay = true
 parameters/looping = true
+
+[node name="Control" parent="." instance=ExtResource("13_g7wvu")]
 
 [connection signal="body_entered" from="Finish" to="Finish" method="_on_body_entered"]
 [connection signal="body_entered" from="Finish" to="player" method="_on_finish_body_entered"]
