@@ -1,18 +1,18 @@
 [gd_scene load_steps=21 format=4 uid="uid://b73eyu2tdawji"]
 
-[ext_resource type="TileSet" uid="uid://cmnrq41gip68b" path="res://early_level_ground.tres" id="1_evi0p"]
-[ext_resource type="Script" path="res://Scenes/level_1.gd" id="1_icumm"]
-[ext_resource type="TileSet" uid="uid://cyvsuhanvaxy1" path="res://Scenes/player_coll.tres" id="2_af3po"]
-[ext_resource type="Texture2D" uid="uid://cphm8pdk353y0" path="res://Sprites/objects/tunnel_light_mask.png" id="2_xrdnt"]
-[ext_resource type="Script" path="res://Scenes/finish_1.gd" id="3_evi0p"]
-[ext_resource type="Script" path="res://Scenes/start_block.gd" id="4_af3po"]
-[ext_resource type="PackedScene" uid="uid://1x63y7s53ti4" path="res://Scenes/player.tscn" id="4_wrinw"]
-[ext_resource type="Texture2D" uid="uid://jbbvg8d1upl3" path="res://Sprites/objects/light_mask.png" id="5_chwpn"]
-[ext_resource type="PackedScene" uid="uid://d4hdlnqb2ixew" path="res://Scenes/moveableBox(TileMap).tscn" id="6_af3po"]
-[ext_resource type="Script" path="res://Scenes/end.gd" id="6_lsmp6"]
-[ext_resource type="Texture2D" uid="uid://cpps0vy6fjm33" path="res://Sprites/test_tile_things-Sheet.png" id="7_xrdnt"]
-[ext_resource type="Script" path="res://Scenes/start.gd" id="9_af3po"]
-[ext_resource type="PackedScene" uid="uid://b1yqgsp5y20wh" path="res://Scenes/NPCs/NPC1.tscn" id="12_uy8f0"]
+[ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_1sqsg"]
+[ext_resource type="TileSet" uid="uid://cmnrq41gip68b" path="res://Tres/early_level_ground.tres" id="2_tuxhq"]
+[ext_resource type="TileSet" uid="uid://cyvsuhanvaxy1" path="res://Tres/player_coll.tres" id="3_u6lry"]
+[ext_resource type="Texture2D" uid="uid://cphm8pdk353y0" path="res://Sprites/objects/tunnel_light_mask.png" id="4_mlrvs"]
+[ext_resource type="Script" path="res://Scripts/start_block.gd" id="5_gke8s"]
+[ext_resource type="Script" path="res://Scripts/finish_1.gd" id="6_g04kt"]
+[ext_resource type="PackedScene" uid="uid://1x63y7s53ti4" path="res://Scenes/player.tscn" id="7_y1dc5"]
+[ext_resource type="Texture2D" uid="uid://jbbvg8d1upl3" path="res://Sprites/objects/light_mask.png" id="8_aej63"]
+[ext_resource type="PackedScene" uid="uid://d4hdlnqb2ixew" path="res://Scenes/Items/moveableBox(TileMap).tscn" id="9_hrvet"]
+[ext_resource type="Script" path="res://Scripts/start.gd" id="10_yfqde"]
+[ext_resource type="Script" path="res://Scripts/end.gd" id="11_0f03y"]
+[ext_resource type="Texture2D" uid="uid://cpps0vy6fjm33" path="res://Sprites/test_tile_things-Sheet.png" id="12_w8lbm"]
+[ext_resource type="PackedScene" uid="uid://b1yqgsp5y20wh" path="res://Scenes/NPCs/NPC1.tscn" id="13_fav0p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40xya"]
 size = Vector2(116, 70)
@@ -76,7 +76,7 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_icumm")
+script = ExtResource("1_1sqsg")
 
 [node name="Tile_map" type="Node2D" parent="."]
 
@@ -84,43 +84,43 @@ script = ExtResource("1_icumm")
 
 [node name="Ground" type="TileMapLayer" parent="Tile_map"]
 tile_map_data = PackedByteArray("AAAAAAgAAQABAAEAAAABAAgAAQABAAEAAAACAAgAAQABAAEAAAADAAgAAQABAAEAAAAEAAgAAQABAAEAAAAFAAgAAQABAAEAAAAGAAgAAwABAAEAAAAGAAcAAQABAAEAAAAGAAYAAQABAAEAAAAGAAUAAQABAAEAAAAGAAQAAQABAAEAAAAGAAMAAQABAAEAAAAGAAIAAQABAAEAAAAGAAEAAQABAAEAAAAGAAAAAQABAAEAAAAFAAAAAQABAAEAAAAEAAAAAQABAAEAAAADAAAAAQABAAEAAAACAAAAAQABAAEAAAABAAAAAQABAAEAAAAAAAAAAQABAAEAAAAAAAEAAQABAAEAAAAAAAIAAQABAAEAAAAAAAMAAQABAAEAAAAAAAQAAQABAAEAAAAAAAUAAQABAAEAAAAAAAYAAQABAAEAAAAAAAcAAQABAAEAAAABAAcAAQABAAEAAAABAAYAAQABAAEAAAABAAUAAQABAAEAAAABAAQAAQABAAEAAAABAAMAAQABAAEAAAABAAIAAQABAAEAAAABAAEAAQABAAEAAAACAAEAAQABAAEAAAACAAIAAQABAAEAAAACAAMAAQABAAEAAAACAAQAAQABAAEAAAACAAUAAQABAAEAAAACAAYAAQABAAEAAAACAAcAAQABAAEAAAADAAcAAQABAAEAAAADAAYAAQABAAEAAAADAAUAAQABAAEAAAADAAQAAQABAAEAAAADAAMAAQABAAEAAAADAAIAAQABAAEAAAADAAEAAQABAAEAAAAEAAEAAQABAAEAAAAEAAIAAQABAAEAAAAEAAMAAQABAAEAAAAEAAQAAQABAAEAAAAEAAUAAQABAAEAAAAEAAYAAQABAAEAAAAEAAcAAQABAAEAAAAFAAcAAQABAAEAAAAFAAYAAQABAAEAAAAFAAUAAQABAAEAAAAFAAQAAQABAAEAAAAFAAMAAQABAAEAAAAFAAIAAQABAAEAAAAFAAEAAQABAAEAAAD//wAAAQAAAAEAAAD//wEAAQAAAAEAAAD//wIAAQAAAAEAAAD//wMAAQAAAAEAAAD//wQAAQAAAAEAAAD//wUAAQAAAAEAAAD//wYAAQAAAAEAAAD//wcAAQAAAAEAAAD//wgAAQAAAAEAAAAAAAkAAQABAAIAAAABAAkAAQABAAIAAAACAAkAAwACAAEAAAADAAkAAQABAAEAAAAEAAkAAwABAAEAAAAFAAkAAQABAAIAAAAGAAkAAQACAAIAAAAHAAgAAQACAAIAAAAHAAcAAQACAAEAAAAHAAYAAQACAAEAAAAHAAUAAQACAAEAAAAHAAQAAQACAAEAAAAHAAMAAQACAAEAAAAHAAIAAQACAAEAAAAHAAEAAQACAAEAAAAHAAAAAQACAAEAAAAGAP//AQABAAAAAAAFAP//AQABAAAAAAAEAP//AQABAAAAAAADAP//AwABAAIAAAACAP//AQABAAEAAAABAP//AwACAAIAAAAAAP//AQABAAAAAAAHAP//AQACAAAAAAD//wkAAQAAAAIAAAD/////AQAAAAAAAAACAP7/AQABAAEAAAACAP3/AQABAAEAAAACAPz/AQABAAEAAAACAPv/AQABAAEAAAACAPr/AQABAAEAAAACAPn/AQABAAEAAAACAPj/AQABAAEAAAACAPf/AQABAAEAAAACAPb/AQABAAEAAAACAPX/AQABAAEAAAACAPT/AQABAAEAAAACAPP/AQABAAEAAAACAPL/AQABAAEAAAABAP7/AQAAAAEAAAABAP3/AQAAAAEAAAABAPz/AQAAAAEAAAABAPv/AQAAAAEAAAABAPr/AQAAAAEAAAABAPn/AQAAAAEAAAABAPj/AQAAAAEAAAABAPf/AQAAAAEAAAABAPb/AQAAAAEAAAABAPX/AQAAAAEAAAABAPT/AQAAAAEAAAABAPP/AQAAAAEAAAABAPL/AQAAAAEAAAADAP7/AQACAAEAAAADAP3/AQACAAEAAAADAPz/AQACAAEAAAADAPv/AQACAAEAAAADAPr/AQACAAEAAAADAPn/AQACAAEAAAADAPj/AQACAAEAAAADAPf/AQACAAEAAAADAPb/AQACAAEAAAADAPX/AQACAAEAAAADAPT/AQACAAEAAAADAPP/AQACAAEAAAADAPL/AQACAAEAAAADAAoAAQABAAEAAAADAAsAAQABAAEAAAADAAwAAQABAAEAAAADAA0AAQABAAEAAAADAA4AAQABAAEAAAADAA8AAQABAAEAAAADABAAAQABAAEAAAADABEAAQABAAEAAAADABIAAQABAAEAAAADABMAAQABAAEAAAADABQAAQABAAEAAAACAAoAAQAAAAEAAAACAAsAAQAAAAEAAAACAAwAAQAAAAEAAAACAA0AAQAAAAEAAAACAA4AAQAAAAEAAAACAA8AAQAAAAEAAAACABAAAQAAAAEAAAACABEAAQAAAAEAAAACABIAAQAAAAEAAAACABMAAQAAAAEAAAACABQAAQAAAAEAAAAEABQAAQACAAEAAAAEABMAAQACAAEAAAAEABIAAQACAAEAAAAEABEAAQACAAEAAAAEABAAAQACAAEAAAAEAA8AAQACAAEAAAAEAA4AAQACAAEAAAAEAA0AAQACAAEAAAAEAAwAAQACAAEAAAAEAAsAAQACAAEAAAAEAAoAAQACAAEAAAACAO7/AQABAAEAAAACAO//AQABAAEAAAACAPD/AQABAAEAAAACAPH/AQABAAEAAAABAO7/AQAAAAEAAAABAO//AQAAAAEAAAABAPD/AQAAAAEAAAABAPH/AQAAAAEAAAADAO7/AQACAAEAAAADAO//AQACAAEAAAADAPD/AQACAAEAAAADAPH/AQACAAEAAAACAOr/AQABAAEAAAACAOv/AQABAAEAAAACAOz/AQABAAEAAAACAO3/AQABAAEAAAADAO3/AQACAAEAAAADAOz/AQACAAEAAAADAOv/AQACAAEAAAADAOr/AQACAAEAAAABAO3/AQAAAAEAAAABAOz/AQAAAAEAAAABAOv/AQAAAAEAAAABAOr/AQAAAAEAAAA=")
-tile_set = ExtResource("1_evi0p")
+tile_set = ExtResource("2_tuxhq")
 
 [node name="Ground1" type="TileMapLayer" parent="Tile_map"]
 tile_map_data = PackedByteArray("AAAAAAAAAwAAAAEAAAACAAEAAwAAAAEAAAAEAAUAAwAAAAEAAAAEAAcAAwAAAAAAAAAFAAMAAwAAAAAAAAAGAAUAAwAAAAIAAAAAAAIAAwAAAAAAAAAAAAgAAwAAAAEAAAABAAAAAwAAAAAAAAABAAEAAwAAAAIAAAABAAIAAwAAAAIAAAABAAMAAwAAAAIAAAABAAUAAwAAAAIAAAACAAYAAwAAAAEAAAADAAAAAwAAAAIAAAAEAAEAAwAAAAEAAAAEAAMAAwAAAAIAAAAEAAgAAwAAAAIAAAAFAAAAAwAAAAIAAAAFAAIAAwAAAAEAAAAFAAYAAwAAAAEAAAAFAAcAAwAAAAAAAAAFAAgAAwAAAAAAAAAGAAAAAwAAAAEAAAAGAAIAAwAAAAAAAAAGAAMAAwAAAAIAAAAGAAYAAwAAAAEAAAADAA0AAwAAAAAAAAADABEAAwAAAAIAAAADABMAAwAAAAIAAAADAAkAAwAAAAIAAAADAAsAAwAAAAAAAAADAA4AAwAAAAIAAAACAPX/AwAAAAIAAAACAPb/AwAAAAAAAAACAPj/AwAAAAAAAAACAPn/AwAAAAEAAAACAPr/AwAAAAIAAAACAOr/AwAAAAIAAAACAOv/AwAAAAIAAAACAOz/AwAAAAIAAAACAO3/AwAAAAIAAAACAO7/AwAAAAIAAAACAO//AwAAAAIAAAACAPD/AwAAAAIAAAACAPH/AwAAAAIAAAACAPL/AwAAAAIAAAACAPP/AwAAAAIAAAACAPT/AwAAAAIAAAADAA8AAwAAAAIAAAADABAAAwAAAAIAAAADABIAAwAAAAIAAAADABQAAwAAAAIAAAACAP7/AwAAAAEAAAA=")
-tile_set = ExtResource("1_evi0p")
+tile_set = ExtResource("2_tuxhq")
 
 [node name="PlayerCollision" type="TileMapLayer" parent="Tile_map"]
 tile_map_data = PackedByteArray("AAAUACQAAAAAAAAAAAAUACMAAAAAAAAAAAAVACMAAAAAAAAAAAAVACIAAAAAAAAAAAAWACIAAAAAAAAAAAAXACIAAAAAAAAAAAAYACIAAAAAAAAAAAAZACIAAAAAAAAAAAAZACAAAAAAAAAAAAAZAB8AAAAAAAAAAAAZAB4AAAAAAAAAAAAaAB4AAAAAAAAAAAAbAB4AAAAAAAAAAAAcAB4AAAAAAAAAAAAdAB4AAAAAAAAAAAAcAB0AAAAAAAAAAAAbAB0AAAAAAAAAAAAaAB0AAAAAAAAAAAAZAB0AAAAAAAAAAAAdAB0AAAAAAAAAAAAUACUAAAAAAAAAAAA=")
-tile_set = ExtResource("2_af3po")
+tile_set = ExtResource("3_u6lry")
 
 [node name="Scenery" type="TileMapLayer" parent="Tile_map"]
 position = Vector2(21.885, 21.605)
 tile_map_data = PackedByteArray("AAAFAAgAAAAAAAQAAAAGAAcAAAAEAAQAAAA=")
-tile_set = ExtResource("1_evi0p")
+tile_set = ExtResource("2_tuxhq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Tile_map"]
 position = Vector2(187, 1228)
 rotation = 3.14159
 scale = Vector2(1.25427, 1.15977)
-texture = ExtResource("2_xrdnt")
+texture = ExtResource("4_mlrvs")
 
 [node name="StartBlock" type="TileMapLayer" parent="Tile_map"]
 visible = false
 tile_map_data = PackedByteArray("AAALACsAAAAAAAAAAAAMACoAAAAAAAAAAAANACkAAAAAAAAAAAAOACoAAAAAAAAAAAAPACsAAAAAAAAAAAAQACsAAAAAAAAAAAARACsAAAAAAAAAAAAKACsAAAAAAAAAAAAMACsAAAAAAAAAAAANACsAAAAAAAAAAAAOACsAAAAAAAAAAAANACoAAAAAAAAAAAA=")
-tile_set = ExtResource("2_af3po")
+tile_set = ExtResource("3_u6lry")
 collision_enabled = false
-script = ExtResource("4_af3po")
+script = ExtResource("5_gke8s")
 
 [node name="finish" type="Area2D" parent="."]
 position = Vector2(24, 43)
-script = ExtResource("3_evi0p")
+script = ExtResource("6_g04kt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
 position = Vector2(135, -166)
 shape = SubResource("RectangleShape2D_40xya")
 
-[node name="player" parent="." instance=ExtResource("4_wrinw")]
+[node name="player" parent="." instance=ExtResource("7_y1dc5")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(217, 1314)
@@ -134,89 +134,89 @@ modulate = Color(1, 1, 1, 0.392157)
 z_index = 5
 position = Vector2(2.75, 7)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("5_chwpn")
+texture = ExtResource("8_aej63")
 
 [node name="Blocks" type="Node2D" parent="."]
 
-[node name="MoveableBox(Tile)" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("9_hrvet")]
 position = Vector2(40, 244)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)2" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)2" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("9_hrvet")]
 position = Vector2(106, 177)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)3" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)3" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("9_hrvet")]
 position = Vector2(174, 246)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)4" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)4" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("9_hrvet")]
 position = Vector2(108, 311)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)5" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)5" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("9_hrvet")]
 position = Vector2(39, 382)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)6" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)6" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("9_hrvet")]
 position = Vector2(167, 449)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)7" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)7" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("9_hrvet")]
 position = Vector2(304, 31)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)8" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)8" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("9_hrvet")]
 position = Vector2(240, 31)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)9" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)9" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("9_hrvet")]
 position = Vector2(240, 177)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)10" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)10" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("9_hrvet")]
 position = Vector2(240, 108)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)11" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)11" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("9_hrvet")]
 position = Vector2(40, 110)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)12" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)12" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("9_hrvet")]
 position = Vector2(173, 110)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)13" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)13" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("9_hrvet")]
 position = Vector2(372, 243)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)14" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("6_af3po")]
+[node name="MoveableBox(Tile)14" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("9_hrvet")]
 position = Vector2(372, 106)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
@@ -225,7 +225,7 @@ CollisionTileMap = NodePath("../../Tile_map/Collision")
 [node name="Start_cutscene" type="Node2D" parent="."]
 
 [node name="start" type="Area2D" parent="Start_cutscene"]
-script = ExtResource("9_af3po")
+script = ExtResource("10_yfqde")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Start_cutscene/start"]
 position = Vector2(225, 1305)
@@ -234,7 +234,7 @@ shape = SubResource("RectangleShape2D_xrdnt")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Start_cutscene/start"]
 
 [node name="end" type="Area2D" parent="Start_cutscene"]
-script = ExtResource("6_lsmp6")
+script = ExtResource("11_0f03y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Start_cutscene/end"]
 position = Vector2(224, 567)
@@ -245,7 +245,7 @@ modulate = Color(1, 1, 1, 0)
 top_level = true
 position = Vector2(227, 690)
 scale = Vector2(1.16066, 1.08422)
-texture = ExtResource("7_xrdnt")
+texture = ExtResource("12_w8lbm")
 region_enabled = true
 region_rect = Rect2(0, 132.92, 85.6133, 59.0803)
 
@@ -254,7 +254,7 @@ libraries = {
 "": SubResource("AnimationLibrary_af3po")
 }
 
-[node name="NPC_0" parent="." instance=ExtResource("12_uy8f0")]
+[node name="NPC_0" parent="." instance=ExtResource("13_fav0p")]
 position = Vector2(348, 423)
 scale = Vector2(-4, 4)
 

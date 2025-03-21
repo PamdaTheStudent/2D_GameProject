@@ -1,12 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://b1yqgsp5y20wh"]
+[gd_scene load_steps=18 format=3 uid="uid://b1yqgsp5y20wh"]
 
 [ext_resource type="Script" path="res://Scripts/npc_animation.gd" id="1_rg3x2"]
 [ext_resource type="Script" path="res://Scripts/npc_dialogue.gd" id="2_8skf3"]
-[ext_resource type="Theme" uid="uid://c7v8yvhp2wyqo" path="res://game_theme.tres" id="3_sqv10"]
+[ext_resource type="Theme" uid="uid://c7v8yvhp2wyqo" path="res://Tres/game_theme.tres" id="3_sqv10"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="4_iy4ia"]
 [ext_resource type="Resource" uid="uid://dmsynq486nf5" path="res://Dialog/NPC_level1.tres" id="5_rg3x2"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="6_uugng"]
 [ext_resource type="Texture2D" uid="uid://bhwicswjm07r" path="res://Sprites/play.png" id="7_84lm3"]
+[ext_resource type="AudioStream" uid="uid://bnifld5rvf7ss" path="res://Sounds/talk-octo.mp3" id="8_d35rg"]
 [ext_resource type="Texture2D" uid="uid://d2ihvkpymtvvq" path="res://Sprites/characters/NPCS-Sheet_1.png" id="8_rg3x2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xiwtc"]
@@ -99,6 +100,9 @@ data = ExtResource("5_rg3x2")
 start_id = "OCTO_MUSTASCH"
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_lm54p")])
 next_icon = ExtResource("7_84lm3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D"]
+stream = ExtResource("8_d35rg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 1)

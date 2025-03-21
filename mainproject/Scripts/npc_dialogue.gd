@@ -11,7 +11,7 @@ signal Close
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") && in_range:
 			Talking.emit()
-			
+			$AudioStreamPlayer2D.play()
 			$CanvasLayer/DialogueBox.start()
 			in_range = false
 
