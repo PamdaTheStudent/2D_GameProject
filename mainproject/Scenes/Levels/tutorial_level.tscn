@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bvihw8wtw0stg"]
+[gd_scene load_steps=27 format=4 uid="uid://bvihw8wtw0stg"]
 
 [ext_resource type="Texture2D" uid="uid://cv5kkh0i8coog" path="res://Sprites/PinkTransparent.png" id="1_tbbih"]
 [ext_resource type="TileSet" uid="uid://cmnrq41gip68b" path="res://Tres/early_level_ground.tres" id="2_f1neg"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bkpy683at20uj" path="res://Scenes/NPCs/NPC0.tscn" id="11_i0tep"]
 [ext_resource type="AudioStream" uid="uid://cm8mnay4mxcld" path="res://Sounds/cavern-noise.mp3" id="12_xtbt1"]
 [ext_resource type="PackedScene" uid="uid://bd7v4xf6lqnd6" path="res://Scenes/Global/control.tscn" id="13_g7wvu"]
+[ext_resource type="PackedScene" uid="uid://bs0tyxis1ahm0" path="res://Scenes/menu.tscn" id="14_4ew57"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oaky4"]
 texture = ExtResource("1_tbbih")
@@ -479,5 +480,9 @@ parameters/looping = true
 
 [node name="Control" parent="." instance=ExtResource("13_g7wvu")]
 
+[node name="Menu" parent="." instance=ExtResource("14_4ew57")]
+
 [connection signal="body_entered" from="Finish" to="Finish" method="_on_body_entered"]
 [connection signal="body_entered" from="Finish" to="player" method="_on_finish_body_entered"]
+[connection signal="Free" from="Menu" to="player" method="_on_menu_free"]
+[connection signal="Paralyze" from="Menu" to="player" method="_on_menu_paralyze"]

@@ -8,6 +8,7 @@ var current_dir = "none"
 var currVelocity : Vector2
 var _indicatorReady
 var targetBox
+var can_move_boxes = true
 var cutscene = 0 # Why not use a bool?
 
 # READY AND PHYSICS
@@ -18,7 +19,7 @@ func _ready():
 
 func _physics_process(delta):
 	player_movement(delta)
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") && can_move_boxes:
 		handle_collisions()
 	if _indicatorReady == true:
 		CheckTargetTile(targetBox)
@@ -135,9 +136,11 @@ func _NPC_focus():
 				NPC_Cast[item].connect("Free", Callable(self, "_dialogue_end"))
 
 func _talking():
+	can_move_boxes = false
 	speed = 0
 
 func _dialogue_end():
+	can_move_boxes = true
 	speed = 200
 
 # EXITING LEVEL
@@ -162,3 +165,13 @@ func _on_end_body_entered(body: Node2D) -> void:
 	print_debug("body entered")
 	if cutscene == 2:
 		cutscene = 1
+
+# MENU
+
+func _on_menu_paralyze():
+	can_move_boxes = false
+	speed = 0
+	
+func _on_menu_free():
+	can_move_boxes = true
+	speed = 200
