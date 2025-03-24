@@ -20,7 +20,8 @@ func _input(event):
 	else:
 		pass
 		
-
 func _on_button_pressed():
+	paused = false
 	Free.emit()
 	$CanvasLayer.visible = false
+		

@@ -97,6 +97,8 @@ theme = ExtResource("3_pfp48")
 script = ExtResource("3_776td")
 data = ExtResource("4_vnseq")
 start_id = "tutorialNPC"
+scroll_speed = 7
+skip_input_action = "ui_down"
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_lm54p")])
 next_icon = ExtResource("7_ip0vb")
 

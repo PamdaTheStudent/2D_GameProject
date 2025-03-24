@@ -16,4 +16,4 @@ func _on_body_entered(body: Node2D) -> void:
 	elif entered == 1:
 		TransitionScreen.transition("fade_to_black_long")
 		await TransitionScreen.on_transition_finished
-		get_tree().change_scene_to_file("res://Scenes/level_1.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Levels/level_1.tscn")

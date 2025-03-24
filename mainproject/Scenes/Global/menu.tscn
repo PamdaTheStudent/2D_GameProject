@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bs0tyxis1ahm0"]
 
-[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_0h8ss"]
-[ext_resource type="FontFile" uid="uid://cxlmcp5twe1e1" path="res://Dialog/PixelifySans-VariableFont_wght.ttf" id="1_4xfke"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_kck6i"]
+[ext_resource type="FontFile" uid="uid://cxlmcp5twe1e1" path="res://Dialog/PixelifySans-VariableFont_wght.ttf" id="2_ifgyv"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_0h8ss")
+script = ExtResource("1_kck6i")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
@@ -38,7 +38,7 @@ offset_top = -3.05176e-05
 offset_right = 0.499939
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_4xfke")
+theme_override_fonts/font = ExtResource("2_ifgyv")
 theme_override_font_sizes/font_size = 48
 toggle_mode = true
 action_mode = 0

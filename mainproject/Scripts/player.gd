@@ -10,14 +10,28 @@ var _indicatorReady
 var targetBox
 var can_move_boxes = true
 var cutscene = 0 # Why not use a bool?
+var talking = false
+
+# This enum lists all the possible states the character can be in.
+enum States {ACTIVE, PASSIVE}
+
+# This variable keeps track of the character's current state.
+var state: States = States.ACTIVE
 
 # READY AND PHYSICS
 
 func _ready():
+	_activate_menu()
 	_NPC_focus()
 	$AnimatedSprite2D.play("idle")
 
 func _physics_process(delta):
+	if state == States.ACTIVE:
+		can_move_boxes = true
+		speed = 200
+	elif state == States.PASSIVE:
+		can_move_boxes = false
+		speed = 0
 	player_movement(delta)
 	if Input.is_action_just_pressed("ui_accept") && can_move_boxes:
 		handle_collisions()
@@ -136,12 +150,12 @@ func _NPC_focus():
 				NPC_Cast[item].connect("Free", Callable(self, "_dialogue_end"))
 
 func _talking():
-	can_move_boxes = false
-	speed = 0
+	talking = true
+	state = States.PASSIVE
 
 func _dialogue_end():
-	can_move_boxes = true
-	speed = 200
+	talking = false
+	state = States.ACTIVE
 
 # EXITING LEVEL
 
@@ -168,10 +182,14 @@ func _on_end_body_entered(body: Node2D) -> void:
 
 # MENU
 
+func _activate_menu():
+	var pause_menu = get_node("/root/Menu")
+	pause_menu.connect("Paralyze", Callable(self, "_on_menu_paralyze"))
+	pause_menu.connect("Free", Callable(self, "_on_menu_free"))
+	
 func _on_menu_paralyze():
-	can_move_boxes = false
-	speed = 0
+	state = States.PASSIVE
 	
 func _on_menu_free():
-	can_move_boxes = true
-	speed = 200
+	if not talking:
+		state = States.ACTIVE

@@ -98,6 +98,8 @@ theme = ExtResource("3_sqv10")
 script = ExtResource("4_iy4ia")
 data = ExtResource("5_rg3x2")
 start_id = "OCTO_MUSTASCH"
+scroll_speed = 7
+skip_input_action = "ui_down"
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_lm54p")])
 next_icon = ExtResource("7_84lm3")
 
