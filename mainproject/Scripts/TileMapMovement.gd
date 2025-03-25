@@ -128,7 +128,7 @@ func isIce(direction: Vector2):
 			target_tile.x + direction.x,
 			target_tile.y + direction.y)
 			print(target_tile)
-			
+
 		print(target_tile)
 	
 		

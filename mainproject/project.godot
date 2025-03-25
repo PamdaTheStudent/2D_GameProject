@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 [autoload]
 
-TransitionScreen="*res://Scenes/Cutscenes/transition_screen.tscn"
+TransitionScreen="*res://Scenes/Global/transition_screen.tscn"
 Music="*res://Scenes/Global/music.tscn"
 Menu="*res://Scenes/Global/menu.tscn"
 

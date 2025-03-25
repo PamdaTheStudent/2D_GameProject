@@ -2,13 +2,7 @@ extends Area2D
 
 var entered = 0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+@onready var pause_menu = get_node("/root/Menu")
 
 func _on_body_entered(body: Node2D) -> void:
 	if entered == 0:
@@ -16,4 +10,11 @@ func _on_body_entered(body: Node2D) -> void:
 	elif entered == 1:
 		TransitionScreen.transition("fade_to_black_long")
 		await TransitionScreen.on_transition_finished
-		get_tree().change_scene_to_file("res://Scenes/Levels/level_1.tscn")
+		pause_menu.current_level += 1
+
+		match pause_menu.current_level:
+			1: get_tree().change_scene_to_file("res://Scenes/Levels/level_1.tscn")
+			2: get_tree().change_scene_to_file("res://Scenes/Levels/level_2.tscn")
+			3: get_tree().change_scene_to_file("res://Scenes/Levels/level_3.tscn")
+			_: print("You won!")
+		

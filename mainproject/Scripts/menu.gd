@@ -5,6 +5,8 @@ signal Free
 
 var paused = false
 
+var current_level = 0
+
 func _ready():
 	var button = $CanvasLayer/Button
 

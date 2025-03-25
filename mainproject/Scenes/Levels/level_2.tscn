@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://jbbvg8d1upl3" path="res://Sprites/objects/light_mask.png" id="11_v5t5r"]
 [ext_resource type="PackedScene" uid="uid://d4hdlnqb2ixew" path="res://Scenes/Items/moveableBox(TileMap).tscn" id="12_f5nqj"]
 [ext_resource type="PackedScene" uid="uid://bw6uouf4u4p5v" path="res://Scenes/NPCs/NPC2.tscn" id="13_gpx23"]
-[ext_resource type="Script" path="res://Scripts/finish_1.gd" id="14_2n8os"]
+[ext_resource type="Script" path="res://Scripts/finish.gd" id="14_axt0t"]
 [ext_resource type="Script" path="res://Scripts/start.gd" id="15_1cwik"]
 [ext_resource type="Script" path="res://Scripts/end.gd" id="16_ux8km"]
 
@@ -738,7 +738,7 @@ scale = Vector2(3, 3)
 
 [node name="finish" type="Area2D" parent="."]
 position = Vector2(24, 43)
-script = ExtResource("14_2n8os")
+script = ExtResource("14_axt0t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
 position = Vector2(8, -1035)

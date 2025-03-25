@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://cyvsuhanvaxy1" path="res://Tres/player_coll.tres" id="3_u6lry"]
 [ext_resource type="Texture2D" uid="uid://cphm8pdk353y0" path="res://Sprites/objects/tunnel_light_mask.png" id="4_mlrvs"]
 [ext_resource type="Script" path="res://Scripts/start_block.gd" id="5_gke8s"]
-[ext_resource type="Script" path="res://Scripts/finish_1.gd" id="6_g04kt"]
+[ext_resource type="Script" path="res://Scripts/finish.gd" id="6_lc2bn"]
 [ext_resource type="PackedScene" uid="uid://1x63y7s53ti4" path="res://Scenes/player.tscn" id="7_y1dc5"]
 [ext_resource type="Texture2D" uid="uid://jbbvg8d1upl3" path="res://Sprites/objects/light_mask.png" id="8_aej63"]
 [ext_resource type="PackedScene" uid="uid://d4hdlnqb2ixew" path="res://Scenes/Items/moveableBox(TileMap).tscn" id="9_hrvet"]
@@ -114,7 +114,7 @@ script = ExtResource("5_gke8s")
 
 [node name="finish" type="Area2D" parent="."]
 position = Vector2(24, 43)
-script = ExtResource("6_g04kt")
+script = ExtResource("6_lc2bn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
 position = Vector2(135, -166)
