@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dfyvk362kjytm" path="res://Sprites/tilesets/early_level_ground.png" id="5_bt5ps"]
 [ext_resource type="Texture2D" uid="uid://cphm8pdk353y0" path="res://Sprites/objects/tunnel_light_mask.png" id="6_yn4hj"]
 [ext_resource type="PackedScene" uid="uid://d4hdlnqb2ixew" path="res://Scenes/Items/moveableBox(TileMap).tscn" id="7_pe1fo"]
-[ext_resource type="Script" uid="uid://g2v3lqhy4i4u" path="res://Scripts/finish.gd" id="8_viaj2"]
+[ext_resource type="Script" path="res://Scripts/finish.gd" id="8_viaj2"]
 [ext_resource type="PackedScene" uid="uid://1x63y7s53ti4" path="res://Scenes/player.tscn" id="9_44ru8"]
 [ext_resource type="Texture2D" uid="uid://jbbvg8d1upl3" path="res://Sprites/objects/light_mask.png" id="10_tvl33"]
 [ext_resource type="PackedScene" uid="uid://bkpy683at20uj" path="res://Scenes/NPCs/NPC0.tscn" id="11_i0tep"]
