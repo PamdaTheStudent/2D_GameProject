@@ -15,6 +15,7 @@ size_flags_vertical = 3
 script = ExtResource("1_kck6i")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]

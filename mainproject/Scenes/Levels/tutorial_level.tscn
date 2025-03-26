@@ -1,6 +1,5 @@
-[gd_scene load_steps=27 format=4 uid="uid://bvihw8wtw0stg"]
+[gd_scene load_steps=26 format=4 uid="uid://bvihw8wtw0stg"]
 
-[ext_resource type="Script" path="res://Scripts/tutorial_level.gd" id="1_dci04"]
 [ext_resource type="Texture2D" uid="uid://cv5kkh0i8coog" path="res://Sprites/PinkTransparent.png" id="1_tbbih"]
 [ext_resource type="TileSet" uid="uid://cmnrq41gip68b" path="res://Tres/early_level_ground.tres" id="2_f1neg"]
 [ext_resource type="Texture2D" uid="uid://y6kss432yl2w" path="res://Sprites/RedTransparent.png" id="3_ekn36"]
@@ -373,7 +372,6 @@ sources/0 = SubResource("TileSetAtlasSource_octvt")
 size = Vector2(163.5, 74)
 
 [node name="Tutorial_level" type="Node2D"]
-script = ExtResource("1_dci04")
 
 [node name="Tile_map" type="Node2D" parent="."]
 
@@ -454,14 +452,12 @@ zoom = Vector2(0.5, 0.5)
 [node name="CanvasLayer" type="CanvasLayer" parent="player"]
 
 [node name="light_mask" type="Sprite2D" parent="player/CanvasLayer"]
-visible = false
 modulate = Color(1, 1, 1, 0.470588)
 position = Vector2(255, 178)
 scale = Vector2(0.6, 0.446)
 texture = ExtResource("10_tvl33")
 
 [node name="light_mask_big" type="Sprite2D" parent="player/CanvasLayer"]
-visible = false
 modulate = Color(1, 1, 1, 0.67451)
 position = Vector2(254, 225)
 scale = Vector2(3.5735, 2.679)
