@@ -13,8 +13,8 @@ func _on_body_entered(body: Node2D) -> void:
 		pause_menu.current_level += 1
 
 		match pause_menu.current_level:
-			1: get_tree().change_scene_to_file("res://Scenes/Levels/level_1.tscn")
-			2: get_tree().change_scene_to_file("res://Scenes/Levels/level_2.tscn")
-			3: get_tree().change_scene_to_file("res://Scenes/Levels/level_3.tscn")
+			1: get_tree().change_scene_to_file("res://Scenes/level_1.tscn")
+			2: get_tree().change_scene_to_file("res://Scenes/level_2.tscn")
+			3: get_tree().change_scene_to_file("res://Scenes/level_3.tscn")
 			_: print("You won!")
 		
