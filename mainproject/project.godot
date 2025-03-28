@@ -22,8 +22,9 @@ Menu="*res://Scenes/Global/menu.tscn"
 
 [display]
 
-window/size/viewport_width=1500
-window/size/viewport_height=1000
+window/size/viewport_width=1200
+window/size/viewport_height=792
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/scale=3.0
 
