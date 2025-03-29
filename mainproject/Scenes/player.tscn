@@ -1,7 +1,8 @@
-[gd_scene load_steps=69 format=3 uid="uid://1x63y7s53ti4"]
+[gd_scene load_steps=71 format=3 uid="uid://1x63y7s53ti4"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_rds16"]
 [ext_resource type="Texture2D" uid="uid://blucuhwf2gla8" path="res://Sprites/greendemonbeta1-Sheet.png" id="2_l7bdo"]
+[ext_resource type="Texture2D" uid="uid://djcem28nqyqdl" path="res://Sprites/characters/NPCsleep.png" id="3_s65nt"]
 [ext_resource type="Texture2D" uid="uid://ufesdkbc66p2" path="res://Sprites/Move-Indicator.png" id="3_w83i6"]
 [ext_resource type="AudioStream" uid="uid://djee3x03m81ni" path="res://Sounds/foosteps.mp3" id="4_4jw1v"]
 
@@ -168,6 +169,10 @@ region = Rect2(257, 0, 63, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ym0op"]
 atlas = ExtResource("2_l7bdo")
 region = Rect2(320, 0, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dury3"]
+atlas = ExtResource("3_s65nt")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t68qs"]
 atlas = ExtResource("2_l7bdo")
@@ -398,6 +403,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_dury3")
+}],
+"loop": true,
+"name": &"paused",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_t68qs")
 }, {
 "duration": 1.0,
@@ -483,7 +496,7 @@ size = Vector2(20, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4t8c"]
 size = Vector2(11, 10)
 
-[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("InteractionBox")]
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("InteractionBox") groups=["player"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_rds16")
@@ -491,9 +504,9 @@ InteractionBox = NodePath("Area2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 5)
-scale = Vector2(0.285714, 0.285484)
+scale = Vector2(0.286, 0.286)
 sprite_frames = SubResource("SpriteFrames_46ogv")
-animation = &"walk-back"
+animation = &"walk-left"
 offset = Vector2(0, -15)
 
 [node name="Area2D" type="Area2D" parent="."]

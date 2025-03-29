@@ -36,6 +36,10 @@ project/assembly_name="Godot"
 
 enabled=PackedStringArray("res://addons/dialogue_nodes/plugin.cfg", "res://addons/godot-sqlite/plugin.cfg")
 
+[global_group]
+
+player=""
+
 [input]
 
 MoveObject={
