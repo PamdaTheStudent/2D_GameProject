@@ -5,9 +5,11 @@ signal title_screen_exit
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	TransitionScreen.transition("fade_to_normal_long")
 	anim.play("default")
 	anim.show()
 	$dark.show()
+	$Label.show()
 		
 
 func _process(delta: float) -> void:
@@ -15,3 +17,4 @@ func _process(delta: float) -> void:
 		title_screen_exit.emit()
 		anim.hide()
 		$dark.hide()
+		$Label.hide()

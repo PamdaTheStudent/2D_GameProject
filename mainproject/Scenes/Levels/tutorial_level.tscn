@@ -1,22 +1,24 @@
-[gd_scene load_steps=31 format=4 uid="uid://bvihw8wtw0stg"]
+[gd_scene load_steps=34 format=4 uid="uid://bvihw8wtw0stg"]
 
 [ext_resource type="Texture2D" uid="uid://cv5kkh0i8coog" path="res://Sprites/PinkTransparent.png" id="1_ewnpt"]
 [ext_resource type="TileSet" uid="uid://cmnrq41gip68b" path="res://Tres/early_level_ground.tres" id="2_j0yln"]
 [ext_resource type="Texture2D" uid="uid://y6kss432yl2w" path="res://Sprites/RedTransparent.png" id="3_lmvla"]
 [ext_resource type="Texture2D" uid="uid://cpps0vy6fjm33" path="res://Sprites/test_tile_things-Sheet.png" id="4_xd7un"]
 [ext_resource type="Texture2D" uid="uid://ihnqtewb67g5" path="res://Sprites/objects/rocks.png" id="5_upmja"]
+[ext_resource type="Texture2D" uid="uid://bt0l4wohvv52q" path="res://Sprites/tilesets/outside_level-Sheet.png" id="6_hp0rl"]
 [ext_resource type="Texture2D" uid="uid://cphm8pdk353y0" path="res://Sprites/UI elements/tunnel_light_mask.png" id="6_mbf6s"]
 [ext_resource type="PackedScene" uid="uid://d4hdlnqb2ixew" path="res://Scenes/Items/moveableBox(TileMap).tscn" id="7_mehq4"]
-[ext_resource type="Script" path="res://Scripts/finish.gd" id="8_s632c"]
+[ext_resource type="Script" uid="uid://g2v3lqhy4i4u" path="res://Scripts/finish.gd" id="8_s632c"]
 [ext_resource type="PackedScene" uid="uid://1x63y7s53ti4" path="res://Scenes/player.tscn" id="9_0x6ck"]
 [ext_resource type="Texture2D" uid="uid://cxnxs58sagp6w" path="res://Sprites/UI elements/outsidebg.png" id="10_xdbxn"]
 [ext_resource type="Texture2D" uid="uid://jbbvg8d1upl3" path="res://Sprites/UI elements/light_mask.png" id="11_nl6b4"]
 [ext_resource type="PackedScene" uid="uid://bkpy683at20uj" path="res://Scenes/NPCs/NPC0.tscn" id="12_h4m71"]
 [ext_resource type="AudioStream" uid="uid://cm8mnay4mxcld" path="res://Sounds/cavern-noise.mp3" id="13_8mcle"]
 [ext_resource type="PackedScene" uid="uid://bd7v4xf6lqnd6" path="res://Scenes/Global/control.tscn" id="14_i2u6v"]
-[ext_resource type="Script" path="res://Scenes/Cutscenes/title_screen.gd" id="15_vv2ue"]
+[ext_resource type="Script" uid="uid://x0yrh07unc8j" path="res://Scenes/Cutscenes/title_screen.gd" id="15_vv2ue"]
 [ext_resource type="Texture2D" uid="uid://bug51oc2ue2xg" path="res://Sprites/UI elements/title1.png" id="16_rxlhw"]
 [ext_resource type="Texture2D" uid="uid://dj0lxojyidw6m" path="res://Sprites/UI elements/title_2.png" id="17_p5dvu"]
+[ext_resource type="FontFile" uid="uid://cxlmcp5twe1e1" path="res://Dialog/PixelifySans-VariableFont_wght.ttf" id="18_g3l5c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oaky4"]
 texture = ExtResource("1_ewnpt")
@@ -203,10 +205,21 @@ texture_region_size = Vector2i(8, 8)
 24:17/size_in_atlas = Vector2i(8, 13)
 24:17/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ck3nf"]
+texture = ExtResource("6_hp0rl")
+texture_region_size = Vector2i(8, 8)
+0:27/size_in_atlas = Vector2i(8, 5)
+0:27/0 = 0
+8:27/size_in_atlas = Vector2i(9, 5)
+8:27/0 = 0
+32:27/size_in_atlas = Vector2i(8, 5)
+32:27/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_2kmsc"]
 tile_size = Vector2i(8, 8)
 sources/0 = SubResource("TileSetAtlasSource_0rl0n")
 sources/1 = SubResource("TileSetAtlasSource_5pgco")
+sources/2 = SubResource("TileSetAtlasSource_ck3nf")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_octvt"]
 texture = ExtResource("4_xd7un")
@@ -343,7 +356,6 @@ editor_draw_drag_margin = true
 [node name="CanvasLayer" type="CanvasLayer" parent="player"]
 
 [node name="light_mask" type="Sprite2D" parent="player/CanvasLayer"]
-visible = false
 modulate = Color(1, 1, 1, 0.286275)
 position = Vector2(203, 147)
 scale = Vector2(0.6, 0.446)
@@ -356,7 +368,6 @@ position = Vector2(226, 106)
 scale = Vector2(12, 12)
 
 [node name="Sprite2D" type="Sprite2D" parent="NPC_0"]
-visible = false
 modulate = Color(1, 1, 1, 0.545098)
 z_index = 2
 position = Vector2(0.0833332, 7.5)
@@ -384,11 +395,27 @@ frame_progress = 0.823838
 
 [node name="dark" type="Sprite2D" parent="title_screen"]
 visible = false
-modulate = Color(1, 1, 1, 0.662745)
+modulate = Color(1, 1, 1, 0.572549)
 z_index = 6
 position = Vector2(1262, -72)
 scale = Vector2(2.99, 1.675)
 texture = ExtResource("11_nl6b4")
+
+[node name="Label" type="Label" parent="title_screen"]
+visible = false
+modulate = Color(1, 1, 1, 0.635294)
+z_index = 6
+offset_left = 96.0
+offset_top = 495.0
+offset_right = 377.0
+offset_bottom = 542.0
+theme_override_colors/font_color = Color(0.14902, 0.85098, 0.94902, 1)
+theme_override_colors/font_shadow_color = Color(0.14902, 0.705882, 0.94902, 1)
+theme_override_colors/font_outline_color = Color(0.392157, 0.92549, 1, 1)
+theme_override_fonts/font = ExtResource("18_g3l5c")
+theme_override_font_sizes/font_size = 26
+text = "Press Enter to start"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="Finish" to="Finish" method="_on_body_entered"]
 [connection signal="body_entered" from="Finish" to="player" method="_on_finish_body_entered"]
