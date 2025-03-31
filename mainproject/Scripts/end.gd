@@ -4,10 +4,11 @@ extends Area2D
 
 var entered = false
 
-func _on_body_entered(body: player) -> void:
-	if not entered:
+func _on_body_entered(body: Node2D) -> void:
+	if not entered && body.is_in_group("player"):
 		animation_player.play("block_appear")
 		entered = true
 	
 func _on_start_body_entered(body: Node2D) -> void:
-	animation_player.play("block_disappear")
+	if body.is_in_group("player"):
+		animation_player.play("block_disappear")

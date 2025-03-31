@@ -19,13 +19,13 @@ func _physics_process(delta):
 		$CanvasLayer/DialogueBox.stop()
 	
 
-func _on_body_entered(body):
-	if body is player:
+func _on_body_entered(body: Node2D):
+	if  body.is_in_group("player"):
 		in_range = true
 		Close.emit()
 
-func _on_body_exited(body):
-	if body is player:
+func _on_body_exited(body: Node2D):
+	if body.is_in_group("player"):
 		in_range = false
 		Free.emit()
 

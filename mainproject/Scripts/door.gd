@@ -3,19 +3,18 @@ extends Area2D
 
 var open:bool = false
 
+signal OPEN
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var plate = get_node("../PressurePlate")
 	if plate:
+		print("plate")
 		plate.connect("Activated", Callable(self, "_on_activated"))
 		plate.connect("Deactivated", Callable(self, "_on_deactivated"))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func _on_activated():
-	$Sprite2D.texture = load('res://Sprites/tilesets/grass.png')
+	$Sprite2D.texture = load('res://Sprites/Move-Indicator.png')
 	open = true
 	print("Activated!")
 
@@ -24,7 +23,8 @@ func _on_deactivated():
 	open = false
 	print("Deactivated!")
 
-func _on_body_entered(body):
-	if open && body is player:
-		$Sprite2D.texture = load('res://Sprites/PinkTransparent.png')
+func _on_body_entered(body: Node2D):
+	if open && body.is_in_group("player"):
 		print("Entered!")
+		OPEN.emit()
+	

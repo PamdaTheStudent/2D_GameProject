@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://dplknq2xgty3i"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_5hk62"]
+
+[resource]
+script = ExtResource("1_5hk62")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-536, -7.00003),
+"start_id": "START"
+},
+"1_1": {
+"dialogue": "man, i tried to get away from my brother over in the icy levels, but he keeps following to antagonize me...",
+"offset": Vector2(-196.336, -28.9866),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 3
+},
+"1_2": {
+"dialogue": "he's just jealous I've got signal with my phone and all he has is multiple pairs of sunglasses and a soggy notepad",
+"offset": Vector2(222.165, 54.2169),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 3
+}
+}
+variables = {}
+strays = Array[String]([])
+characters = "res://Dialog/characters.tres"

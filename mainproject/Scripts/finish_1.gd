@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if entered == 0:
 		entered = 1
-	elif entered == 1:
+	elif entered == 1 && body.is_in_group("player"):
 		TransitionScreen.transition("fade_to_black_long")
 		await TransitionScreen.on_transition_finished
 		get_tree().change_scene_to_file("res://Scenes/Levels/level_2.tscn")

@@ -59,7 +59,7 @@ func player_movement(delta):
 		#play_anim(1)
 		velocity.x = 0
 		velocity.y = speed
-	elif Input.is_action_pressed("ui_up") or cutscene == 2:
+	elif Input.is_action_pressed("ui_up") or cutscene == 1:
 		InteractionBox.rotation_degrees = 270
 		current_dir = "up"		
 		velocity.x = 0
@@ -141,7 +141,8 @@ func directionToVector2():
 
 func _NPC_focus():
 	var NPC_Cast = [
-		get_node("../NPC_0/Area2D")
+		get_node("../NPC_0/Area2D"),
+		get_node("../NPC_1/Area2D")
 	]
 	if NPC_Cast:
 		for item in NPC_Cast.size():
@@ -161,24 +162,21 @@ func _dialogue_end():
 
 func _on_finish_body_entered(body: Node2D) -> void:
 	print_debug("body entered")
-	if cutscene == 0:
+	if cutscene == 0 && body.is_in_group("player"):
 		cutscene = 1
-	elif cutscene == 1:
-		cutscene = 2
 
 
 func _on_start_body_entered(body: Node2D) -> void:
 	print_debug("body entered")
-	if cutscene == 0:
+	if cutscene == 0 && body.is_in_group("player"):
 		cutscene = 1
-	elif cutscene == 1:
-		cutscene = 2
+
 
 
 func _on_end_body_entered(body: Node2D) -> void:
 	print_debug("body entered")
-	if cutscene == 2:
-		cutscene = 1
+	if cutscene == 1 && body.is_in_group("player"):
+		cutscene = 0
 
 # MENU
 

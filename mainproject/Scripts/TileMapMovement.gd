@@ -112,6 +112,7 @@ func changeIndicator(inArea: bool):
 		indicator = inArea
 	
 func isIce(direction: Vector2):
+	animation_speed = 3
 	current_tile = mainTileMap.local_to_map(global_position)
 	var target_tile: Vector2i =  Vector2i(
 		current_tile.x + direction.x,
@@ -120,15 +121,16 @@ func isIce(direction: Vector2):
 	while loop:
 		var mainTileData: TileData = mainTileMap.get_cell_tile_data(target_tile) 
 		if mainTileData == null or !mainTileData.get_custom_data("ice"):
+			
 			loop = false
 			print(target_tile)
 			return target_tile
 		else:
+			
 			target_tile =  Vector2i(
 			target_tile.x + direction.x,
 			target_tile.y + direction.y)
 			print(target_tile)
-
-		print(target_tile)
-	
+		animation_speed = 5
 		
+		print(target_tile)

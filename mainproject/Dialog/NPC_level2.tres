@@ -40,7 +40,7 @@ nodes = {
 "speaker": 2
 },
 "1_3": {
-"dialogue": "my masters in \"Dungeon Design\" may have backfired on me [shake rate=20.0 level=5 connected=1]*sigh*[/shake]",
+"dialogue": "my masters in \"Dungeon Design\" may have backfired on me [tornado radius=2.0 freq=1.0 connected=1]*sigh*[/tornado]",
 "offset": Vector2(567.577, -318.461),
 "options": {
 0: {

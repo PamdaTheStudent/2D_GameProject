@@ -41,7 +41,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_ifgyv")
 theme_override_font_sizes/font_size = 48
-toggle_mode = true
 action_mode = 0
 button_mask = 7
 text = "Resume"

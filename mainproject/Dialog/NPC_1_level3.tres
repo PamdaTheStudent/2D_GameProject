@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://7j1fw6g0jke5"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_q8rol"]
+
+[resource]
+script = ExtResource("1_q8rol")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-514, -244),
+"start_id": "START"
+},
+"1_1": {
+"dialogue": "My kid brothers such a nerd, look at his stupid phone,,,",
+"offset": Vector2(-189, -194),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 4
+},
+"1_2": {
+"dialogue": "with his,, stupid endless entertainment,,,",
+"offset": Vector2(252.261, 123),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 4
+},
+"1_3": {
+"dialogue": "why doesn't he like google a way to escape [shake rate=20.0 level=5 connected=1]NERD!!!![/shake]",
+"offset": Vector2(719.219, 491.381),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 4
+}
+}
+variables = {}
+strays = Array[String]([])
+characters = "res://Dialog/characters.tres"

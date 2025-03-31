@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterList" load_steps=11 format=3 uid="uid://d2fh684014qnb"]
+[gd_resource type="Resource" script_class="CharacterList" load_steps=15 format=3 uid="uid://d2fh684014qnb"]
 
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_drd4d"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="2_5atv3"]
@@ -36,6 +36,26 @@ name = "ONION GUY"
 image = SubResource("AtlasTexture_osf4k")
 color = Color(1, 1, 1, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji7x8"]
+atlas = ExtResource("3_d0s2x")
+region = Rect2(267, 65, 47, 40)
+
+[sub_resource type="Resource" id="Resource_0g8gs"]
+script = ExtResource("1_drd4d")
+name = "SAD FISH"
+image = SubResource("AtlasTexture_ji7x8")
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_852jd"]
+atlas = ExtResource("3_d0s2x")
+region = Rect2(262, 129, 51, 38)
+
+[sub_resource type="Resource" id="Resource_14c7k"]
+script = ExtResource("1_drd4d")
+name = "COOL FISH"
+image = SubResource("AtlasTexture_852jd")
+color = Color(1, 1, 1, 1)
+
 [resource]
 script = ExtResource("2_5atv3")
-characters = Array[ExtResource("1_drd4d")]([SubResource("Resource_kmyie"), SubResource("Resource_ifw4y"), SubResource("Resource_h6hbs")])
+characters = Array[ExtResource("1_drd4d")]([SubResource("Resource_kmyie"), SubResource("Resource_ifw4y"), SubResource("Resource_h6hbs"), SubResource("Resource_0g8gs"), SubResource("Resource_14c7k")])

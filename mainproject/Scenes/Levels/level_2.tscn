@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://kxh76ew6krng"]
+[gd_scene load_steps=38 format=4 uid="uid://kxh76ew6krng"]
 
 [ext_resource type="Texture2D" uid="uid://cv5kkh0i8coog" path="res://Sprites/PinkTransparent.png" id="1_tdv3f"]
 [ext_resource type="TileSet" uid="uid://cmnrq41gip68b" path="res://Tres/early_level_ground.tres" id="2_bigdl"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Scripts/finish.gd" id="14_axt0t"]
 [ext_resource type="Script" path="res://Scripts/start.gd" id="15_1cwik"]
 [ext_resource type="Script" path="res://Scripts/end.gd" id="16_ux8km"]
+[ext_resource type="Script" path="res://Scripts/save_states.gd" id="17_s6yuk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wuyfc"]
 texture = ExtResource("1_tdv3f")
@@ -666,7 +667,7 @@ region_enabled = true
 region_rect = Rect2(304, 504, 336, 496)
 region_filter_clip_enabled = true
 
-[node name="player" parent="." instance=ExtResource("10_m50cs")]
+[node name="player" parent="." groups=["save_node"] instance=ExtResource("10_m50cs")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-40, 1512)
@@ -684,49 +685,49 @@ texture = ExtResource("11_v5t5r")
 
 [node name="Blocks" type="Node2D" parent="."]
 
-[node name="MoveableBox(Tile)" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("12_f5nqj")]
+[node name="MoveableBox(Tile)" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["save_node"] instance=ExtResource("12_f5nqj")]
 position = Vector2(32, 32)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)2" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("12_f5nqj")]
+[node name="MoveableBox(Tile)2" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["save_node"] instance=ExtResource("12_f5nqj")]
 position = Vector2(-96, -96)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)3" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("12_f5nqj")]
+[node name="MoveableBox(Tile)3" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["save_node"] instance=ExtResource("12_f5nqj")]
 position = Vector2(32, -224)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)4" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("12_f5nqj")]
+[node name="MoveableBox(Tile)4" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["save_node"] instance=ExtResource("12_f5nqj")]
 position = Vector2(-96, -608)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)6" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("12_f5nqj")]
+[node name="MoveableBox(Tile)6" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["save_node"] instance=ExtResource("12_f5nqj")]
 position = Vector2(32, -736)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)7" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("12_f5nqj")]
+[node name="MoveableBox(Tile)7" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["save_node"] instance=ExtResource("12_f5nqj")]
 position = Vector2(-96, 32)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)8" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("12_f5nqj")]
+[node name="MoveableBox(Tile)8" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["save_node"] instance=ExtResource("12_f5nqj")]
 position = Vector2(32, -608)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
 CollisionTileMap = NodePath("../../Tile_map/Collision")
 
-[node name="MoveableBox(Tile)9" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") instance=ExtResource("12_f5nqj")]
+[node name="MoveableBox(Tile)9" parent="Blocks" node_paths=PackedStringArray("mainTileMap", "CollisionTileMap") groups=["save_node"] instance=ExtResource("12_f5nqj")]
 position = Vector2(-96, -352)
 scale = Vector2(4, 4)
 mainTileMap = NodePath("../../Tile_map/Ground")
@@ -777,6 +778,13 @@ scale = Vector2(5.27059, 3.23703)
 texture = ExtResource("4_qkn2y")
 region_enabled = true
 region_rect = Rect2(0, 132.92, 85.6133, 59.0803)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_s6yuk")
 
 [connection signal="body_entered" from="finish" to="player" method="_on_finish_body_entered"]
 [connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]
