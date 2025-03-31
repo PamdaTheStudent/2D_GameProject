@@ -8,10 +8,12 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_talking() -> void:
 	$AnimatedSprite2D.play("talk")
+	$MomTalk.play()
 
 
 func _on_area_2d_free() -> void:
 	$AnimatedSprite2D.play("stand")
+	$MomTalk.stop()
 
 
 func _on_area_2d_close() -> void:

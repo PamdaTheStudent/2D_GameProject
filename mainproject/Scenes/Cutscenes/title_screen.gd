@@ -10,6 +10,10 @@ func _ready() -> void:
 	anim.show()
 	$dark.show()
 	$Label.show()
+	$MainMenuMusic.play()
+	await get_tree().create_timer(39).timeout
+	$Ambience.play()
+	
 		
 
 func _process(delta: float) -> void:
