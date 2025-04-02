@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://dplknq2xgty3i" path="res://Dialog/NPC_level3.tres" id="5_j8ecf"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="6_y0o5a"]
 [ext_resource type="Texture2D" uid="uid://bhwicswjm07r" path="res://Sprites/play.png" id="7_d8arf"]
-[ext_resource type="AudioStream" uid="uid://6t2v3aknp62y" path="res://Sounds/talk-glasses.mp3" id="8_log71"]
+[ext_resource type="AudioStream" uid="uid://bftucf2dt7l5j" path="res://Sounds/fish-one.mp3" id="8_vg6dm"]
 [ext_resource type="Texture2D" uid="uid://d2ihvkpymtvvq" path="res://Sprites/characters/NPCS-Sheet_1.png" id="9_j5arg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xiwtc"]
@@ -104,7 +104,7 @@ custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_lm54p")])
 next_icon = ExtResource("7_d8arf")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D"]
-stream = ExtResource("8_log71")
+stream = ExtResource("8_vg6dm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -1)

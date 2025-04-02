@@ -1,6 +1,7 @@
 class_name player
 extends CharacterBody2D
 @export var InteractionBox : Area2D
+@onready var anim = $AnimatedSprite2D
 
 var speed = 200
 var current_dir = "none"
@@ -75,36 +76,36 @@ func player_movement(delta):
 		move_and_slide()
 
 func play_anim(movement):
-	var footstep = $AudioStreamPlayer2D
-	var dir = current_dir
-	var anim = $AnimatedSprite2D
-	if movement == 0:
-		footstep.play()
-	match dir:
-		"right":
-			anim.flip_h = false			
-			if movement == 1:
-				anim.play("walk-right")
-			elif movement == 0:
-				anim.play("idle")
-		"left":
-			anim.flip_h = false
-			if movement == 1:
-				anim.play("walk-left")
-			elif movement == 0:
-				anim.play("idle")
-		"up":
-			anim.flip_h = true	
-			if movement == 1:
-				anim.play("walk-back")
-			elif movement == 0:
-				anim.play("idle")
-		"down":
-			anim.flip_h = true	
-			if movement == 1:
-				anim.play("walk-forward")
-			elif movement == 0:
-				anim.play("idle")
+	if state == States.ACTIVE:
+		var footstep = $AudioStreamPlayer2D
+		var dir = current_dir
+		if movement == 0:
+			footstep.play()
+		match dir:
+			"right":
+				anim.flip_h = false			
+				if movement == 1:
+					anim.play("walk-right")
+				elif movement == 0:
+					anim.play("idle")
+			"left":
+				anim.flip_h = false
+				if movement == 1:
+					anim.play("walk-left")
+				elif movement == 0:
+					anim.play("idle")
+			"up":
+				anim.flip_h = true	
+				if movement == 1:
+					anim.play("walk-back")
+				elif movement == 0:
+					anim.play("idle")
+			"down":
+				anim.flip_h = true	
+				if movement == 1:
+					anim.play("walk-forward")
+				elif movement == 0:
+					anim.play("idle")
 
 # BLOCK PUSHING
 
@@ -141,8 +142,7 @@ func directionToVector2():
 
 func _NPC_focus():
 	var NPC_Cast = [
-		get_node("../NPC_0/Area2D"),
-		get_node("../NPC_1/Area2D")
+		get_node("../NPC_0/Area2D")
 	]
 	if NPC_Cast:
 		for item in NPC_Cast.size():
@@ -161,21 +161,23 @@ func _dialogue_end():
 # EXITING LEVEL
 
 func _on_finish_body_entered(body: Node2D) -> void:
-	print_debug("body entered")
-	if cutscene == 0 && body.is_in_group("player"):
-		cutscene = 1
+	if body.is_in_group("player"):
+		print_debug("body entered")
+		if cutscene == 0:
+			cutscene = 1
+		elif cutscene == 1:
+			cutscene = 2
 
 
 func _on_start_body_entered(body: Node2D) -> void:
 	print_debug("body entered")
-	if cutscene == 0 && body.is_in_group("player"):
+	if cutscene == 0:
 		cutscene = 1
-
 
 
 func _on_end_body_entered(body: Node2D) -> void:
 	print_debug("body entered")
-	if cutscene == 1 && body.is_in_group("player"):
+	if cutscene == 1:
 		cutscene = 0
 
 # MENU
@@ -185,9 +187,23 @@ func _activate_menu():
 	pause_menu.connect("Paralyze", Callable(self, "_on_menu_paralyze"))
 	pause_menu.connect("Free", Callable(self, "_on_menu_free"))
 	
+	
 func _on_menu_paralyze():
+	$AnimatedSprite2D.scale = Vector2(0.16, 0.16)
+	anim.play("paused")
 	state = States.PASSIVE
 	
 func _on_menu_free():
+	$AnimatedSprite2D.scale = Vector2(0.286, 0.286)
+	anim.play("idle")
 	if not talking:
 		state = States.ACTIVE
+
+
+func _on_title_screen_ready() -> void:
+	_on_menu_paralyze()
+
+
+func _on_title_screen_title_screen_exit() -> void:
+	await get_tree().create_timer(1.5).timeout
+	_on_menu_free()

@@ -2,12 +2,12 @@
 
 [ext_resource type="TileSet" uid="uid://cmnrq41gip68b" path="res://Tres/early_level_ground.tres" id="1_dxrxh"]
 [ext_resource type="TileSet" uid="uid://cyvsuhanvaxy1" path="res://Tres/player_coll.tres" id="2_p8bmd"]
-[ext_resource type="Texture2D" uid="uid://cphm8pdk353y0" path="res://Sprites/objects/tunnel_light_mask.png" id="3_tb8uk"]
+[ext_resource type="Texture2D" uid="uid://cphm8pdk353y0" path="res://Sprites/UI elements/tunnel_light_mask.png" id="3_tb8uk"]
 [ext_resource type="Script" path="res://Scripts/player_collision.gd" id="3_xl5ui"]
 [ext_resource type="Script" path="res://Scripts/start_block.gd" id="4_g4s7c"]
 [ext_resource type="Script" path="res://Scripts/finish.gd" id="5_gxvlc"]
 [ext_resource type="PackedScene" uid="uid://1x63y7s53ti4" path="res://Scenes/player.tscn" id="6_4h5wv"]
-[ext_resource type="Texture2D" uid="uid://jbbvg8d1upl3" path="res://Sprites/objects/light_mask.png" id="7_stmvq"]
+[ext_resource type="Texture2D" uid="uid://jbbvg8d1upl3" path="res://Sprites/UI elements/light_mask.png" id="7_stmvq"]
 [ext_resource type="PackedScene" uid="uid://d4hdlnqb2ixew" path="res://Scenes/Items/moveableBox(TileMap).tscn" id="8_icc2f"]
 [ext_resource type="Script" path="res://Scripts/start.gd" id="9_8yfsa"]
 [ext_resource type="Script" path="res://Scripts/end.gd" id="10_7vcyw"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cpux7s5bdo8rf" path="res://Scenes/Items/door.tscn" id="14_2udi5"]
 [ext_resource type="PackedScene" uid="uid://tr500wc11xyo" path="res://Scenes/NPCs/NPC3.tscn" id="15_yt8hi"]
 [ext_resource type="PackedScene" uid="uid://ngqbfnug6l5a" path="res://Scenes/NPCs/NPC3_1.tscn" id="16_3p2tx"]
-[ext_resource type="Script" path="res://Scripts/save_states.gd" id="17_43u2f"]
+[ext_resource type="PackedScene" uid="uid://bd7v4xf6lqnd6" path="res://Scenes/Global/control.tscn" id="17_31byq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sg5yw"]
 size = Vector2(208, 70)
@@ -92,7 +92,7 @@ tile_set = ExtResource("1_dxrxh")
 
 [node name="PlayerCollision" type="TileMapLayer" parent="Tile_map"]
 visible = false
-tile_map_data = PackedByteArray("AAACAPz/AAAAAAAAAAADAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAAFAPz/AAAAAAAAAAAGAPz/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAALAPz/AAAAAAAAAAALAP3/AAAAAAAAAAALAP7/AAAAAAAAAAAMAPz/AAAAAAAAAAAMAP3/AAAAAAAAAAAMAP7/AAAAAAAAAAANAPz/AAAAAAAAAAANAP3/AAAAAAAAAAANAP7/AAAAAAAAAAAOAPz/AAAAAAAAAAAOAP3/AAAAAAAAAAAOAP7/AAAAAAAAAAAPAPz/AAAAAAAAAAAPAP3/AAAAAAAAAAAPAP7/AAAAAAAAAAAQAPz/AAAAAAAAAAAQAP3/AAAAAAAAAAAQAP7/AAAAAAAAAAARAPz/AAAAAAAAAAARAP3/AAAAAAAAAAARAP7/AAAAAAAAAAABAPz/AAAAAAAAAAABAP3/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAHAP3/AAAAAAAAAAAHAPz/AAAAAAAAAAAKAP7/AAAAAAAAAAAKAP3/AAAAAAAAAAAKAPz/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAACAPz/AAAAAAAAAAADAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAAFAPz/AAAAAAAAAAAGAPz/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAALAPz/AAAAAAAAAAALAP3/AAAAAAAAAAALAP7/AAAAAAAAAAAMAPz/AAAAAAAAAAAMAP3/AAAAAAAAAAAMAP7/AAAAAAAAAAANAPz/AAAAAAAAAAANAP3/AAAAAAAAAAANAP7/AAAAAAAAAAAOAPz/AAAAAAAAAAAOAP3/AAAAAAAAAAAOAP7/AAAAAAAAAAAPAPz/AAAAAAAAAAAPAP3/AAAAAAAAAAAPAP7/AAAAAAAAAAAQAPz/AAAAAAAAAAAQAP3/AAAAAAAAAAAQAP7/AAAAAAAAAAARAPz/AAAAAAAAAAARAP3/AAAAAAAAAAARAP7/AAAAAAAAAAABAPz/AAAAAAAAAAABAP3/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAA=")
 tile_set = ExtResource("2_p8bmd")
 
 [node name="Scenery" type="TileMapLayer" parent="Tile_map"]
@@ -201,12 +201,7 @@ scale = Vector2(3, 3)
 position = Vector2(-160, 96)
 scale = Vector2(3, 3)
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("17_43u2f")
+[node name="Control" parent="." instance=ExtResource("17_31byq")]
 
 [connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]
 [connection signal="body_entered" from="finish" to="player" method="_on_finish_body_entered"]

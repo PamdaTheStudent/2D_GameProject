@@ -5,6 +5,9 @@ extends StaticBody2D
 @export var mainTileMap: TileMapLayer
 @export var CollisionTileMap: TileMapLayer
 
+signal Moving
+signal Still
+
 var indicator: bool
 var current_tile: Vector2
 var collidingIndicator: bool
@@ -18,6 +21,7 @@ func _ready() -> void:
 
 
 func move(direction: Vector2):
+	Moving.emit()
 	$AudioStreamPlayer2D.play()
 	current_tile = mainTileMap.local_to_map(global_position)
 	var target_tile: Vector2i =  Vector2i(
@@ -47,8 +51,6 @@ func move(direction: Vector2):
 	var base_speed = 16  # Speed per tile (adjust as needed)
 	var duration = distance / (base_speed * animation_speed)
 	
-	
-
 	var tween = create_tween()
 	tween.tween_property(self, "position", target_position, duration).set_trans(Tween.TRANS_SINE)
 	
@@ -56,6 +58,7 @@ func move(direction: Vector2):
 	await tween.finished
 	moving = false
 	global_position = mainTileMap.map_to_local(target_tile)
+	Still.emit()
 
 func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body is moveableBox:
