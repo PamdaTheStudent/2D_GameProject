@@ -14,12 +14,10 @@ func _ready():
 		plate.connect("Deactivated", Callable(self, "_on_deactivated"))
 
 func _on_activated():
-	$Sprite2D.texture = load('res://Sprites/Move-Indicator.png')
 	open = true
 	print("Activated!")
 
 func _on_deactivated():
-	$Sprite2D.texture = load('res://Sprites/GreenTransparent.png')
 	open = false
 	print("Deactivated!")
 
