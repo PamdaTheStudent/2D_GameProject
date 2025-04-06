@@ -1,0 +1,123 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://j5jipuddfyew"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_tcnvv"]
+
+[resource]
+script = ExtResource("1_tcnvv")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-681, -76),
+"start_id": "START"
+},
+"1_1": {
+"dialogue": "So you made it, after all.",
+"offset": Vector2(-336.99, -83.6231),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 5
+},
+"1_2": {
+"dialogue": "I’m sorry, but you are already too late, by a few thousand years.",
+"offset": Vector2(130.497, 79.1917),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 5
+},
+"1_3": {
+"dialogue": "Humanity waged war against the [color=red]Star People[/color], until they were all destroyed.",
+"offset": Vector2(608.234, 416.228),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 5
+},
+"1_4": {
+"dialogue": "They tried to come for us, to get an edge on their enemies, but they died at the labyrinth’s exit.",
+"offset": Vector2(1098.64, 719.486),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 5
+},
+"1_5": {
+"dialogue": "That is where we are, now. This place is their burial ground.",
+"offset": Vector2(1589.04, 1028.21),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 5
+},
+"1_6": {
+"dialogue": "But do not despair. The [color=red]Star People[/color] who destroyed them decided this world was spent.",
+"offset": Vector2(2024.8, 1353.32),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 5
+},
+"1_7": {
+"dialogue": "Now, it is ours. Passed down to us by providence.",
+"offset": Vector2(2489.25, 1619.7),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 5
+},
+"1_8": {
+"dialogue": "Come, [color=aquamarine]Greendaemon[/color]. There are friends waiting to hear of your success.",
+"offset": Vector2(2907.26, 1958.47),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 5
+}
+}
+variables = {}
+strays = Array[String]([])
+characters = "res://Dialog/characters.tres"

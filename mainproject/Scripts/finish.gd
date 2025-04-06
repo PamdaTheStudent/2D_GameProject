@@ -12,5 +12,5 @@ func _on_body_entered(body: Node2D) -> void:
 			1: get_tree().change_scene_to_file("res://Scenes/Levels/level_1.tscn")
 			2: get_tree().change_scene_to_file("res://Scenes/Levels/level_2.tscn")
 			3: get_tree().change_scene_to_file("res://Scenes/Levels/level_3.tscn")
-			_: print("You won!")
+			_: get_tree().change_scene_to_file("res://Scenes/Levels/outside.tscn")
 		

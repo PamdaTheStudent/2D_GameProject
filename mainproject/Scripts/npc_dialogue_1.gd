@@ -1,4 +1,4 @@
-class_name final_NPC
+class_name NPC
 
 extends Area2D
 
@@ -30,8 +30,7 @@ func _on_body_exited(body: Node2D):
 		Free.emit()
 
 func _on_dialogue_box_dialogue_ended():
-	if not pause_menu.paused:
-		Free.emit()
+	get_parent().add_child(preload("res://Scenes/the_end.tscn").instantiate())
 		
 func _input(event):
 	if event.is_action_pressed("ui_cancel") && not pause_menu.paused:

@@ -2,6 +2,7 @@ class_name player
 extends CharacterBody2D
 @export var InteractionBox : Area2D
 @onready var anim = $AnimatedSprite2D
+@onready var pause_menu = get_node("/root/Menu")
 
 var speed = 200
 var current_dir = "none"
@@ -24,7 +25,10 @@ var state: States = States.ACTIVE
 func _ready():
 	_activate_menu()
 	_NPC_focus()
-	$AnimatedSprite2D.play("idle")
+	if pause_menu.current_level > 3:
+		$AnimatedSprite2D.play("paused")
+	else:
+		$AnimatedSprite2D.play("idle")
 
 func _physics_process(delta):
 	if state == States.ACTIVE:
